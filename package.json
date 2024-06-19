@@ -1,5 +1,6 @@
 {
-  "name": "maplibre-theme",
+  "name": "maplibre-theme-private",
+  "private": true,
   "version": "0.0.6",
   "description": "CSS Themes for your Maplibre GL Js Web app",
   "type": "module",

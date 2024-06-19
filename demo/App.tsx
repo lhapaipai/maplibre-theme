@@ -1,8 +1,7 @@
 import { Map, StyleSpecification } from "maplibre-gl";
-import "./App.scss";
-import "maplibre-react-components/dist/style.css";
+import "./App.css";
+import "maplibre-react-components/style.css";
 import style from "./style.json";
-
 const mapStyle = style as StyleSpecification;
 
 new URL(window.location.toString()).searchParams
@@ -34,7 +33,9 @@ import clsx from "clsx";
 const marignier = { lng: 6.498, lat: 46.089 };
 const marignier2 = { lng: 6.2, lat: 46.089 };
 const leman = { lng: 6.382560880284075, lat: 46.41406563675616 };
-const rasterDemTiles = ["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"];
+const rasterDemTiles = [
+  "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
+];
 
 function MyCtrl() {
   const { container } = useRControl({
@@ -101,19 +102,21 @@ function MyCtrl() {
         <span className="maplibregl-ctrl-icon" aria-hidden="true"></span>
       </button>
     </>,
-    container,
+    container
   );
 }
 
 const acuracyCircleStyle = {
-  transform: "translate(-50%, -50%) translate(148px, 250px) rotateX(0deg) rotateZ(0deg)",
+  transform:
+    "translate(-50%, -50%) translate(148px, 250px) rotateX(0deg) rotateZ(0deg)",
   width: "297px",
   height: "297px",
   opacity: 1,
 };
 
 const dotStyle = {
-  transform: "translate(-50%, -50%) translate(148px, 250px) rotateX(0deg) rotateZ(0deg)",
+  transform:
+    "translate(-50%, -50%) translate(148px, 250px) rotateX(0deg) rotateZ(0deg)",
   opacity: 1,
 };
 
@@ -127,7 +130,6 @@ function CustomMap({
   scheme?: "light" | "dark";
 }) {
   const mapRef = useRef<Map>(null);
-  //       mapStyle={"/assets/styles/ign/PLAN.IGN/standard.json"}
 
   return (
     <div className={clsx("map-container", scheme)}>
@@ -164,7 +166,8 @@ function CustomMap({
           Hello world !
         </RPopup>
         <RPopup longitude={5.74} latitude={45.95}>
-          Hello world !<button className="maplibregl-popup-close-button">×</button>
+          Hello world !
+          <button className="maplibregl-popup-close-button">×</button>
         </RPopup>
 
         <MrcLogoControl position="top-left" />

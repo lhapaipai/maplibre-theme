@@ -13,21 +13,14 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "maplibre-gl": "^4.4.1",
-    "maplibre-react-components": "workspace:*",
+    "maplibre-react-components": "^0.0.6",
     "maplibre-theme": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@mapbox/point-geometry": "^0.1.0",
-    "@types/geojson": "^7946.0.14",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.7.0",
-    "postcss": "^8.4.38",
-    "postcss-load-config": "^5.1.0",
-    "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5",
     "vite": "^5.3.1"
   }
