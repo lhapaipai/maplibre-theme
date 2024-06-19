@@ -142,8 +142,8 @@ new Map({
 
 Some variables differs between `classic` and `modern`. check the source code for the exact implementation.
 
-- [classic vars.postcss](https://github.com/lhapaipai/lonlat/blob/main/packages/maplibre-theme/src/themes/classic/vars.postcss)
-- [modern vars.postcss](https://github.com/lhapaipai/lonlat/blob/main/packages/maplibre-theme/src/themes/modern/vars.postcss)
+- [modern vars.css](https://github.com/lhapaipai/maplibre-theme/blob/main/src/themes/modern/vars.css)
+- [classic vars.css](https://github.com/lhapaipai/maplibre-theme/blob/main/src/themes/classic/vars.css)
 
 It is not recommended to modify css variables for media queries `@media (forced-colors: active) and (prefers-color-scheme: light)` and `@media (forced-colors: active)`.
 If you find inconsistencies, open an issue or submit a PR instead.
@@ -216,11 +216,11 @@ pnpm i
 # choose -> Save your font in your local system
 ```
 
-your `packages/maplibre-theme/src/themes/<...>/font` is updated...
+your `src/themes/<...>/font` is updated...
 
-the files `packages/maplibre-theme/src/themes/<...>/font/codes.css` are used as a helper to know the correspondance between the icon and the character code.
+the files `src/themes/<...>/font/codes.css` are used as a helper to know the correspondance between the icon and the character code.
 
-original svg files are saved inside `packages/maplibre-theme/src/themes/<...>/assets` directory.
+original svg files are saved inside `src/themes/<...>/assets` directory.
 
 There is some restriction with your SVG file, check the [Fontello Wiki page](https://github.com/fontello/fontello/wiki/How-to-use-custom-images).
 
