@@ -5,7 +5,8 @@
   "description": "CSS Themes for your Maplibre GL Js Web app",
   "type": "module",
   "scripts": {
-    "dev": "postcss --watch -d dist src/core.css src/legacy.css src/classic.css src/modern.css --ext .scoped.css --env scoped",
+    "dev:demo": "pnpm --filter maplibre-theme-demo dev",
+    "dev:scoped": "postcss --watch -d dist src/core.css src/legacy.css src/classic.css src/modern.css --ext .scoped.css --env scoped",
     "build:scoped": "postcss -d dist src/core.css src/legacy.css src/classic.css src/modern.css --ext .scoped.css --env scoped",
     "build:base": "postcss -d dist src/core.css src/legacy.css src/classic.css src/modern.css --env base",
     "build": "pnpm build:scoped && pnpm build:base && node generate-public-package.js",

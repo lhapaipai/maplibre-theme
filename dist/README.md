@@ -103,17 +103,8 @@ new Map({
  * with .maplibregl-map you overwrite CSS vars you want
  */
 .maplibregl-map {
+  /* your CSS vars */
   --ml-ctrl-border-radius: 4px;
-  --ml-font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
-  --ml-font-attribution: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
-
-  --blue: 29 161 242;
-  --ml-c-neutral: 0 0 0;
-
-  --ml-c-active: var(--blue);
-  --ml-c-error: 229 78 51;
-
-  --ml-c-bg: 255 255 255;
 
   /*
    * gray-1 usually hover effect
@@ -123,20 +114,7 @@ new Map({
   --ml-c-gray-1: 240 240 240;
   --ml-c-gray-2: 215 215 215;
 
-  /*
-   * text: content of popup, attribution
-   * icon: control buttons (hover effect -> neutral)
-   */
-  --ml-c-text: 51 51 51;
-  --ml-c-icon: 51 51 51;
-
-  --ml-c-disabled: 170 170 170;
-
-  --ml-shadow-ctrl: 0 0 0 2px rgb(0 0 0 / 10%);
-  --ml-shadow-popup: 0 1px 2px rgb(0 0 0 / 10%);
-
-  --ml-c-geoloc: var(--blue);
-  --ml-outline: 0 0 2px 2px rgb(var(--blue));
+  /* etc... */
 }
 ```
 
@@ -241,3 +219,12 @@ Default generated colors with Forced-colors active.
 | ButtonFace     | #f5f5f5  | #000    |
 | HighlightText  | #ffffff  | #000    |
 | Highlight      | #1f9ede  | #1aebff |
+
+## Developpers
+
+```bash
+pnpm run dev:demo
+pnpm run dev:scoped
+
+# go to http://localhost:5173
+```
