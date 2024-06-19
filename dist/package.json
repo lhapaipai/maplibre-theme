@@ -1,0 +1,16 @@
+{
+  "name": "maplibre-theme",
+  "version": "0.0.6",
+  "description": "CSS Themes for your Maplibre GL Js Web app",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lhapaipai/maplibre-theme.git"
+  },
+  "homepage": "https://github.com/lhapaipai/maplibre-theme",
+  "keywords": [
+    "maplibre"
+  ],
+  "author": "Hugues Tavernier",
+  "license": "ISC"
+}
