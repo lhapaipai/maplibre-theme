@@ -67,7 +67,7 @@ new Map({
 </div>
 ```
 
-<img src="https://raw.githubusercontent.com/lhapaipai/lonlat/main/packages/maplibre-theme/theme-modern.png" alt="MapLibre classic theme" />
+<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/theme-modern.png" alt="MapLibre Modern theme" />
 
 
 ## Theme classic
@@ -92,7 +92,7 @@ new Map({
 </div>
 ```
 
-<img src="https://raw.githubusercontent.com/lhapaipai/lonlat/main/packages/maplibre-theme/theme-classic.png" alt="MapLibre classic theme" />
+<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/theme-classic.png" alt="MapLibre Classic theme" />
 
 
 ## Advanced configuration with CSS vars.

@@ -2,24 +2,24 @@
 
 @import "./icons/default/fontello.postcss";
 
-@import "./themes/classic/vars.postcss";
+@import "./themes/classic/vars.css";
 
-@import "./themes/classic/ctrl/ctrl--base.postcss";
-@import "./themes/classic/ctrl/ctrl--components.postcss";
-@import "./themes/classic/ctrl/ctrl--button.postcss";
-@import "./themes/classic/ctrl/ctrl-attrib.postcss";
-@import "./themes/classic/ctrl/ctrl-fullscreen.postcss";
-@import "./themes/classic/ctrl/ctrl-geolocate-marker.postcss";
-@import "./themes/classic/ctrl/ctrl-geolocate.postcss";
-@import "./themes/classic/ctrl/ctrl-logo.postcss";
-@import "./themes/classic/ctrl/ctrl-navigation.postcss";
-@import "./themes/classic/ctrl/ctrl-scale.postcss";
-@import "./themes/classic/ctrl/ctrl-terrain.postcss";
+@import "./themes/classic/ctrl/ctrl--base.css";
+@import "./themes/classic/ctrl/ctrl--components.css";
+@import "./themes/classic/ctrl/ctrl--button.css";
+@import "./themes/classic/ctrl/ctrl-attrib.css";
+@import "./themes/classic/ctrl/ctrl-fullscreen.css";
+@import "./themes/classic/ctrl/ctrl-geolocate-marker.css";
+@import "./themes/classic/ctrl/ctrl-geolocate.css";
+@import "./themes/classic/ctrl/ctrl-logo.css";
+@import "./themes/classic/ctrl/ctrl-navigation.css";
+@import "./themes/classic/ctrl/ctrl-scale.css";
+@import "./themes/classic/ctrl/ctrl-terrain.css";
 
-@import "./themes/classic/handler/boxzoom.postcss";
-@import "./themes/classic/handler/cooperative-gesture-screen.postcss";
+@import "./themes/classic/handler/boxzoom.css";
+@import "./themes/classic/handler/cooperative-gesture-screen.css";
 
-@import "./themes/classic/ui/popup--base.postcss";
-@import "./themes/classic/ui/popup--content.postcss";
+@import "./themes/classic/ui/popup--base.css";
+@import "./themes/classic/ui/popup--content.css";
 
-@import "./themes/classic/layout.postcss";
+@import "./themes/classic/layout.css";
