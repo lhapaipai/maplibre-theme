@@ -106,18 +106,14 @@ function MyCtrl() {
   );
 }
 
-const acuracyCircleStyle = {
-  transform:
-    "translate(-50%, -50%) translate(148px, 250px) rotateX(0deg) rotateZ(0deg)",
-  width: "297px",
-  height: "297px",
-  opacity: 1,
+const accuracyCircleStyle = {
+  transform: "translate(-50%, -50%)",
+  width: "200px",
+  height: "200px",
 };
 
 const dotStyle = {
-  transform:
-    "translate(-50%, -50%) translate(148px, 250px) rotateX(0deg) rotateZ(0deg)",
-  opacity: 1,
+  transform: "translate(-50%, -50%)",
 };
 
 function CustomMap({
@@ -149,10 +145,14 @@ function CustomMap({
           encoding="terrarium"
           tileSize={256}
         />
-        <RMarker longitude={leman.lng} latitude={leman.lat}>
+        <RMarker
+          longitude={leman.lng}
+          latitude={leman.lat}
+          initialAnchor="center"
+        >
           <div
             className="maplibregl-user-location-accuracy-circle maplibregl-marker maplibregl-marker-anchor-center"
-            style={acuracyCircleStyle}
+            style={accuracyCircleStyle}
           ></div>
           <div
             className="maplibregl-user-location-dot maplibregl-marker maplibregl-marker-anchor-center"
