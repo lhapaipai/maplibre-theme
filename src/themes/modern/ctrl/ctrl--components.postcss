@@ -1,0 +1,37 @@
+.maplibregl-ctrl-group {
+  border-radius: 1rem;
+  background: rgb(var(--ml-c-bg));
+  overflow: hidden;
+}
+
+.maplibregl-ctrl-group:not(:empty) {
+  box-shadow: var(--ml-shadow);
+}
+
+@media (forced-colors: active) {
+  .maplibregl-ctrl-group:not(:empty) {
+    box-shadow: 0 0 0 2px ButtonText;
+  }
+}
+
+.maplibregl-ctrl-group button + button {
+  border-top: 1px solid rgb(var(--ml-c-gray-2));
+}
+
+@media (forced-colors: active) {
+  .maplibregl-ctrl-group button + button {
+    border-top: 1px solid ButtonText;
+  }
+}
+
+.maplibregl-ctrl-group button:first-child {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.maplibregl-ctrl-group button:last-child {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.maplibregl-ctrl-group button:only-child {
+  border-radius: inherit;
+}

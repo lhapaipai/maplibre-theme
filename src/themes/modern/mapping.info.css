@@ -1,0 +1,18 @@
+.maplibregl-map {
+  border-radius: 1rem;
+
+  /* text hover color, button active bgcolor */
+  --color-yellow-5: 219 167 38; /* rgb(219, 167, 38); */
+
+  --color-gray-0: 255 255 255; /* rgb(255, 255, 255); */
+  --color-gray-1: 242 242 242; /* rgb(242, 242, 242); */
+  --color-gray-2: 228 228 228; /* rgb(228, 228, 228); */
+  --color-gray-3: 204 204 204; /* rgb(204, 204, 204); */
+  --color-gray-4: 180 180 180; /* rgb(180, 180, 180); */
+  --color-gray-5: 140 140 140; /* rgb(140, 140, 140); */
+  /* text-hint text-disabled */
+  --color-gray-6: 90 90 90; /* rgb(90, 90, 90); */
+  --color-gray-7: 50 50 50; /* rgb(50, 50, 50); */
+  --color-gray-8: 0 0 0; /* rgb(0, 0, 0); */
+  --color-gray-text: var(--color-gray-7);
+}

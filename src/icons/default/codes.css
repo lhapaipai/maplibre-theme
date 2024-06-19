@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?13918391');
+  src: url('../font/fontello.eot?13918391#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?13918391') format('woff2'),
+       url('../font/fontello.woff?13918391') format('woff'),
+       url('../font/fontello.ttf?13918391') format('truetype'),
+       url('../font/fontello.svg?13918391#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?13918391#fontello') format('svg');
+  }
+}
+*/
+[class^="ml-"]:before, [class*=" ml-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.ml-space_alata-regular:before { content: '\20'; } /* ' ' */
+.ml-maplibregl-ctrl-zoom-in:before { content: '\2b'; } /* '+' */
+.ml-maplibregl-ctrl-zoom-out:before { content: '\2d'; } /* '-' */
+.ml-alata-l:before { content: '\4c'; } /* 'L' */
+.ml-alata-m:before { content: '\4d'; } /* 'M' */
+.ml-alata-a:before { content: '\61'; } /* 'a' */
+.ml-alata-b:before { content: '\62'; } /* 'b' */
+.ml-alata-e:before { content: '\65'; } /* 'e' */
+.ml-alata-i:before { content: '\69'; } /* 'i' */
+.ml-alata-p:before { content: '\70'; } /* 'p' */
+.ml-alata-r:before { content: '\72'; } /* 'r' */
+.ml-maplibregl-ctrl-attrib:before { content: '\e808'; } /* '' */
+.ml-maplibregl-ctrl-compass-north:before { content: '\e809'; } /* '' */
+.ml-maplibregl-ctrl-compass-south:before { content: '\e80a'; } /* '' */
+.ml-maplibregl-ctrl-fullscreen:before { content: '\e80b'; } /* '' */
+.ml-maplibregl-ctrl-geolocate-active:before { content: '\e80c'; } /* '' */
+.ml-maplibregl-ctrl-geolocate-background:before { content: '\e80d'; } /* '' */
+.ml-maplibregl-ctrl-geolocate-stroke:before { content: '\e80e'; } /* '' */
+.ml-maplibregl-ctrl-shrink:before { content: '\e80f'; } /* '' */
+.ml-maplibregl-ctrl-terrain:before { content: '\e810'; } /* '' */
+.ml-maplibre-logo:before { content: '\e813'; } /* '' */

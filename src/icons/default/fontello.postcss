@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "fontello-ml-default";
+  src: url("b64---./src/icons/default/generated/fontello.woff2---");
+  font-weight: normal;
+  font-style: normal;
+}
+
+a.maplibregl-ctrl-logo::before,
+.maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
+.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
+.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::after,
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+  font-family: "fontello-ml-default";
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  text-decoration: inherit;
+}
+
+.maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
+.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
+.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::after,
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+  font-style: normal;
+  font-weight: normal;
+
+  display: inline-block;
+  text-align: center;
+}

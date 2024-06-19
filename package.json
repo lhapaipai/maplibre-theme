@@ -1,0 +1,43 @@
+{
+  "name": "maplibre-theme",
+  "version": "0.0.6",
+  "description": "CSS Themes for your Maplibre GL Js Web app",
+  "type": "module",
+  "scripts": {
+    "dev": "postcss --watch -d dist src/core.css src/legacy.css src/classic.css src/modern.css --ext .scoped.css --env scoped",
+    "build:scoped": "postcss -d dist src/core.css src/legacy.css src/classic.css src/modern.css --ext .scoped.css --env scoped",
+    "build:base": "postcss -d dist src/core.css src/legacy.css src/classic.css src/modern.css --env base",
+    "build": "pnpm build:scoped && pnpm build:base && node generate-public-package.js",
+    "build:fontello": "tsup",
+    "dev:fontello": "tsup --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lhapaipai/lonlat.git"
+  },
+  "homepage": "https://github.com/lhapaipai/lonlat/tree/main/packages/maplibre-theme",
+  "keywords": [
+    "maplibre"
+  ],
+  "author": "Hugues Tavernier",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.4",
+    "@types/prompts": "^2.4.9",
+    "autoprefixer": "^10.4.19",
+    "axios": "^1.7.2",
+    "cssnano": "^7.0.2",
+    "extract-zip": "^2.0.1",
+    "form-data": "^4.0.0",
+    "open": "^10.1.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-inline-base64": "^7.3.1",
+    "postcss-inline-svg": "^6.0.0",
+    "postcss-prefix-selector": "^1.16.1",
+    "prompts": "^2.4.2",
+    "rimraf": "^5.0.7",
+    "tsup": "^8.1.0"
+  }
+}

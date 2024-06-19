@@ -1,0 +1,50 @@
+.maplibregl-ctrl button.maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon {
+  background-image: svg-load("../assets/maplibregl-ctrl-zoom-out.svg", fill: #333);
+}
+
+.maplibregl-ctrl button.maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon {
+  background-image: svg-load("../assets/maplibregl-ctrl-zoom-in.svg", fill: #333);
+}
+
+@media (forced-colors: active) {
+  .maplibregl-ctrl button.maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon {
+    background-image: svg-load("../assets/maplibregl-ctrl-zoom-out.svg", fill: #fff);
+  }
+
+  .maplibregl-ctrl button.maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon {
+    background-image: svg-load("../assets/maplibregl-ctrl-zoom-in.svg", fill: #fff);
+  }
+}
+
+@media (forced-colors: active) and (prefers-color-scheme: light) {
+  .maplibregl-ctrl button.maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon {
+    background-image: svg-load("../assets/maplibregl-ctrl-zoom-out.svg", fill: #000);
+  }
+
+  .maplibregl-ctrl button.maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon {
+    background-image: svg-load("../assets/maplibregl-ctrl-zoom-in.svg", fill: #000);
+  }
+}
+
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon {
+  background-image: svg-load("../assets/maplibregl-ctrl-compass.svg", fill: #333);
+}
+
+@media (forced-colors: active) {
+  .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon {
+    @svg-load ctrl-compass-white url("../assets/maplibregl-ctrl-compass.svg") {
+      fill: #fff;
+      #south {
+        fill: #999;
+      }
+    }
+
+    background-image: svg-inline(ctrl-compass-white);
+  }
+}
+
+@media (forced-colors: active) and (prefers-color-scheme: light) {
+  .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon {
+    background-image: svg-load("../assets/maplibregl-ctrl-compass.svg", fill: #000);
+  }
+}

@@ -1,0 +1,98 @@
+.maplibregl-ctrl.maplibregl-ctrl-attrib {
+  padding: 0 5px;
+  background-color: rgb(255 255 255 / 50%);
+  margin: 0;
+}
+
+@media screen {
+  .maplibregl-ctrl-attrib.maplibregl-compact {
+    min-height: 20px;
+    padding: 2px 24px 2px 0;
+    margin: 10px;
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    border-radius: 12px;
+    box-sizing: content-box;
+  }
+
+  .maplibregl-ctrl-attrib.maplibregl-compact-show {
+    padding: 2px 28px 2px 8px;
+  }
+
+  .maplibregl-ctrl-top-left > .maplibregl-ctrl-attrib.maplibregl-compact-show,
+  .maplibregl-ctrl-bottom-left > .maplibregl-ctrl-attrib.maplibregl-compact-show {
+    padding: 2px 8px 2px 28px;
+    border-radius: 12px;
+  }
+
+  .maplibregl-ctrl-attrib-button {
+    cursor: pointer;
+    position: absolute;
+    background-image: svg-load("../assets/maplibregl-ctrl-attrib.svg");
+    background-color: rgb(255 255 255 / 50%);
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    outline: none;
+    top: 0;
+    right: 0;
+    border: 0;
+  }
+
+  .maplibregl-ctrl-top-left .maplibregl-ctrl-attrib-button,
+  .maplibregl-ctrl-bottom-left .maplibregl-ctrl-attrib-button {
+    left: 0;
+  }
+
+  .maplibregl-ctrl-attrib.maplibregl-compact-show .maplibregl-ctrl-attrib-button {
+    background-color: rgb(0 0 0 / 5%);
+  }
+
+  .maplibregl-ctrl-bottom-right > .maplibregl-ctrl-attrib.maplibregl-compact::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  .maplibregl-ctrl-top-right > .maplibregl-ctrl-attrib.maplibregl-compact::after {
+    top: 0;
+    right: 0;
+  }
+
+  .maplibregl-ctrl-top-left > .maplibregl-ctrl-attrib.maplibregl-compact::after {
+    top: 0;
+    left: 0;
+  }
+
+  .maplibregl-ctrl-bottom-left > .maplibregl-ctrl-attrib.maplibregl-compact::after {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .maplibregl-ctrl-attrib.maplibregl-compact::after {
+    background-image: svg-load("../assets/maplibregl-ctrl-attrib.svg", fill=#fff);
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .maplibregl-ctrl-attrib.maplibregl-compact::after {
+    background-image: svg-load("../assets/maplibregl-ctrl-attrib.svg");
+  }
+}
+
+.maplibregl-ctrl-attrib a {
+  color: rgb(0 0 0 / 75%);
+  text-decoration: none;
+}
+
+.maplibregl-ctrl-attrib a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.maplibregl-attrib-empty {
+  display: none;
+}

@@ -1,0 +1,59 @@
+.maplibregl-user-location-dot {
+  background-color: rgb(var(--ml-c-geoloc));
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.maplibregl-user-location-dot::before {
+  background-color: rgb(var(--ml-c-geoloc));
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  animation: maplibregl-user-location-dot-pulse 2s infinite;
+}
+
+.maplibregl-user-location-dot::after {
+  border-radius: 50%;
+  border: 2px solid rgb(var(--ml-c-gray-0));
+  content: "";
+  height: 19px;
+  left: -2px;
+  position: absolute;
+  top: -2px;
+  width: 19px;
+  box-sizing: border-box;
+  box-shadow: var(--ml-shadow);
+}
+
+@keyframes maplibregl-user-location-dot-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.maplibregl-user-location-dot-stale {
+  background-color: rgb(var(--ml-c-disabled));
+}
+
+.maplibregl-user-location-dot-stale::after {
+  display: none;
+}
+
+.maplibregl-user-location-accuracy-circle {
+  background-color: rgb(var(--ml-c-geoloc) / 20%);
+  width: 1px;
+  height: 1px;
+  border-radius: 100%;
+}

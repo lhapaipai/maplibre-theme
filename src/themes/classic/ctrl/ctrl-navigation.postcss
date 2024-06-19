@@ -1,0 +1,19 @@
+.maplibregl-ctrl button.maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon::before {
+  content: "-";
+}
+
+.maplibregl-ctrl button.maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon::before {
+  content: "+";
+}
+
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::before {
+  content: "\e809";
+}
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+  color: rgb(var(--ml-c-gray-2));
+  content: "\e80a";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

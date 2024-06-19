@@ -1,0 +1,48 @@
+a.maplibregl-ctrl-logo {
+  width: 88px;
+  height: 23px;
+  margin: 0 0 -4px -4px;
+  display: block;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  background-image: svg-load("../assets/maplibregl-ctrl-logo.svg");
+}
+
+a.maplibregl-ctrl-logo.maplibregl-compact {
+  width: 14px;
+}
+
+@media (forced-colors: active) {
+  a.maplibregl-ctrl-logo {
+    @svg-load ctrl-logo-white url("../assets/maplibregl-ctrl-logo.svg") {
+      #outline {
+        opacity: 1;
+      }
+      #fill {
+        opacity: 1;
+      }
+    }
+
+    background-color: transparent;
+    background-image: svg-inline(ctrl-logo-white);
+  }
+}
+
+@media (forced-colors: active) and (prefers-color-scheme: light) {
+  a.maplibregl-ctrl-logo {
+    @svg-load ctrl-logo-black url("../assets/maplibregl-ctrl-logo.svg") {
+      #outline {
+        opacity: 1;
+        fill: #fff;
+        stroke: #fff;
+      }
+      #fill {
+        opacity: 1;
+        fill: #000;
+      }
+    }
+
+    background-image: svg-inline(ctrl-logo-black);
+  }
+}

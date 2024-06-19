@@ -1,0 +1,59 @@
+.maplibregl-ctrl button.maplibregl-ctrl-geolocate .maplibregl-ctrl-icon::before {
+  content: "\e80c";
+}
+
+.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::before {
+  color: rgb(var(--ml-c-disabled));
+}
+
+.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::after {
+  content: "\e80e";
+  color: rgb(var(--ml-c-error));
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-active
+  .maplibregl-ctrl-icon::before {
+  content: "\e80c";
+  color: rgb(var(--ml-c-active));
+}
+
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-active-error
+  .maplibregl-ctrl-icon::before {
+  content: "\e80c";
+  color: rgb(var(--ml-c-error));
+}
+
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-background
+  .maplibregl-ctrl-icon::before {
+  content: "\e80d";
+  color: rgb(var(--ml-c-active));
+}
+
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-background-error
+  .maplibregl-ctrl-icon::before {
+  content: "\e80d";
+  color: rgb(var(--ml-c-error));
+}
+
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-waiting
+  .maplibregl-ctrl-icon::before {
+  animation: maplibregl-spin 2s infinite linear;
+}
+
+@keyframes maplibregl-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

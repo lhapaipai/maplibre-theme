@@ -1,0 +1,92 @@
+.maplibregl-ctrl button,
+.maplibregl-ctrl-attrib-button {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  border: 0;
+  color: rgb(var(--ml-c-icon));
+
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke,
+    box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+.maplibregl-ctrl-group button {
+  display: block;
+  background-color: transparent;
+  position: relative;
+  box-shadow: var(--ml-ring-shadow-active, 0 0 #0000);
+}
+
+.maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
+.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
+.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::after,
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+  /* = 25px */
+  width: 1.563rem;
+  height: 1.563rem;
+  /* opacity: .8; */
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1.25em;
+
+  font-size: 1.25rem;
+}
+
+.maplibregl-ctrl button:not(:disabled):hover,
+.maplibregl-ctrl-attrib-button:not(:disabled):hover {
+  background-color: rgb(var(--ml-c-gray-1));
+  color: rgb(var(--ml-c-neutral));
+}
+.maplibregl-ctrl button:not(:disabled):active,
+.maplibregl-ctrl-attrib-button:not(:disabled):active {
+  background-color: rgb(var(--ml-c-gray-2));
+  box-shadow: var(--ml-ring-shadow-active, 0 0 #0000), var(--ml-shadow-active);
+}
+
+.maplibregl-ctrl button:focus,
+.maplibregl-ctrl-attrib-button:focus {
+  --ml-ring-shadow-active: var(--ml-ring-shadow);
+}
+.maplibregl-ctrl button:focus {
+  z-index: 2;
+}
+
+.maplibregl-ctrl button:focus:focus-visible,
+.maplibregl-ctrl-attrib-button:focus:focus-visible {
+  --ml-ring-shadow-active: var(--ml-ring-shadow);
+}
+
+.maplibregl-ctrl button:focus:not(:focus-visible),
+.maplibregl-ctrl-attrib-button:focus:not(:focus-visible) {
+  --ml-ring-shadow-active: 0 0 #0000;
+}
+
+.maplibregl-ctrl button .maplibregl-ctrl-icon {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+@media (forced-colors: active) {
+  .maplibregl-ctrl-icon {
+    background-color: transparent;
+  }
+}
+
+/* https://bugzilla.mozilla.org/show_bug.cgi?id=140562 */
+.maplibregl-ctrl button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.maplibregl-ctrl button:disabled {
+  cursor: not-allowed;
+}
+
+.maplibregl-ctrl button:disabled .maplibregl-ctrl-icon::before {
+  opacity: 0.25;
+}

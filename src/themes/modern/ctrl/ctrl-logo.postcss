@@ -1,0 +1,41 @@
+a.maplibregl-ctrl-logo {
+  margin: 0 0 -4px -4px;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.maplibregl-ctrl-logo::before {
+  font-size: 1rem;
+
+  font-weight: 900;
+  color: rgb(var(--ml-c-gray-0));
+  content: "\e813MapLibre";
+  text-stroke: 2px #999;
+  -webkit-text-stroke: 2px #999;
+  paint-order: stroke fill;
+
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.dark a.maplibregl-ctrl-logo::before {
+  text-stroke: 0;
+  -webkit-text-stroke: 0;
+}
+@media (forced-colors: active) {
+  a.maplibregl-ctrl-logo::before,
+  .dark a.maplibregl-ctrl-logo::before {
+    text-stroke: 0;
+    -webkit-text-stroke: 0;
+  }
+}
+
+a.maplibregl-ctrl-logo:hover::before {
+  color: rgb(var(--ml-c-gray-2));
+}
+
+a.maplibregl-ctrl-logo.maplibregl-compact::before {
+  content: "\e813";
+}

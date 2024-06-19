@@ -1,0 +1,20 @@
+@import "./core.css";
+
+@import "./themes/legacy/ctrl/ctrl--base.postcss";
+@import "./themes/legacy/ctrl/ctrl--components.postcss";
+@import "./themes/legacy/ctrl/ctrl-attrib.postcss";
+@import "./themes/legacy/ctrl/ctrl-fullscreen.postcss";
+@import "./themes/legacy/ctrl/ctrl-geolocate-marker.postcss";
+@import "./themes/legacy/ctrl/ctrl-geolocate.postcss";
+@import "./themes/legacy/ctrl/ctrl-logo.postcss";
+@import "./themes/legacy/ctrl/ctrl-navigation.postcss";
+@import "./themes/legacy/ctrl/ctrl-scale.postcss";
+@import "./themes/legacy/ctrl/ctrl-terrain.postcss";
+
+@import "./themes/legacy/handler/boxzoom.postcss";
+@import "./themes/legacy/handler/cooperative-gesture-screen.postcss";
+
+@import "./themes/legacy/ui/popup--base.postcss";
+@import "./themes/legacy/ui/popup--content.postcss";
+
+@import "./themes/legacy/layout.postcss";

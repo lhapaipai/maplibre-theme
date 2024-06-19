@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2024 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="space_alata-regular" unicode="&#x20;" d="" horiz-adv-x="255" />
+
+<glyph glyph-name="maplibregl-ctrl-zoom-in" unicode="&#x2b;" d="M500 728c-47 0-94-47-94-94v-189h-190c-47 0-94-48-94-95s47-94 94-94h190v-190c0-47 47-94 94-94s95 47 95 94v190h189c47 0 94 47 94 94s-47 95-94 95h-189v189c0 47-48 94-95 94" horiz-adv-x="1000" />
+
+<glyph glyph-name="maplibregl-ctrl-zoom-out" unicode="&#x2d;" d="M216 445c-47 0-94-48-94-95s47-94 94-94h568c47 0 94 47 94 94s-47 95-94 95z" horiz-adv-x="1000" />
+
+<glyph glyph-name="alata-l" unicode="&#x4c;" d="M78 50v735h113v-635h211v-100h-324z" horiz-adv-x="442" />
+
+<glyph glyph-name="alata-m" unicode="&#x4d;" d="M444 50l-177 343-46 104-21-104-68-343h-111l152 735h12l202-397 60-133 60 133 198 397h11l158-735h-110l-74 343-22 104-40-104-178-343h-6z" horiz-adv-x="905" />
+
+<glyph glyph-name="alata-a" unicode="&#x61;" d="M274 40q-61 0-113 29t-85 83-32 129q0 72 28 126t78 84 120 30q42 0 77-14t58-35 31-40l2 77h103v-459h-102l-2 81q-10-22-33-43t-57-34-73-14z m18 90q37 0 68 18t49 49 18 76v7q0 45-18 79t-49 52-68 18q-67 0-100-43t-34-106q0-64 34-107t100-43z" horiz-adv-x="625" />
+
+<glyph glyph-name="alata-b" unicode="&#x62;" d="M343 40q-40 0-73 14t-55 34-34 43l-2-81h-104v735h106v-283l-5-78q11 26 37 48t62 36 75 13q69 0 119-30t77-85 27-127q0-75-32-128t-84-82-114-29z m-18 90q68 0 102 43t33 106q0 65-33 108t-102 42q-36 0-67-17t-49-50-19-76v-7q1-44 19-78t49-52 67-19z" horiz-adv-x="627" />
+
+<glyph glyph-name="alata-e" unicode="&#x65;" d="M288 40q-86 0-140 34t-79 88-25 117q0 75 31 129t84 84 122 29q109 0 159-60t50-163q0-27-3-56h-330q11-62 45-88t89-27q54 0 85 10t51 20l33-77q-20-13-62-26t-110-14z m-131 277h228q1 65-29 89t-78 24q-50 0-81-26t-40-87z" horiz-adv-x="542" />
+
+<glyph glyph-name="alata-i" unicode="&#x69;" d="M138 736c-21 0-38-7-52-20-13-13-20-29-20-48 0-21 7-38 20-52 14-14 31-21 52-21 21 0 38 7 51 21 14 14 21 31 21 52 0 19-7 35-21 48-13 13-30 20-51 20z m-59-227v-459h112v459h-112z" horiz-adv-x="280" />
+
+<glyph glyph-name="alata-p" unicode="&#x70;" d="M73-193v702h104v-85q23 41 65 69t107 28q62 0 111-26t78-79 28-134q0-74-30-128t-80-84-112-30q-59 0-101 21t-66 58v-312h-104z m246 324q68 0 102 43t33 105q0 65-33 107t-102 42q-36 0-67-17t-50-49-19-77v-7q0-44 19-77t50-52 67-18z" horiz-adv-x="620" />
+
+<glyph glyph-name="alata-r" unicode="&#x72;" d="M68 50v459h108v-90q16 45 52 74t82 28q32 0 44-6l-15-109q-9 6-39 6-25 0-54-11t-49-38-21-77v-236h-108z" horiz-adv-x="374" />
+
+<glyph glyph-name="maplibregl-ctrl-attrib" unicode="&#xe808;" d="M463 849a500 500 0 0 1-463-499 500 500 0 1 1 1000 0 500 500 0 0 1-537 499z m37-164a83 83 0 0 0 83-85 83 83 0 1 0-166 0 83 83 0 0 0 83 85z m-15-251a83 83 0 0 0 98-84v-250a83 83 0 1 0-166 0v250a83 83 0 0 0 68 84z" horiz-adv-x="1000" />
+
+<glyph glyph-name="maplibregl-ctrl-compass-north" unicode="&#xe809;" d="M278 406l222 444 222-444z" horiz-adv-x="1000" />
+
+<glyph glyph-name="maplibregl-ctrl-compass-south" unicode="&#xe80a;" d="M278 295l222-445 222 445z" horiz-adv-x="1000" />
+
+<glyph glyph-name="maplibregl-ctrl-fullscreen" unicode="&#xe80b;" d="M1000 271v-289c0-93-39-132-132-132h-289v53l158 79-211 289 53 53 289-211 80 158z m-947 0l79-158 289 211 53-53-211-289 158-80v-52h-289c-92 0-132 39-132 132v289z m368 579v-53l-158-79 210-289-52-53-289 211-79-158h-53v289c0 93 40 132 132 132z m579-132c0 93-39 132-132 132h-289v-53l158-79-211-289 53-53 289 211 80-158h52z" horiz-adv-x="1000" />
+
+<glyph glyph-name="maplibregl-ctrl-geolocate-active" unicode="&#xe80c;" d="M500 850c-83 0-83-83-83-83v-9a417 417 0 0 1-325-325h-8s-84 0-84-83 83-83 83-83h9a417 417 0 0 1 325-325v-8s0-84 83-84 83 84 83 84v8a417 417 0 0 1 325 325h8s84 0 84 83-84 83-84 83h-8a417 417 0 0 1-325 325v8s0 84-83 84z m0-208a292 292 0 0 0 0-584 292 292 0 0 0 0 584z m0-125a167 167 0 0 1-167-167 167 167 0 0 1 167-167 167 167 0 0 1 167 167 167 167 0 0 1-167 167z" horiz-adv-x="1000" />
+
+<glyph glyph-name="maplibregl-ctrl-geolocate-background" unicode="&#xe80d;" d="M500 850c-83 0-83-83-83-83v-9a417 417 0 0 1-325-325h-8s-84 0-84-83 83-83 83-83h9a417 417 0 0 1 325-325v-8s0-84 83-84 83 84 83 84v8a417 417 0 0 1 325 325h8s84 0 84 83-84 83-84 83h-8a417 417 0 0 1-325 325v8s0 84-83 84m0-208a292 292 0 1 0 0-584 292 292 0 1 0 0 584" horiz-adv-x="1000" />
+
+<glyph glyph-name="maplibregl-ctrl-geolocate-stroke" unicode="&#xe80e;" d="M833 767l84-84-750-750-84 84z" horiz-adv-x="1000" />
+
+<glyph glyph-name="maplibregl-ctrl-shrink" unicode="&#xe80f;" d="M690 279c-83 0-119-36-119-120v-261h48l71 142 262-190 48 48-190 261 142 72v48z m-261-120c0 84-36 120-119 120h-262v-48l142-71-190-262 48-48 261 190 72-142h48z m142 381c0-83 36-119 119-119h262v48l-142 71 190 262-48 48-261-190-72 142h-47z m-261-119c83 0 119 36 119 119v262h-48l-71-142-262 190-48-48 190-261-142-72v-47z" horiz-adv-x="1000" />
+
+<glyph glyph-name="maplibregl-ctrl-terrain" unicode="&#xe810;" d="M52 250l216 235 150-149 159-159 47 47-160 160 185 200 299-334h52v42l-349 391-235-252-150 151-266-289v-43z m-52-166h1000v-67h-1000z m0 0" horiz-adv-x="1000" />
+
+<glyph glyph-name="maplibre-logo" unicode="&#xe813;" d="M417 830c-166 1-301-124-302-280-1-137 67-204 140-277 52-50 106-104 141-186 2-1 4-3 5-3a17 17 0 0 1 11-5 17 17 0 0 1 12 4c0 1 0 1 0 1 2 0 3 1 4 3 35 81 90 134 143 184 74 72 144 139 145 276 1 155-133 282-299 283z m-1-143c82-1 148-68 148-152-1-83-68-150-150-150h0c-82 1-148 69-148 152 1 83 68 151 150 150z m-109-656c-14 0-25-15-25-34l-1-95c0-18 11-34 25-34l209-1c14 0 25 15 25 34l1 95c0 19-11 34-25 34z" horiz-adv-x="830" />
+</font>
+</defs>
+</svg>

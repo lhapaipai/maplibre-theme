@@ -1,0 +1,21 @@
+@svg-load ctrl-terrain url("../assets/maplibregl-ctrl-terrain.svg") {
+  fill: #333;
+  #stroke {
+    display: none;
+  }
+}
+
+@svg-load ctrl-terrain-enabled url("../assets/maplibregl-ctrl-terrain.svg") {
+  fill: #33b5e5;
+  #stroke {
+    display: none;
+  }
+}
+
+.maplibregl-ctrl button.maplibregl-ctrl-terrain .maplibregl-ctrl-icon {
+  background-image: svg-inline(ctrl-terrain);
+}
+
+.maplibregl-ctrl button.maplibregl-ctrl-terrain-enabled .maplibregl-ctrl-icon {
+  background-image: svg-inline(ctrl-terrain-enabled);
+}

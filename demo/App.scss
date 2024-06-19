@@ -1,0 +1,46 @@
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body,
+#root,
+#map {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.map-container {
+  height: 500px;
+  padding: 2rem;
+}
+
+.dark {
+  background-color: #111725;
+  color: #fff;
+}
+
+.ml-title {
+  position: absolute;
+  top: .5rem;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  font-size: 1rem;
+  pointer-events: none;
+  user-select: none;
+  color: rgb(var(--ml-c-text));
+  background-color: rgb(var(--ml-c-bg));
+  border-radius: 1rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 0 .5rem;
+}

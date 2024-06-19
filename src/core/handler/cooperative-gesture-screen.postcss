@@ -1,0 +1,28 @@
+.maplibregl-cooperative-gesture-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+}
+
+.maplibregl-cooperative-gesture-screen.maplibregl-show {
+  opacity: 1;
+}
+
+.maplibregl-cooperative-gesture-screen .maplibregl-mobile-message {
+  display: none;
+}
+
+@media (hover: none), (width <= 480px) {
+  .maplibregl-cooperative-gesture-screen .maplibregl-desktop-message {
+    display: none;
+  }
+
+  .maplibregl-cooperative-gesture-screen .maplibregl-mobile-message {
+    display: block;
+  }
+}

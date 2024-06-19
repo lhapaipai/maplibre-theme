@@ -1,0 +1,31 @@
+.maplibregl-canvas-container.maplibregl-interactive.maplibregl-track-pointer {
+  cursor: pointer;
+}
+
+.maplibregl-canvas-container.maplibregl-touch-zoom-rotate,
+.maplibregl-canvas-container.maplibregl-touch-zoom-rotate .maplibregl-canvas {
+  touch-action: pan-x pan-y;
+}
+
+.maplibregl-canvas-container.maplibregl-touch-drag-pan,
+.maplibregl-canvas-container.maplibregl-touch-drag-pan .maplibregl-canvas {
+  touch-action: pinch-zoom;
+}
+
+.maplibregl-canvas-container.maplibregl-touch-zoom-rotate.maplibregl-touch-drag-pan,
+.maplibregl-canvas-container.maplibregl-touch-zoom-rotate.maplibregl-touch-drag-pan
+  .maplibregl-canvas {
+  touch-action: none;
+}
+
+.maplibregl-canvas-container.maplibregl-touch-drag-pan.maplibregl-cooperative-gestures,
+.maplibregl-canvas-container.maplibregl-touch-drag-pan.maplibregl-cooperative-gestures
+  .maplibregl-canvas {
+  touch-action: pan-x pan-y;
+}
+
+.maplibregl-crosshair,
+.maplibregl-crosshair .maplibregl-interactive,
+.maplibregl-crosshair .maplibregl-interactive:active {
+  cursor: crosshair;
+}
