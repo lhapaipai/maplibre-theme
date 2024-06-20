@@ -4,7 +4,15 @@ export default defineConfig({
   entry: ["src/fontello.ts"],
   format: ["esm"],
   esbuildOptions(options) {
-    options.external = ["prompts", "axios", "form-data", "rimraf", "extract-zip", "open"];
+    options.external = [
+      "prompts",
+      "axios",
+      "form-data",
+      "rimraf",
+      "extract-zip",
+      "open",
+      "commander",
+    ];
   },
   outDir: "bin",
   shims: true,

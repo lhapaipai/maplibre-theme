@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.experimental.configFile": {
+    "playground/wizard/tailwind.config.js": "playground/wizard/**"
+  }
+}

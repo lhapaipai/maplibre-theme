@@ -12,7 +12,7 @@ import {
   readdirSync,
   writeFileSync
 } from "node:fs";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 import open from "open";
 import { rimrafSync } from "rimraf";
 import FormData from "form-data";
@@ -20,11 +20,24 @@ import prompts from "prompts";
 import axios from "axios";
 import extractZip from "extract-zip";
 import { cwd } from "node:process";
+import { program } from "commander";
 var projectDir = cwd();
-var iconsDir = resolve(projectDir, "src/icons");
 var tmpDir = resolve(projectDir, "tmp");
 var fontelloHost = "https://fontello.com";
-var { action, iconSet } = await prompts([
+program.option(
+  "-c, --config <config>",
+  "JSON file with fontello configuration",
+  "config.json"
+);
+program.parse();
+var options = program.opts();
+var configFile = resolve(projectDir, options.config);
+if (!existsSync(configFile)) {
+  console.log(`${configFile} doesn't exists for this theme`);
+  process.exit(0);
+}
+var configDir = dirname(configFile);
+var { action } = await prompts([
   {
     message: "Which action do you want ?",
     type: "select",
@@ -33,28 +46,13 @@ var { action, iconSet } = await prompts([
       { title: "Open Fontello in your Browser", value: "open" },
       { title: "Save your font in your local system", value: "save" }
     ]
-  },
-  {
-    message: "Which icon set?",
-    type: "select",
-    name: "iconSet",
-    choices: readdirSync(iconsDir, { encoding: "utf-8" }).map((dirname) => ({
-      title: dirname,
-      value: dirname
-    }))
   }
 ]);
-var iconSetDir = resolve(iconsDir, iconSet);
-var configFile = resolve(iconSetDir, "config.json");
-var generatedDir = resolve(iconSetDir, "generated");
-var idFile = resolve(iconSetDir, ".fontello");
-var cssFile = resolve(iconSetDir, "codes.css");
+var generatedDir = resolve(configDir, "generated");
+var idFile = resolve(configDir, ".fontello");
+var cssFile = resolve(configDir, "fontello.css");
 switch (action) {
   case "open": {
-    if (!existsSync(configFile)) {
-      console.log(`${configFile} doesn't exists for this theme`);
-      break;
-    }
     const payload = new FormData();
     payload.append("config", createReadStream(configFile));
     const res = await axios({
@@ -93,11 +91,12 @@ switch (action) {
     const zipContentDir = resolve(tmpDir, fontelloDirname);
     copyFileSync(resolve(zipContentDir, "config.json"), configFile);
     cpSync(resolve(zipContentDir, "font"), generatedDir, { recursive: true });
-    const cssContent = readFileSync(
-      resolve(zipContentDir, "css/fontello.css"),
-      {
-        encoding: "utf-8"
-      }
+    let cssContent = readFileSync(resolve(zipContentDir, "css/fontello.css"), {
+      encoding: "utf-8"
+    });
+    cssContent = cssContent.replaceAll(
+      "../font/fontello",
+      "./generated/fontello"
     );
     writeFileSync(cssFile, cssContent, { encoding: "utf-8" });
     rimrafSync(tmpDir);

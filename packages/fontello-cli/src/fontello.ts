@@ -10,7 +10,7 @@ import {
   readdirSync,
   writeFileSync,
 } from "node:fs";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 import open from "open";
 
 import { rimrafSync } from "rimraf";
@@ -19,18 +19,34 @@ import prompts from "prompts";
 import axios from "axios";
 import extractZip from "extract-zip";
 import { cwd } from "node:process";
+import { program } from "commander";
 
 const projectDir = cwd();
-const iconsDir = resolve(projectDir, "src/icons");
 const tmpDir = resolve(projectDir, "tmp");
 const fontelloHost = "https://fontello.com";
 
+program.option(
+  "-c, --config <config>",
+  "JSON file with fontello configuration",
+  "config.json"
+);
+program.parse();
+const options = program.opts();
+
+const configFile = resolve(projectDir, options.config);
+
+if (!existsSync(configFile)) {
+  console.log(`${configFile} doesn't exists for this theme`);
+  process.exit(0);
+}
+
+const configDir = dirname(configFile);
+
 type Answers = {
   action: "open" | "save";
-  iconSet: string;
 };
 
-const { action, iconSet }: Answers = await prompts([
+const { action }: Answers = await prompts([
   {
     message: "Which action do you want ?",
     type: "select",
@@ -40,29 +56,14 @@ const { action, iconSet }: Answers = await prompts([
       { title: "Save your font in your local system", value: "save" },
     ],
   },
-  {
-    message: "Which icon set?",
-    type: "select",
-    name: "iconSet",
-    choices: readdirSync(iconsDir, { encoding: "utf-8" }).map((dirname) => ({
-      title: dirname,
-      value: dirname,
-    })),
-  },
 ]);
 
-const iconSetDir = resolve(iconsDir, iconSet);
-const configFile = resolve(iconSetDir, "config.json");
-const generatedDir = resolve(iconSetDir, "generated");
-const idFile = resolve(iconSetDir, ".fontello");
-const cssFile = resolve(iconSetDir, "codes.css");
+const generatedDir = resolve(configDir, "generated");
+const idFile = resolve(configDir, ".fontello");
+const cssFile = resolve(configDir, "fontello.css");
 
 switch (action) {
   case "open": {
-    if (!existsSync(configFile)) {
-      console.log(`${configFile} doesn't exists for this theme`);
-      break;
-    }
     const payload = new FormData();
     payload.append("config", createReadStream(configFile));
 
@@ -117,11 +118,12 @@ switch (action) {
     copyFileSync(resolve(zipContentDir, "config.json"), configFile);
     cpSync(resolve(zipContentDir, "font"), generatedDir, { recursive: true });
 
-    const cssContent = readFileSync(
-      resolve(zipContentDir, "css/fontello.css"),
-      {
-        encoding: "utf-8",
-      }
+    let cssContent = readFileSync(resolve(zipContentDir, "css/fontello.css"), {
+      encoding: "utf-8",
+    });
+    cssContent = cssContent.replaceAll(
+      "../font/fontello",
+      "./generated/fontello"
     );
 
     writeFileSync(cssFile, cssContent, { encoding: "utf-8" });
