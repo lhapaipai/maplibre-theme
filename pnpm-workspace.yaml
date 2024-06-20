@@ -1,3 +1,4 @@
 packages:
-  - 'demo'
-  - 'dist'
+  - 'packages/maplibre-theme/dist'
+  - 'packages/*'
+  - 'playground/*'

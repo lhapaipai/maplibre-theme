@@ -10,6 +10,8 @@ this themes are designed to mimic the actual theme with some improvements.
 
 See a [Demo](https://maplibre-theme.pentatrion.com/).
 
+Compatibility : `maplibre-gl` >= 1.15
+
 ## Installation
 
 ```bash

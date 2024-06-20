@@ -1,4 +1,4 @@
 [build]
-base = "demo"
+base = "playground/wizard"
 command = "pnpm build"
 publish = "dist"

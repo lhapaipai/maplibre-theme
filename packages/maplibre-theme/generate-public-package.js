@@ -2,6 +2,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readFileSync, writeFileSync, copyFileSync } from "node:fs";
 const projectDir = dirname(fileURLToPath(import.meta.url));
+const rootDir = resolve(projectDir, "../..");
 const pkgInfos = JSON.parse(
   readFileSync(resolve(projectDir, "package.json"), "utf-8")
 );
@@ -17,6 +18,6 @@ writeFileSync(
 );
 
 copyFileSync(
-  resolve(projectDir, "README.md"),
+  resolve(rootDir, "README.md"),
   resolve(projectDir, "dist/README.md")
 );

@@ -12,15 +12,15 @@ import {
   readdirSync,
   writeFileSync
 } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
 import open from "open";
 import { rimrafSync } from "rimraf";
 import FormData from "form-data";
 import prompts from "prompts";
 import axios from "axios";
 import extractZip from "extract-zip";
-var projectDir = dirname(dirname(fileURLToPath(import.meta.url)));
+import { cwd } from "node:process";
+var projectDir = cwd();
 var iconsDir = resolve(projectDir, "src/icons");
 var tmpDir = resolve(projectDir, "tmp");
 var fontelloHost = "https://fontello.com";
@@ -38,9 +38,9 @@ var { action, iconSet } = await prompts([
     message: "Which icon set?",
     type: "select",
     name: "iconSet",
-    choices: readdirSync(iconsDir, { encoding: "utf-8" }).map((dirname2) => ({
-      title: dirname2,
-      value: dirname2
+    choices: readdirSync(iconsDir, { encoding: "utf-8" }).map((dirname) => ({
+      title: dirname,
+      value: dirname
     }))
   }
 ]);
@@ -77,7 +77,9 @@ switch (action) {
     mkdirSync(tmpDir, { recursive: true });
     existsSync(generatedDir) && rimrafSync(generatedDir);
     if (!existsSync(idFile)) {
-      console.log(`${idFile} doesn't exists open fontello in your browser before saving`);
+      console.log(
+        `${idFile} doesn't exists open fontello in your browser before saving`
+      );
       break;
     }
     const id = readFileSync(idFile, { encoding: "utf-8" });
@@ -85,13 +87,18 @@ switch (action) {
     await downloadFile(`${fontelloHost}/${id}/get`, zipFile);
     await extractZip(zipFile, { dir: tmpDir });
     const files = readdirSync(tmpDir, { encoding: "utf-8" });
-    const fontelloDirname = files.find((fileName) => fileName.startsWith("fontello-"));
+    const fontelloDirname = files.find(
+      (fileName) => fileName.startsWith("fontello-")
+    );
     const zipContentDir = resolve(tmpDir, fontelloDirname);
     copyFileSync(resolve(zipContentDir, "config.json"), configFile);
     cpSync(resolve(zipContentDir, "font"), generatedDir, { recursive: true });
-    const cssContent = readFileSync(resolve(zipContentDir, "css/fontello.css"), {
-      encoding: "utf-8"
-    });
+    const cssContent = readFileSync(
+      resolve(zipContentDir, "css/fontello.css"),
+      {
+        encoding: "utf-8"
+      }
+    );
     writeFileSync(cssFile, cssContent, { encoding: "utf-8" });
     rimrafSync(tmpDir);
     break;
