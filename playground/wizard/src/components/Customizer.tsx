@@ -41,7 +41,7 @@ export default function Customizer({ values, onChange, properties }: Props) {
             <h2>
               <i className={`fe-${mode}`}></i> {mode} theme
             </h2>
-            <div className="flex flex-col gap-[2px]">
+            <div className="flex flex-col gap-2">
               {properties.map(({ type, name, options }) => {
                 const value = values[mode][name];
                 if (!value) {
