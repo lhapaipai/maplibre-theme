@@ -778,8 +778,8 @@
   color: #fff;
   content: "\e813MapLibre";
 
-  text-stroke: 2px #999;
-  -webkit-text-stroke: 2px #999;
+  text-stroke: 1px #999;
+  -webkit-text-stroke: 1px #999;
   paint-order: stroke fill;
 }
 

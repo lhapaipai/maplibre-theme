@@ -1,3 +1,7 @@
+## 0.0.9
+
+- Modern/Classic : fix ctrl logo text stroke when browser does not support `paint-order`.
+
 ## 0.0.8
 
 - Modern/Classic : rename CSS color name `gray` to `primary`.
