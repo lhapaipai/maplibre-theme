@@ -4,7 +4,6 @@ export function mergeCssValues(
 ): {
   [key: string]: string;
 } {
-  console.log("mergeCssValues");
   if (!cssValues) {
     return {};
   }

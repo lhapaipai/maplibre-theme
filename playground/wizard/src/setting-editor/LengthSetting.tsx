@@ -28,7 +28,6 @@ export default function LengthSetting({
         onChange={(e) => {
           const updatedValue = formatter(e.target.valueAsNumber);
           if (updatedValue !== value && typeof updatedValue === "string") {
-            console.log("update", name, updatedValue);
             onChange(name, updatedValue);
           }
         }}

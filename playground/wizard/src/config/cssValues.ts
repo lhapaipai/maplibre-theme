@@ -108,7 +108,11 @@ export const propertiesByTheme: {
     { type: "shadow", name: "--ml-ring-shadow", options: { category: "ring" } },
   ],
   classic: [
-    { type: "font", name: "--ml-ctrl-border-radius", options: { unit: "px" } },
+    {
+      type: "length",
+      name: "--ml-ctrl-border-radius",
+      options: { unit: "px" },
+    },
     // { type: "font", name: "--ml-font" },
     // { type: "font", name: "--ml-font-attribution" },
     { type: "color", name: "--ml-c-neutral" },

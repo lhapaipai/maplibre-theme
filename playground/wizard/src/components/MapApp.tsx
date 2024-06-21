@@ -45,20 +45,16 @@ const rasterDemTiles = [
 ];
 
 export default function MapApp({ theme, style }: Props) {
-  const mapStyle = useMemo(() => {
-    // console.log("call to useMemo for mapStyle", style);
-    return {
+  const mapStyle = useMemo(
+    () => ({
       ...initialMapStyle,
       ...style,
-    };
-  }, [style]);
+    }),
+    [style]
+  );
 
   return (
-    <RMap
-      style={mapStyle}
-      className={`maplibregl-theme-${theme}`}
-      onClick={(e) => console.log(e.lngLat)}
-    >
+    <RMap style={mapStyle} className={`maplibregl-theme-${theme}`}>
       <RSource
         type="raster-dem"
         id="terrarium"
@@ -85,7 +81,11 @@ export default function MapApp({ theme, style }: Props) {
       <RPopup longitude={marignier.lng} latitude={marignier.lat}>
         Hello world !
       </RPopup>
-      <RPopup longitude={bichkek.lng} latitude={bichkek.lat}>
+      <RPopup
+        longitude={bichkek.lng}
+        latitude={bichkek.lat}
+        initialFocusAfterOpen={false}
+      >
         Hello world !
         <button className="maplibregl-popup-close-button">×</button>
       </RPopup>

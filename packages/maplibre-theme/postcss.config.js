@@ -13,6 +13,11 @@ const config = (ctx) => {
   return {
     plugins: [
       postcssImport(),
+      postcssInlineBase64({
+        baseDir: projectDir,
+      }),
+      postcssInlineSvg(),
+
       scoped &&
         prefixer({
           prefix: "",
@@ -20,6 +25,14 @@ const config = (ctx) => {
           transform(prefix, selector, _prefixedSelector, filePath, _rule) {
             const entryName = basename(filePath, ".css");
             const themeClassName = `.maplibregl-theme-${entryName}`;
+
+            // if (
+            //   selector.startsWith(
+            //     ".maplibregl-ctrl button.maplibregl-ctrl-geolocate"
+            //   )
+            // ) {
+            //   debugger;
+            // }
 
             if (entryName === "core" || selector.includes(themeClassName)) {
               return selector;
@@ -39,30 +52,27 @@ const config = (ctx) => {
             return `${themeClassName} ${selector}`;
           },
         }),
-      postcssInlineBase64({
-        baseDir: projectDir,
-      }),
+
       autoprefixer(),
-      postcssInlineSvg(),
-      cssnanoPlugin({
-        preset: [
-          "default",
-          {
-            svgo: {
-              plugins: [
-                {
-                  name: "preset-default",
-                  params: {
-                    overrides: {
-                      removeViewBox: false,
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      }),
+      // cssnanoPlugin({
+      //   preset: [
+      //     "default",
+      //     {
+      //       svgo: {
+      //         plugins: [
+      //           {
+      //             name: "preset-default",
+      //             params: {
+      //               overrides: {
+      //                 removeViewBox: false,
+      //               },
+      //             },
+      //           },
+      //         ],
+      //       },
+      //     },
+      //   ],
+      // }),
     ],
   };
 };

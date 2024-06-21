@@ -1,32 +1,23 @@
 @svg-load ctrl-geolocate url("../assets/maplibregl-ctrl-geolocate.svg") {
   fill: #333;
-  #stroke {
-    display: none;
-  }
 }
 
 @svg-load ctrl-geolocate-white url("../assets/maplibregl-ctrl-geolocate.svg") {
   fill: #fff;
-  #stroke {
-    display: none;
-  }
 }
 
 @svg-load ctrl-geolocate-black url("../assets/maplibregl-ctrl-geolocate.svg") {
   fill: #000;
-  #stroke {
-    display: none;
-  }
 }
 
-@svg-load ctrl-geolocate-disabled url("../assets/maplibregl-ctrl-geolocate.svg") {
+@svg-load ctrl-geolocate-disabled url("../assets/maplibregl-ctrl-geolocate-disabled.svg") {
   fill: #aaa;
   #stroke {
     fill: #f00;
   }
 }
 
-@svg-load ctrl-geolocate-disabled-white url("../assets/maplibregl-ctrl-geolocate.svg") {
+@svg-load ctrl-geolocate-disabled-white url("../assets/maplibregl-ctrl-geolocate-disabled.svg") {
   fill: #999;
   #stroke {
     fill: #f00;
@@ -35,50 +26,31 @@
 
 @svg-load ctrl-geolocate-disabled-black url("../assets/maplibregl-ctrl-geolocate.svg") {
   fill: #666;
-  #stroke {
-    fill: #f00;
-  }
 }
 
 @svg-load ctrl-geolocate-active url("../assets/maplibregl-ctrl-geolocate.svg") {
   fill: #33b5e5;
-  #stroke {
-    display: none;
-  }
 }
 
 @svg-load ctrl-geolocate-active-error url("../assets/maplibregl-ctrl-geolocate.svg") {
   fill: #e58978;
-  #stroke {
-    display: none;
-  }
 }
 
-@svg-load ctrl-geolocate-background url("../assets/maplibregl-ctrl-geolocate.svg") {
+@svg-load ctrl-geolocate-background url("../assets/maplibregl-ctrl-geolocate-background.svg") {
   fill: #33b5e5;
-  #stroke {
-    display: none;
-  }
-  #dot {
-    display: none;
-  }
 }
 
-@svg-load ctrl-geolocate-background-error url("../assets/maplibregl-ctrl-geolocate.svg") {
+@svg-load ctrl-geolocate-background-error url("../assets/maplibregl-ctrl-geolocate-background.svg") {
   fill: #e54e33;
-  #stroke {
-    display: none;
-  }
-  #dot {
-    display: none;
-  }
 }
 
 .maplibregl-ctrl button.maplibregl-ctrl-geolocate .maplibregl-ctrl-icon {
   background-image: svg-inline(ctrl-geolocate);
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon {
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon {
   background-image: svg-inline(ctrl-geolocate-disabled);
 }
 
@@ -117,7 +89,9 @@
     background-image: svg-inline(ctrl-geolocate-white);
   }
 
-  .maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon {
+  .maplibregl-ctrl
+    button.maplibregl-ctrl-geolocate:disabled
+    .maplibregl-ctrl-icon {
     background-image: svg-inline(ctrl-geolocate-disabled-white);
   }
 
@@ -151,7 +125,9 @@
     background-image: svg-inline(ctrl-geolocate-black);
   }
 
-  .maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon {
+  .maplibregl-ctrl
+    button.maplibregl-ctrl-geolocate:disabled
+    .maplibregl-ctrl-icon {
     background-image: svg-inline(ctrl-geolocate-disabled-black);
   }
 }

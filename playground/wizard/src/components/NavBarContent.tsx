@@ -66,7 +66,9 @@ export default function NavBarContent({
               properties={properties}
             />
           ) : (
-            <div>This Theme is not Customizable</div>
+            <div className="mt-6 text-center">
+              This Theme is not Customizable.
+            </div>
           ))}
       </div>
     </div>

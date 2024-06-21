@@ -17,14 +17,13 @@ function App() {
   const [themeCssValues, setThemeCssValues] = useState<null | CssValues>(null);
 
   useEffect(() => {
-    console.log("reinit default css values");
     setThemeCssValues(cssDefaultValuesByTheme[theme]);
   }, [theme]);
 
-  const mergedCssValues = useMemo(() => {
-    console.log("mergeCssValues", isDarkMode);
-    return mergeCssValues(themeCssValues, isDarkMode);
-  }, [themeCssValues, isDarkMode]);
+  const mergedCssValues = useMemo(
+    () => mergeCssValues(themeCssValues, isDarkMode),
+    [themeCssValues, isDarkMode]
+  );
 
   return (
     <div id="app" className="flex">
@@ -49,7 +48,6 @@ function App() {
           setThemeCssValues={setThemeCssValues}
         />
       </NavBar>
-
       <div id="content" className="flex-1 relative">
         <MapApp theme={theme} style={mergedCssValues} />
       </div>

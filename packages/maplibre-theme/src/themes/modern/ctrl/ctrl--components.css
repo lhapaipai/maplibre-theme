@@ -1,7 +1,6 @@
 .maplibregl-ctrl-group {
   border-radius: var(--ml-ctrl-border-radius);
   background: rgb(var(--ml-c-bg));
-  overflow: hidden;
 }
 
 .maplibregl-ctrl-group:not(:empty) {
