@@ -35,6 +35,24 @@
       "css": "github-circled",
       "code": 61595,
       "src": "fontawesome"
+    },
+    {
+      "uid": "ivmsk67zo1yb1tthd3ugi4xnb3get418",
+      "css": "light",
+      "code": 59392,
+      "src": "typicons"
+    },
+    {
+      "uid": "c2152732d525871cf35345955854f711",
+      "css": "dark",
+      "code": 59394,
+      "src": "iconic"
+    },
+    {
+      "uid": "21b42d3c3e6be44c3cc3d73042faa216",
+      "css": "sliders",
+      "code": 61918,
+      "src": "fontawesome"
     }
   ]
 }

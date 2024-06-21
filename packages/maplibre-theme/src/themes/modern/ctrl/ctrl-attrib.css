@@ -6,19 +6,19 @@
 }
 
 .maplibregl-ctrl-bottom-right > .maplibregl-ctrl-attrib {
-  border-top-left-radius: 1rem;
+  border-top-left-radius: var(--ml-ctrl-border-radius);
 }
 
 .maplibregl-ctrl-top-right > .maplibregl-ctrl-attrib {
-  border-bottom-left-radius: 1rem;
+  border-bottom-left-radius: var(--ml-ctrl-border-radius);
 }
 
 .maplibregl-ctrl-top-left > .maplibregl-ctrl-attrib {
-  border-bottom-right-radius: 1rem;
+  border-bottom-right-radius: var(--ml-ctrl-border-radius);
 }
 
 .maplibregl-ctrl-bottom-left > .maplibregl-ctrl-attrib {
-  border-top-right-radius: 1rem;
+  border-top-right-radius: var(--ml-ctrl-border-radius);
 }
 
 @media screen {
@@ -28,7 +28,7 @@
     position: relative;
     background-color: rgb(var(--ml-c-bg));
     color: rgb(var(--ml-c-text));
-    border-radius: 1rem;
+    border-radius: var(--ml-ctrl-border-radius);
     margin: 0.5rem;
   }
 
@@ -37,13 +37,14 @@
   }
 
   .maplibregl-ctrl-top-left > .maplibregl-ctrl-attrib.maplibregl-compact-show,
-  .maplibregl-ctrl-bottom-left > .maplibregl-ctrl-attrib.maplibregl-compact-show {
+  .maplibregl-ctrl-bottom-left
+    > .maplibregl-ctrl-attrib.maplibregl-compact-show {
     padding: 0 0.5rem 0 2.5rem;
-    border-radius: 1rem;
+    border-radius: var(--ml-ctrl-border-radius);
   }
 
   .maplibregl-ctrl-attrib-button {
-    border-radius: 1rem;
+    border-radius: var(--ml-ctrl-border-radius);
     position: absolute;
 
     top: 0;

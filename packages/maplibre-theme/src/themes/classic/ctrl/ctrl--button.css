@@ -20,13 +20,17 @@
 
 .maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
 .maplibregl-ctrl button .maplibregl-ctrl-icon::before,
-.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::after,
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon::after,
 .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
   color: rgb(var(--ml-c-icon));
 }
 
 .maplibregl-ctrl button .maplibregl-ctrl-icon::before,
-.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::after,
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon::after,
 .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
   width: 22.5px;
   height: 22.5px;
@@ -68,12 +72,12 @@
 
 .maplibregl-ctrl button:not(:disabled):hover,
 .maplibregl-ctrl-attrib-button:not(:disabled):hover {
-  background-color: rgb(var(--ml-c-gray-1));
+  background-color: rgb(var(--ml-c-primary-1));
 }
 
 .maplibregl-ctrl button:not(:disabled):active,
 .maplibregl-ctrl-attrib-button:not(:disabled):active {
-  background-color: rgb(var(--ml-c-gray-2));
+  background-color: rgb(var(--ml-c-primary-2));
 }
 
 .maplibregl-ctrl-group button:focus:focus-visible {

@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@uiw/react-color-compact": "^2.3.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.395.0",
     "maplibre-react-components": "^0.0.7",

@@ -9,7 +9,7 @@ a.maplibregl-ctrl-logo::before {
   font-size: 1rem;
 
   font-weight: 900;
-  color: rgb(var(--ml-c-gray-0));
+  color: rgb(var(--ml-c-primary-0));
   content: "\e813MapLibre";
   text-stroke: 2px #999;
   -webkit-text-stroke: 2px #999;
@@ -33,7 +33,7 @@ a.maplibregl-ctrl-logo::before {
 }
 
 a.maplibregl-ctrl-logo:hover::before {
-  color: rgb(var(--ml-c-gray-2));
+  color: rgb(var(--ml-c-primary-2));
 }
 
 a.maplibregl-ctrl-logo.maplibregl-compact::before {

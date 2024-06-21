@@ -17,7 +17,7 @@
 
 .maplibregl-user-location-dot::after {
   border-radius: 50%;
-  border: 2px solid rgb(var(--ml-c-gray-1));
+  border: 2px solid rgb(var(--ml-c-primary-1));
   content: "";
   height: 19px;
   left: -2px;

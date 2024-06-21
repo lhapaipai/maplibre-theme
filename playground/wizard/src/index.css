@@ -8,14 +8,14 @@ html {
   font-size: 16px;
   line-height: 24px;
   color-scheme: normal;
-  --sidebar-menu-width: 200px;
+  --sidebar-menu-width: 350px;
 }
 
 body {
   @apply bg-gray-0 font-sans text-gray-7;
 }
 
-.dark {
+dark {
   color-scheme: dark;
 }
 

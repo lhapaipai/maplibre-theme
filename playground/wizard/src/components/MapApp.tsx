@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, useMemo } from "react";
 import {
   RAttributionControl,
   RFullscreenControl,
@@ -13,7 +13,7 @@ import {
   RTerrainControl,
 } from "maplibre-react-components";
 import GeolocMockCtrl from "./GeolocMockCtrl";
-const mapStyle: CSSProperties = {
+const initialMapStyle: CSSProperties = {
   position: "absolute",
   top: 0,
   left: 0,
@@ -23,6 +23,7 @@ const mapStyle: CSSProperties = {
 
 interface Props {
   theme: ThemeID;
+  style: CSSProperties;
 }
 
 const accuracyCircleStyle = {
@@ -43,7 +44,15 @@ const rasterDemTiles = [
   "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
 ];
 
-export default function MapApp({ theme }: Props) {
+export default function MapApp({ theme, style }: Props) {
+  const mapStyle = useMemo(() => {
+    // console.log("call to useMemo for mapStyle", style);
+    return {
+      ...initialMapStyle,
+      ...style,
+    };
+  }, [style]);
+
   return (
     <RMap
       style={mapStyle}

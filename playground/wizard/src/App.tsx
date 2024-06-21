@@ -1,16 +1,30 @@
 import "./App.css";
 
-import { ResizeArea } from "pentatrion-design/components/resize-area";
 import { Button } from "pentatrion-design/components/button";
-import clsx from "clsx";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import MapApp from "./components/MapApp";
 import NavBar from "./components/NavBar";
+import NavBarContent from "./components/NavBarContent";
+import { cssDefaultValuesByTheme } from "./config/cssValues";
+import { useDarkMode } from "./hooks/useDarkMode";
+import { mergeCssValues } from "./lib/css";
 
 function App() {
+  const { isDarkMode, setDarkMode } = useDarkMode();
   const [showNavBar, setShowNavBar] = useState(false);
   const [theme, setTheme] = useState<ThemeID>("modern");
+  const [themeCssValues, setThemeCssValues] = useState<null | CssValues>(null);
+
+  useEffect(() => {
+    console.log("reinit default css values");
+    setThemeCssValues(cssDefaultValuesByTheme[theme]);
+  }, [theme]);
+
+  const mergedCssValues = useMemo(() => {
+    console.log("mergeCssValues", isDarkMode);
+    return mergeCssValues(themeCssValues, isDarkMode);
+  }, [themeCssValues, isDarkMode]);
 
   return (
     <div id="app" className="flex">
@@ -25,29 +39,19 @@ function App() {
           <i className="fe-menu"></i>
         </Button>
       </div>
+      <NavBar showNavBar={showNavBar} setShowNavBar={setShowNavBar}>
+        <NavBarContent
+          isDarkMode={isDarkMode}
+          setDarkMode={setDarkMode}
+          theme={theme}
+          setTheme={setTheme}
+          themeCssValues={themeCssValues}
+          setThemeCssValues={setThemeCssValues}
+        />
+      </NavBar>
 
-      <div
-        id="menu-col"
-        className={clsx(
-          "fixed left-0 top-0 z-30 h-screen flex-col max-w-full w-64 flex-none overflow-y-auto overflow-x-hidden bg-gray-0 px-4 py-2 shadow dark:shadow-dark md:relative md:flex md:bg-transparent md:shadow-none md:dark:shadow-none md:flex-[0_0_var(--sidebar-menu-width)] border-r border-r-gray-2",
-          !showNavBar ? "hidden" : "flex"
-        )}
-      >
-        <ResizeArea name="menu" position="right" className="hidden md:block" />
-        <div className="absolute right-2 top-2 md:hidden">
-          <Button
-            icon
-            onClick={() => setShowNavBar(false)}
-            color="gray"
-            variant="text"
-          >
-            <i className="fe-cancel"></i>
-          </Button>
-        </div>
-        <NavBar theme={theme} setTheme={setTheme} />
-      </div>
       <div id="content" className="flex-1 relative">
-        <MapApp theme={theme} />
+        <MapApp theme={theme} style={mergedCssValues} />
       </div>
     </div>
   );

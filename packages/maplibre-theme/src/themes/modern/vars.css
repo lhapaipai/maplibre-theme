@@ -13,20 +13,21 @@
    * text: content of popup, attribution
    * icon: control buttons (hover effect -> neutral)
    */
-  --ml-c-text: 51 51 51; /* --color-gray-7 */
-  --ml-c-icon: 51 51 51; /* --color-gray-7 */
+  --ml-c-text: 51 51 51;
+  --ml-c-icon: 51 51 51;
 
   /*
-   * gray-1 usually hover effect
-   * gray-2 active effect
+   * primary-0 logo color
+   * primary-1 usually hover effect
+   * primary-2 active effect
    */
-  --ml-c-gray-0: 255 255 255; /* --color-gray-0 */
-  --ml-c-gray-1: 240 240 240; /* --color-gray-1 */
-  --ml-c-gray-2: 215 215 215; /* --color-gray-2 */
+  --ml-c-primary-0: 255 255 255;
+  --ml-c-primary-1: 240 240 240;
+  --ml-c-primary-2: 215 215 215;
 
-  --ml-c-disabled: 180 180 180; /* --color-gray-4 */
+  --ml-c-disabled: 180 180 180;
 
-  --ml-c-outline: 219 167 38; /* --color-yellow-5 */
+  --ml-c-outline: 219 167 38;
 
   --ml-c-active: 29 161 242;
   --ml-c-geoloc: 29 161 242;
@@ -48,9 +49,9 @@
   --ml-c-text: 203 213 225;
   --ml-c-icon: 255 255 255;
 
-  --ml-c-gray-0: 17 23 37;
-  --ml-c-gray-1: 65 72 83;
-  --ml-c-gray-2: 50 54 63;
+  --ml-c-primary-0: 17 23 37;
+  --ml-c-primary-1: 65 72 83;
+  --ml-c-primary-2: 50 54 63;
 
   --ml-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.15), 0 1px 2px -1px rgb(0 0 0 / 0.15); /* shadow */
 }
@@ -66,11 +67,11 @@
 
     --ml-c-disabled: 102 102 102;
 
-    --ml-c-gray-0: 255 255 255;
-    --ml-c-gray-1: 200 200 200;
-    --ml-c-gray-2: 180 180 180;
+    --ml-c-primary-0: 255 255 255;
+    --ml-c-primary-1: 200 200 200;
+    --ml-c-primary-2: 180 180 180;
 
-    --ml-c-gray-2: 0 0 0;
+    --ml-c-primary-2: 0 0 0;
 
     --ml-c-error: 255 0 0;
   }
@@ -87,9 +88,9 @@
 
     --ml-c-disabled: 153 153 153;
 
-    --ml-c-gray-0: 0 0 0;
-    --ml-c-gray-1: 65 72 83;
-    --ml-c-gray-2: 50 54 63;
+    --ml-c-primary-0: 0 0 0;
+    --ml-c-primary-1: 65 72 83;
+    --ml-c-primary-2: 50 54 63;
 
     --ml-c-error: 255 0 0;
   }

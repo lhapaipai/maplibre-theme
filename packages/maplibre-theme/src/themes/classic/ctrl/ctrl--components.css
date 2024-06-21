@@ -14,7 +14,7 @@
 }
 
 .maplibregl-ctrl-group button + button {
-  border-top: 1px solid rgb(var(--ml-c-gray-2));
+  border-top: 1px solid rgb(var(--ml-c-primary-2));
 }
 
 @media (forced-colors: active) {
