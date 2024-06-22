@@ -8,9 +8,10 @@
     "dev": "postcss --watch -d dist src/core.css src/legacy.css src/classic.css src/modern.css --ext .scoped.css --env scoped",
     "build:scoped": "postcss -d dist src/core.css src/legacy.css src/classic.css src/modern.css --ext .scoped.css --env scoped",
     "build:base": "postcss -d dist src/core.css src/legacy.css src/classic.css src/modern.css --env base",
-    "build:icons": "postcss -o dist/icons.default.css src/icons/default/index.postcss --env base",
+    "build:icons": "postcss -d dist src/icons/default/icons.default.css src/icons/lucide/icons.lucide.css --env base",
     "build": "pnpm build:scoped && pnpm build:base && pnpm build:icons && node generate-public-package.js",
     "fontello:default": "fontello -c src/icons/default/config.json",
+    "fontello:lucide": "fontello -c src/icons/lucide/config.json",
     "fontello:core": "fontello -c src/icons/core/config.json"
   },
   "repository": {

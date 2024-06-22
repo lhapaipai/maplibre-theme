@@ -22,7 +22,7 @@ a.maplibregl-ctrl-logo::before,
   button.maplibregl-ctrl-geolocate:disabled
   .maplibregl-ctrl-icon::after,
 .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
-  font-family: "maplibregl-icons";
+  font-family: var(--ml-font-icons);
 }
 
 a.maplibregl-ctrl-logo::before {

@@ -33,7 +33,18 @@ in your files
 + @import "maplibre-theme/<your-theme>.css";
 ```
 
-Modern theme example
+For theme choose between : `modern`, `classic` and `legacy`.
+For icon set choose between : `default` and `lucide`.
+
+
+note: if you don't use default icon set, add this extra config in your css.
+```css
+.maplibregl-map {
+  --ml-font-icons: maplibregl-icons-<your-icon-set>;
+}
+```
+
+Modern theme with default icon set example
 
 ```js
 import "maplibre-theme/icons.default.css";
@@ -52,8 +63,9 @@ List of available CSS files to import. (see [Scoped themes](#scoped-themes) sect
     ├── modern.css (18 ko)
     ├── classic.css (17 ko)
     |
-    | // default icon set, need to be added with your theme above
+    | // icon sets, need to be added with your theme above
     ├── icons.default.css (6 ko)
+    ├── icons.lucide.css (6 ko)
     |
     | // scoped themes only if you need to use multiple theme in your app
     ├── classic.scoped.css (21 ko)
@@ -118,6 +130,7 @@ new Map({
 <img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/theme-classic.png" alt="MapLibre Classic theme" />
 
 
+
 ## Advanced configuration with CSS vars.
 
 ```css
@@ -152,41 +165,76 @@ If you find inconsistencies, open an issue or submit a PR instead.
 
 note: define your colors as just the color channel so we can work with the opacity modifier syntax [TailwindCSS explanation](https://tailwindcss.com/docs/customizing-colors#using-css-variables).
 
-## Use your own icon set
+## Custom icon set
 
-If you want to replace the default icon with your own set of icon.
+If you want to use another set of icons
 
-remove this import 
+```js
+import "maplibre-theme/icons.<name>.css";
+import "maplibre-theme/classic.css";
+```
+
+```css
+.maplibregl-map {
+  --ml-font-icons: maplibregl-icons-<name>;
+}
+```
+
+example with lucide
+```js
+import "maplibre-theme/icons.lucide.css";
+import "maplibre-theme/classic.css";
+
+```
+```css
+.maplibregl-map {
+  --ml-font-icons: maplibregl-icons-lucide;
+}
+```
+
+## Create your own icon set
+
+If you want to replace the default icons with your own set of icons.
+
+Simply remove this import 
+
 ```diff
 - import "maplibre-theme/icons.default.css"
 ```
 
-instead add this code. 
+Instead add this code. 
 
 ```css
 @font-face {
-  font-family: "maplibregl-icons";
+  font-family: "maplibregl-icons-custom";
   src: url("./path/to/your/icon-font.woff2");
   font-weight: normal;
   font-style: normal;
 }
 ```
+```css
+.maplibregl-map {
+  --ml-font-icons: maplibregl-icons-custom;
+}
+```
 
-And place your icons at this codes.
+And create with a tool like [Fontello](https://fontello.com/) your icons using this codes.
 
 | Icon | Unicode |
 |------|---------|
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-attrib.svg" width="20" /> | U+E808 |
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-compass-north.svg" width="20" /> | U+E809 |
-|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-compass-south.svg" width="20" /> | U+E0A |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-compass-south.svg" width="20" /> | U+E80A |
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-fullscreen.svg" width="20" /> | U+E80B |
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-geolocate-active.svg" width="20" /> | U+E80C |
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-geolocate-background.svg" width="20" /> | U+E80D |
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-geolocate-stroke.svg" width="20" /> | U+E80E |
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-shrink.svg" width="20" /> | U+E80F |
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-terrain.svg" width="20" /> | U+E810 |
-|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-zoom-in.svg" width="20" /> | U+E002B |
-|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-zoom-out.svg" width="20" /> | U+E002D |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-zoom-in.svg" width="20" /> | U+002B |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-zoom-out.svg" width="20" /> | U+002D |
+
+note: if you don't want to specify a bicolor compass icon. add your compass for the code `U+E809` and a blank icon like [space.svg](https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/core/assets/space.svg) for the `U+E80A` char code.
 
 
 ## Scoped themes

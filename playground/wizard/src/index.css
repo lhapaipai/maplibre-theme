@@ -30,3 +30,7 @@ body,
 .app-logo {
   font-family: maplibregl-icons-core;
 }
+
+[data-floating-ui-portal] [role="dialog"] {
+  min-width: 16rem;
+}

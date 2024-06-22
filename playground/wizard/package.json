@@ -30,7 +30,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "fontello-cli": "workspace:^",
-    "pentatrion-design": "^0.0.8",
+    "pentatrion-design": "^0.0.9",
     "postcss": "^8.4.38",
     "postcss-input-range": "^5.0.0",
     "postcss-load-config": "^6.0.1",

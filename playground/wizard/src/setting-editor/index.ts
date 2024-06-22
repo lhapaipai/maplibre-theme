@@ -1,7 +1,7 @@
 import ColorSetting from "./ColorSetting";
 import FontSetting from "./FontSetting";
 import NumberSetting from "./NumberSetting";
-import ShadowSetting from "./ShadowSetting";
+import SelectSetting from "./SelectSetting";
 
 export const settingEditors: {
   [key in SettingType]: (props: SettingComponentProps) => JSX.Element;
@@ -9,5 +9,5 @@ export const settingEditors: {
   color: ColorSetting,
   font: FontSetting,
   number: NumberSetting,
-  shadow: ShadowSetting,
+  select: SelectSetting,
 };

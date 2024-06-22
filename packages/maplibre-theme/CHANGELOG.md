@@ -1,3 +1,8 @@
+## 0.0.12
+
+- add lucide icon set
+- wizard add config generator
+
 ## 0.0.11
 
 - separate core icons (MapLibre letters and logo) and ctrl icons

@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 
 import "maplibre-theme/icons.default.css";
+import "maplibre-theme/icons.lucide.css";
 import "maplibre-theme/classic.scoped.css";
 import "maplibre-theme/modern.scoped.css";
 import "maplibre-theme/legacy.scoped.css";

@@ -36,7 +36,12 @@ function App() {
           <i className="fe-menu"></i>
         </Button>
       </div>
-      <NavBar showNavBar={showNavBar} setShowNavBar={setShowNavBar}>
+      <NavBar
+        showNavBar={showNavBar}
+        setShowNavBar={setShowNavBar}
+        theme={theme}
+        themeCssValues={themeCssValues}
+      >
         <NavBarContent
           isDarkMode={isDarkMode}
           setDarkMode={setDarkMode}

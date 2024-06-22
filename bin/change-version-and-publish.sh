@@ -41,7 +41,7 @@ cd "$PROJECT_DIR"
 git add .
 git commit -m "change maplibre-theme version $VERSION"
 
-git tag -a $VERSION -a $VERSION
+git tag -a $VERSION -m $VERSION
 
 git push origin
 

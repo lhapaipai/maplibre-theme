@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('./generated/fontello.eot?96940422');
+  src: url('./generated/fontello.eot?96940422#iefix') format('embedded-opentype'),
+       url('./generated/fontello.woff2?96940422') format('woff2'),
+       url('./generated/fontello.woff?96940422') format('woff'),
+       url('./generated/fontello.ttf?96940422') format('truetype'),
+       url('./generated/fontello.svg?96940422#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('./generated/fontello.svg?96940422#fontello') format('svg');
+  }
+}
+*/
+[class^="ml-"]:before, [class*=" ml-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.ml-zoom-in:before { content: '\2b'; } /* '+' */
+.ml-zoom-out:before { content: '\2d'; } /* '-' */
+.ml-info:before { content: '\e808'; } /* '' */
+.ml-navigation-2:before { content: '\e809'; } /* '' */
+.ml-alata-space:before { content: '\e80a'; } /* '' */
+.ml-maximize:before { content: '\e80b'; } /* '' */
+.ml-locate-fixed:before { content: '\e80c'; } /* '' */
+.ml-locate:before { content: '\e80d'; } /* '' */
+.ml-stroke:before { content: '\e80e'; } /* '' */
+.ml-minimize:before { content: '\e80f'; } /* '' */
+.ml-box:before { content: '\e810'; } /* '' */

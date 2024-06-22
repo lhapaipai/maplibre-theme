@@ -3,7 +3,6 @@
   --ml-font: 16px/24px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --ml-font-attribution: inherit;
-
   --ml-c-bg-1: 255 255 255;
   --ml-c-bg-2: 240 240 240;
   --ml-c-bg-3: 215 215 215;
@@ -29,6 +28,7 @@
    * --ml-c-outline is only used here
    */
   --ml-ring-shadow: 0 0 0px 2px rgb(var(--ml-c-outline) / 1);
+  --ml-font-icons: "maplibregl-icons-default";
 }
 
 .dark {

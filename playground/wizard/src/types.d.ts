@@ -1,6 +1,6 @@
 type ThemeID = "modern" | "classic" | "legacy";
 
-type SettingType = "color" | "font" | "number" | "shadow";
+type SettingType = "color" | "font" | "number" | "select";
 
 type NumberOptions = {
   min?: number;
@@ -8,9 +8,10 @@ type NumberOptions = {
   step?: number;
   unit?: "px" | "rem" | "default";
 };
-type ShadowOptions = {
-  category: "modern" | "classic" | "ring";
-};
+type SelectOptions = {
+  value: string | number;
+  label: string;
+}[];
 
 type Property =
   | {
@@ -28,10 +29,10 @@ type Property =
       options: NumberOptions;
     }
   | {
-      type: "shadow";
+      type: "select";
       name: string;
       description?: string;
-      options: ShadowOptions;
+      options: SelectOptions;
     };
 
 type SettingComponentProps = {
@@ -40,7 +41,7 @@ type SettingComponentProps = {
   onChange: (name: string, value: string) => void;
   options?:
     | NumberOptions
-    | ShadowOptions
+    | SelectOptions
     | {
         [key: string]: string;
       };

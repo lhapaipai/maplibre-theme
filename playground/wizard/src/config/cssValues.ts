@@ -1,3 +1,16 @@
+import { classicOptions, modernOptions } from "../lib/shadow";
+
+const iconOptions: SelectOptions = [
+  {
+    label: "Default",
+    value: "maplibregl-icons-default",
+  },
+  {
+    label: "Lucide",
+    value: "maplibregl-icons-lucide",
+  },
+];
+
 export const cssDefaultValuesByTheme: {
   [key in ThemeID]: CssValues;
 } = {
@@ -10,7 +23,8 @@ export const cssDefaultValuesByTheme: {
       "--ml-ctrl-border-radius": "4px",
       "--ml-font": '12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif',
       "--ml-font-attribution":
-        '12px/20px "Helvetica Neue", Arial, Helvetica,\n    sans-serif',
+        '12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif',
+      "--ml-font-icons": "maplibregl-icons-default",
       "--ml-c-bg-1": "255 255 255",
       "--ml-c-bg-2": "240 240 240",
       "--ml-c-bg-3": "215 215 215",
@@ -48,6 +62,7 @@ export const cssDefaultValuesByTheme: {
       "--ml-font":
         '16px/24px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
       "--ml-font-attribution": "inherit",
+      "--ml-font-icons": "maplibregl-icons-default",
       "--ml-c-bg-1": "255 255 255",
       "--ml-c-bg-2": "240 240 240",
       "--ml-c-bg-3": "215 215 215",
@@ -93,6 +108,12 @@ export const propertiesByTheme: {
       options: { unit: "rem", min: 0, max: 1, step: 0.125 },
       description:
         "define the round corner of your controls (buttons container and attributions) and popups.",
+    },
+    {
+      type: "select",
+      name: "--ml-font-icons",
+      description: "set of icons to use",
+      options: iconOptions,
     },
     // { type: "font", name: "--ml-font" },
     // { type: "font", name: "--ml-font-attribution" },
@@ -156,15 +177,15 @@ export const propertiesByTheme: {
       },
     },
     {
-      type: "shadow",
+      type: "select",
       name: "--ml-shadow",
-      options: { category: "modern" },
+      options: modernOptions,
       description: "shadow of your controls and popups",
     },
     {
-      type: "shadow",
+      type: "select",
       name: "--ml-shadow-active",
-      options: { category: "modern" },
+      options: modernOptions,
       description: "shadow of your control buttons when active state",
     },
     {
@@ -200,6 +221,13 @@ export const propertiesByTheme: {
       name: "--ml-ctrl-border-radius",
       options: { unit: "px", min: 0, max: 20, step: 1 },
     },
+    {
+      type: "select",
+      name: "--ml-font-icons",
+      description: "set of icons to use",
+      options: iconOptions,
+    },
+
     // { type: "font", name: "--ml-font" },
     // { type: "font", name: "--ml-font-attribution" },
     { type: "color", name: "--ml-c-bg-1" },
@@ -226,14 +254,14 @@ export const propertiesByTheme: {
       },
     },
     {
-      type: "shadow",
+      type: "select",
       name: "--ml-shadow-ctrl",
-      options: { category: "classic" },
+      options: classicOptions,
     },
     {
-      type: "shadow",
+      type: "select",
       name: "--ml-shadow-popup",
-      options: { category: "classic" },
+      options: classicOptions,
     },
     { type: "color", name: "--ml-c-link-1" },
     { type: "color", name: "--ml-c-link-2" },
