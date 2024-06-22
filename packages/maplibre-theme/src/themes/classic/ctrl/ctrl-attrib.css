@@ -1,6 +1,6 @@
 .maplibregl-ctrl.maplibregl-ctrl-attrib {
   padding: 0 5px;
-  background-color: rgb(var(--ml-c-bg) / 65%);
+  background-color: rgb(var(--ml-c-bg-1) / 65%);
   margin: 0;
   font: var(--ml-font-footer);
 }
@@ -12,8 +12,8 @@
     padding: 2px 24px 2px 0;
     margin: 10px;
     position: relative;
-    background-color: rgb(var(--ml-c-bg));
-    color: rgb(var(--ml-c-text));
+    background-color: rgb(var(--ml-c-bg-1));
+    color: rgb(var(--ml-c-icon-1));
     border-radius: 12px;
     box-sizing: content-box;
   }
@@ -56,17 +56,17 @@
 
   .maplibregl-ctrl-attrib.maplibregl-compact-show
     .maplibregl-ctrl-attrib-button {
-    background-color: rgb(var(--ml-c-primary-1));
+    background-color: rgb(var(--ml-c-bg-2));
   }
 }
 
 .maplibregl-ctrl-attrib a {
-  color: rgb(var(--ml-c-text));
+  color: rgb(var(--ml-c-link-1));
   text-decoration: none;
 }
 
 .maplibregl-ctrl-attrib a:hover {
-  color: rgb(var(--ml-c-neutral));
+  color: rgb(var(--ml-c-link-2));
   text-decoration: underline;
 }
 

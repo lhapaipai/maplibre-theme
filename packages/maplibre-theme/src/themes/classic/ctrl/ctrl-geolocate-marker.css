@@ -17,7 +17,7 @@
 
 .maplibregl-user-location-dot::after {
   border-radius: 50%;
-  border: 2px solid rgb(var(--ml-c-primary-0));
+  border: 2px solid rgb(var(--ml-c-logo-1));
   content: "";
   height: 19px;
   left: -2px;
@@ -44,7 +44,7 @@
 }
 
 .maplibregl-user-location-dot-stale {
-  background-color: rgb(var(--ml-c-disabled));
+  background-color: rgb(var(--ml-c-error));
 }
 
 .maplibregl-user-location-dot-stale::after {

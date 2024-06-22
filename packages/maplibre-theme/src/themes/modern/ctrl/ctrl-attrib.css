@@ -1,5 +1,5 @@
 .maplibregl-ctrl.maplibregl-ctrl-attrib {
-  background-color: rgb(var(--ml-c-bg) / 65%);
+  background-color: rgb(var(--ml-c-bg-1) / 65%);
   min-height: 2rem;
   margin: 0;
   padding: 0 0.5rem;
@@ -26,8 +26,7 @@
     min-height: 2rem;
     padding: 0 2rem 0 0;
     position: relative;
-    background-color: rgb(var(--ml-c-bg));
-    color: rgb(var(--ml-c-text));
+    background-color: rgb(var(--ml-c-bg-1));
     border-radius: var(--ml-ctrl-border-radius);
     margin: 0.5rem;
   }
@@ -67,12 +66,12 @@
 }
 
 .maplibregl-ctrl-attrib a {
-  color: rgb(var(--ml-c-text));
+  color: rgb(var(--ml-c-link-1));
   text-decoration: none;
 }
 
 .maplibregl-ctrl-attrib a:hover {
-  color: rgb(var(--ml-c-neutral));
+  color: rgb(var(--ml-c-link-2));
   text-decoration: underline;
 }
 

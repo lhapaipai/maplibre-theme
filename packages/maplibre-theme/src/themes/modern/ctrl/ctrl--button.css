@@ -6,7 +6,7 @@
   outline: none;
   padding: 0;
   border: 0;
-  color: rgb(var(--ml-c-icon));
+  color: rgb(var(--ml-c-icon-1));
 
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, box-shadow;
@@ -39,12 +39,12 @@
 
 .maplibregl-ctrl button:not(:disabled):hover,
 .maplibregl-ctrl-attrib-button:not(:disabled):hover {
-  background-color: rgb(var(--ml-c-primary-1));
-  color: rgb(var(--ml-c-neutral));
+  background-color: rgb(var(--ml-c-bg-2));
+  color: rgb(var(--ml-c-icon-2));
 }
 .maplibregl-ctrl button:not(:disabled):active,
 .maplibregl-ctrl-attrib-button:not(:disabled):active {
-  background-color: rgb(var(--ml-c-primary-2));
+  background-color: rgb(var(--ml-c-bg-3));
   box-shadow: var(--ml-ring-shadow-active, 0 0 #0000), var(--ml-shadow-active);
 }
 
@@ -90,5 +90,5 @@
 }
 
 .maplibregl-ctrl button:disabled .maplibregl-ctrl-icon::before {
-  opacity: 0.25;
+  opacity: var(--ml-o-disabled);
 }

@@ -29,6 +29,10 @@ a.maplibregl-ctrl-logo::before {
   }
 }
 
+a.maplibregl-ctrl-logo:hover::before {
+  color: rgb(var(--ml-c-logo-2));
+}
+
 a.maplibregl-ctrl-logo.maplibregl-compact::before {
   content: "\e813";
 }

@@ -51,11 +51,13 @@ const shadowOptionsByCategory = {
 export default function ShadowSetting({
   name,
   value,
-  options,
+  options: _options,
   onChange,
 }: SettingComponentProps) {
-  const category =
-    (options?.category as "modern" | "classic" | "ring") || "modern";
+  const options = _options as ShadowOptions;
+
+  const { category = "modern" } = options;
+
   const shadowOptions = shadowOptionsByCategory[category];
   return (
     <div className="p8n-setting">
@@ -63,6 +65,8 @@ export default function ShadowSetting({
       <Select
         variant="ghost"
         options={shadowOptions}
+        placement="bottom-end"
+        floatingMinWidth={160}
         value={value}
         onChange={(o) => {
           onChange(name, o.target.value as string);

@@ -1,4 +1,4 @@
 .maplibregl-map {
   font: var(--ml-font);
-  color: rgb(var(--ml-c-text));
+  /* color: rgb(var(--ml-c-icon-1)); */
 }

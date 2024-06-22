@@ -1,0 +1,31 @@
+:root {
+  --ml-ctrl-border-radius: 4px;
+  --ml-font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  --ml-font-attribution: 12px/20px "Helvetica Neue", Arial, Helvetica,
+    sans-serif;
+  --ml-c-icon-2: 0 0 0;
+  --ml-c-error: 229 78 51;
+  --ml-c-bg-1: 255 255 255;
+  --ml-c-logo-1: 255 255 255;
+  --ml-c-bg-2: 240 240 240;
+  --ml-c-bg-3: 215 215 215;
+  --ml-c-icon-1: 51 51 51;
+  --ml-c-icon-1: 51 51 51;
+  --ml-c-disabled: 170 170 170;
+  --ml-shadow-ctrl: 0 0 0 2px rgb(0 0 0 / 10%);
+  --ml-shadow-popup: 0 1px 2px rgb(0 0 0 / 10%);
+  --ml-c-active: 29 161 242;
+  --ml-c-geoloc: 29 161 242;
+  --ml-outline: 0 0 2px 2px rgb(29 161 242);
+}
+.dark {
+  --ml-c-bg-1: 17 23 37;
+  --ml-c-icon-2: 255 255 255;
+  --ml-c-icon-1: 203 213 225;
+  --ml-c-icon-1: 255 255 255;
+  --ml-c-logo-1: 17 23 37;
+  --ml-c-bg-2: 65 72 83;
+  --ml-c-bg-3: 50 54 63;
+  --ml-shadow-ctrl: 0 0 0 2px rgb(0 0 0 / 35%);
+  --ml-shadow-popup: 0 0 0 2px rgb(0 0 0 / 35%);
+}

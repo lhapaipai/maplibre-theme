@@ -14,7 +14,7 @@ then
     MINOR_VERSION=${a[1]}
     PATCH_VERSION=${a[2]}
 else
-    echo "Usage: publish <version>"
+    echo "Usage: change-version-and-publish.sh <version>"
     exit 1
 fi
 
@@ -40,6 +40,8 @@ cd "$PROJECT_DIR"
 
 git add .
 git commit -m "change maplibre-theme version $VERSION"
+
+git tag -a $VERSION -a $VERSION
 
 git push origin
 

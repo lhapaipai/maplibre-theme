@@ -24,7 +24,7 @@
   button.maplibregl-ctrl-geolocate:disabled
   .maplibregl-ctrl-icon::after,
 .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
-  color: rgb(var(--ml-c-icon));
+  color: rgb(var(--ml-c-icon-1));
 }
 
 .maplibregl-ctrl button .maplibregl-ctrl-icon::before,
@@ -67,17 +67,17 @@
 }
 
 .maplibregl-ctrl button:disabled .maplibregl-ctrl-icon {
-  opacity: 0.25;
+  opacity: var(--ml-o-disabled);
 }
 
 .maplibregl-ctrl button:not(:disabled):hover,
 .maplibregl-ctrl-attrib-button:not(:disabled):hover {
-  background-color: rgb(var(--ml-c-primary-1));
+  background-color: rgb(var(--ml-c-bg-2));
 }
 
 .maplibregl-ctrl button:not(:disabled):active,
 .maplibregl-ctrl-attrib-button:not(:disabled):active {
-  background-color: rgb(var(--ml-c-primary-2));
+  background-color: rgb(var(--ml-c-bg-3));
 }
 
 .maplibregl-ctrl-group button:focus:focus-visible {

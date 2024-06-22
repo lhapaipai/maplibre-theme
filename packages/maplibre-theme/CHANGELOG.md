@@ -1,3 +1,7 @@
+## 0.0.10
+
+- rename the CSS variables for better readability
+
 ## 0.0.9
 
 - Modern/Classic : fix ctrl logo text stroke when browser does not support `paint-order`.

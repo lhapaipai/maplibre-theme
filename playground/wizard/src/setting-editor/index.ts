@@ -1,6 +1,6 @@
 import ColorSetting from "./ColorSetting";
 import FontSetting from "./FontSetting";
-import LengthSetting from "./LengthSetting";
+import NumberSetting from "./NumberSetting";
 import ShadowSetting from "./ShadowSetting";
 
 export const settingEditors: {
@@ -8,6 +8,6 @@ export const settingEditors: {
 } = {
   color: ColorSetting,
   font: FontSetting,
-  length: LengthSetting,
+  number: NumberSetting,
   shadow: ShadowSetting,
 };

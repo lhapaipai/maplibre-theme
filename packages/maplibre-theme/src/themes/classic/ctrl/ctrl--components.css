@@ -1,6 +1,6 @@
 .maplibregl-ctrl-group {
   border-radius: var(--ml-ctrl-border-radius);
-  background: rgb(var(--ml-c-bg));
+  background: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-ctrl-group:not(:empty) {
@@ -14,7 +14,7 @@
 }
 
 .maplibregl-ctrl-group button + button {
-  border-top: 1px solid rgb(var(--ml-c-primary-2));
+  border-top: 1px solid rgb(var(--ml-c-bg-3));
 }
 
 @media (forced-colors: active) {

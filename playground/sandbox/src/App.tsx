@@ -24,87 +24,21 @@ import {
   RScaleControl,
   RSource,
   RTerrainControl,
-  useRControl,
 } from "maplibre-react-components";
 import { useRef } from "react";
-import { createPortal } from "react-dom";
 import clsx from "clsx";
+import GeolocMockCtrl from "./GeolocMockCtrl";
+import CustomControl from "./CustomCtrl";
 
 const marignier = { lng: 6.498, lat: 46.089 };
-const marignier2 = { lng: 6.2, lat: 46.089 };
-const leman = { lng: 6.382560880284075, lat: 46.41406563675616 };
+const montreal = { lng: -73.6, lat: 45.4 };
+const durban = { lng: 31, lat: -29 };
+const bichkek = { lng: 74, lat: 42 };
+const paquesIsland = { lng: -109.3, lat: -27.1 };
+
 const rasterDemTiles = [
   "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
 ];
-
-function MyCtrl() {
-  const { container } = useRControl({
-    position: "top-left",
-  });
-
-  return createPortal(
-    <>
-      <button
-        className="maplibregl-ctrl-geolocate ring-1"
-        type="button"
-        title="Find my location"
-        aria-label="Find my location"
-      >
-        <span className="maplibregl-ctrl-icon" aria-hidden="true"></span>
-      </button>
-      <button
-        className="maplibregl-ctrl-geolocate maplibregl-ctrl-geolocate-active"
-        type="button"
-        title="Find my location"
-        aria-label="Find my location"
-      >
-        <span className="maplibregl-ctrl-icon" aria-hidden="true"></span>
-      </button>
-      <button
-        className="maplibregl-ctrl-geolocate maplibregl-ctrl-geolocate-active-error"
-        type="button"
-        title="Find my location"
-        aria-label="Find my location"
-      >
-        <span className="maplibregl-ctrl-icon" aria-hidden="true"></span>
-      </button>
-      <button
-        className="maplibregl-ctrl-geolocate maplibregl-ctrl-geolocate-background"
-        type="button"
-        title="Find my location"
-        aria-label="Find my location"
-      >
-        <span className="maplibregl-ctrl-icon" aria-hidden="true"></span>
-      </button>
-      <button
-        className="maplibregl-ctrl-geolocate maplibregl-ctrl-geolocate-background-error"
-        type="button"
-        title="Find my location"
-        aria-label="Find my location"
-      >
-        <span className="maplibregl-ctrl-icon" aria-hidden="true"></span>
-      </button>
-      <button
-        className="maplibregl-ctrl-geolocate maplibregl-ctrl-geolocate-waiting"
-        type="button"
-        title="Find my location"
-        aria-label="Find my location"
-      >
-        <span className="maplibregl-ctrl-icon" aria-hidden="true"></span>
-      </button>
-      <button
-        className="maplibregl-ctrl-geolocate"
-        type="button"
-        title="Find my location"
-        aria-label="Find my location"
-        disabled
-      >
-        <span className="maplibregl-ctrl-icon" aria-hidden="true"></span>
-      </button>
-    </>,
-    container
-  );
-}
 
 const accuracyCircleStyle = {
   transform: "translate(-50%, -50%)",
@@ -131,8 +65,6 @@ function CustomMap({
     <div className={clsx("map-container", scheme)}>
       <RMap
         ref={mapRef}
-        initialCenter={marignier}
-        initialZoom={8}
         initialAttributionControl={false}
         className={clsx(className, `shadow-md maplibregl-theme-${theme}`)}
         mapStyle={mapStyle}
@@ -146,8 +78,8 @@ function CustomMap({
           tileSize={256}
         />
         <RMarker
-          longitude={leman.lng}
-          latitude={leman.lat}
+          longitude={durban.lng}
+          latitude={durban.lat}
           initialAnchor="center"
         >
           <div
@@ -159,18 +91,32 @@ function CustomMap({
             style={dotStyle}
           ></div>
         </RMarker>
-        <RMarker longitude={marignier2.lng} latitude={marignier2.lat} />
-
-        <RMarker longitude={marignier2.lng} latitude={marignier2.lat} />
+        <RMarker
+          longitude={paquesIsland.lng}
+          latitude={paquesIsland.lat}
+          initialAnchor="center"
+        >
+          <div
+            className="maplibregl-user-location-accuracy-circle maplibregl-marker maplibregl-marker-anchor-center"
+            style={accuracyCircleStyle}
+          ></div>
+          <div
+            className="maplibregl-user-location-dot maplibregl-user-location-dot-stale maplibregl-marker maplibregl-marker-anchor-center"
+            style={dotStyle}
+          ></div>
+        </RMarker>
+        <RMarker longitude={montreal.lng} latitude={montreal.lat} />
         <RPopup longitude={marignier.lng} latitude={marignier.lat}>
           Hello world !
         </RPopup>
-        <RPopup longitude={5.74} latitude={45.95}>
+        <RPopup
+          longitude={bichkek.lng}
+          latitude={bichkek.lat}
+          initialFocusAfterOpen={false}
+        >
           Hello world !
           <button className="maplibregl-popup-close-button">×</button>
         </RPopup>
-
-        <MrcLogoControl position="top-left" />
         <RFullscreenControl />
         <RGeolocateControl
           showAccuracyCircle={true}
@@ -184,7 +130,8 @@ function CustomMap({
         <RScaleControl />
         <RAttributionControl compact={false} />
         <RAttributionControl compact={true} />
-        <MyCtrl />
+        <GeolocMockCtrl />
+        <CustomControl />
         <div className="ml-title">
           {theme} {scheme}
         </div>

@@ -1,10 +1,10 @@
 .maplibregl-ctrl-scale {
-  background-color: rgb(var(--ml-c-bg) / 65%);
+  background-color: rgb(var(--ml-c-bg-1) / 65%);
   font: var(--ml-font-footer);
   border-width: medium 2px 2px;
   border-style: none solid solid;
-  border-color: rgb(var(--ml-c-icon));
+  border-color: rgb(var(--ml-c-icon-1));
   padding: 0 5px;
-  color: rgb(var(--ml-c-icon));
+  color: rgb(var(--ml-c-icon-1));
   box-sizing: border-box;
 }

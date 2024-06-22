@@ -3,16 +3,19 @@ import { Range } from "pentatrion-design";
 const formatters = {
   px: (val: number) => `${val}px`,
   rem: (val: number) => `${val}rem`,
+  default: (val: number) => val.toString(),
 };
 
-export default function LengthSetting({
+export default function NumberSetting({
   name,
   value,
-  options,
+  options: _options,
   onChange,
 }: SettingComponentProps) {
+  const options = _options as NumberOptions;
+  const { unit = "default", min = 0, max = 1, step = 0.1 } = options;
+
   const floatVal = parseFloat(value);
-  const unit = (options?.unit as "px" | "rem") || "rem";
   const formatter = formatters[unit];
 
   return (
@@ -21,9 +24,9 @@ export default function LengthSetting({
       <Range
         showValue={false}
         formatter={formatter}
-        min={0}
-        max={unit === "rem" ? 1 : 20}
-        step={unit === "rem" ? 0.125 : 1}
+        min={min}
+        max={max}
+        step={step}
         value={floatVal}
         onChange={(e) => {
           const updatedValue = formatter(e.target.valueAsNumber);

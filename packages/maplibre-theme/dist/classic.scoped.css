@@ -333,60 +333,61 @@
   --ml-font-attribution: 12px/20px "Helvetica Neue", Arial, Helvetica,
     sans-serif;
 
-  --ml-c-neutral: 0 0 0;
+  --ml-c-bg-1: 255 255 255;
+  --ml-c-bg-2: 240 240 240;
+  --ml-c-bg-3: 215 215 215;
 
+  --ml-c-icon-1: 51 51 51;
+  --ml-c-icon-2: 0 0 0;
+  --ml-c-active: 29 161 242;
   --ml-c-error: 229 78 51;
-
-  --ml-c-bg: 255 255 255;
-
-  --ml-c-primary-0: 255 255 255;
-  --ml-c-primary-1: 240 240 240;
-  --ml-c-primary-2: 215 215 215;
-
-  --ml-c-text: 51 51 51;
-  --ml-c-icon: 51 51 51;
-
-  --ml-c-disabled: 170 170 170;
-
+  --ml-c-outline: 29 161 242;
+  --ml-o-disabled: 0.25;
   --ml-shadow-ctrl: 0 0 0 2px rgb(0 0 0 / 10%);
   --ml-shadow-popup: 0 1px 2px rgb(0 0 0 / 10%);
+  --ml-c-link-1: 51 51 51;
+  --ml-c-link-2: 0 0 0;
 
-  --ml-c-active: 29 161 242;
+  --ml-c-logo-1: 255 255 255;
+  --ml-c-logo-2: 215 215 215;
+
   --ml-c-geoloc: 29 161 242;
-  --ml-outline: 0 0 2px 2px rgb(29 161 242);
+
+  /**
+   * --ml-c-outline is only used here
+   */
+  --ml-outline: 0 0 2px 2px rgb(var(--ml-c-outline));
 }
 
 .dark .maplibregl-theme-classic {
-  --ml-c-bg: 17 23 37;
-  --ml-c-neutral: 255 255 255;
+  --ml-c-bg-1: 17 23 37;
+  --ml-c-bg-2: 65 72 83;
+  --ml-c-bg-3: 50 54 63;
 
-  --ml-c-text: 203 213 225;
-  --ml-c-icon: 255 255 255;
-
-  --ml-c-primary-0: 17 23 37;
-  --ml-c-primary-1: 65 72 83;
-  --ml-c-primary-2: 50 54 63;
+  --ml-c-icon-1: 203 213 225;
+  --ml-c-icon-2: 255 255 255;
+  --ml-c-link-1: 203 213 225;
+  --ml-c-link-2: 255 255 255;
 
   --ml-shadow-ctrl: 0 0 0 2px rgb(0 0 0 / 35%);
   --ml-shadow-popup: 0 0 0 2px rgb(0 0 0 / 35%);
+
+  --ml-c-logo-1: 17 23 37;
+  --ml-c-logo-2: 50 54 63;
 }
 
 @media (forced-colors: active) and (prefers-color-scheme: light) {
   .maplibregl-theme-classic,
   .dark .maplibregl-theme-classic {
-    --ml-c-bg: 255 255 255;
-    --ml-c-neutral: 0 0 0;
+    --ml-c-bg-1: 255 255 255;
+    --ml-c-bg-2: 200 200 200;
+    --ml-c-bg-3: 180 180 180;
 
-    --ml-c-text: 0 0 0;
-    --ml-c-icon: 0 0 0;
+    --ml-c-icon-1: 0 0 0;
+    --ml-c-icon-2: 0 0 0;
 
-    --ml-c-disabled: 102 102 102;
-
-    --ml-c-primary-0: 255 255 255;
-    --ml-c-primary-1: 200 200 200;
-    --ml-c-primary-2: 180 180 180;
-
-    --ml-c-primary-2: 0 0 0;
+    --ml-c-logo-1: 255 255 255;
+    --ml-c-logo-2: 180 180 180;
 
     --ml-c-error: 255 0 0;
   }
@@ -395,17 +396,15 @@
 @media (forced-colors: active) {
   .maplibregl-theme-classic,
   .dark .maplibregl-theme-classic {
-    --ml-c-bg: 0 0 0;
-    --ml-c-neutral: 255 255 255;
+    --ml-c-bg-1: 0 0 0;
+    --ml-c-bg-2: 65 72 83;
+    --ml-c-bg-3: 50 54 63;
 
-    --ml-c-text: 255 255 255;
-    --ml-c-icon: 255 255 255;
+    --ml-c-icon-1: 255 255 255;
+    --ml-c-icon-2: 255 255 255;
 
-    --ml-c-disabled: 153 153 153;
-
-    --ml-c-primary-0: 0 0 0;
-    --ml-c-primary-1: 65 72 83;
-    --ml-c-primary-2: 50 54 63;
+    --ml-c-logo-1: 0 0 0;
+    --ml-c-logo-2: 50 54 63;
 
     --ml-c-error: 255 0 0;
   }
@@ -433,7 +432,7 @@
 
 .maplibregl-theme-classic .maplibregl-ctrl-group {
   border-radius: var(--ml-ctrl-border-radius);
-  background: rgb(var(--ml-c-bg));
+  background: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl-group:not(:empty) {
@@ -447,7 +446,7 @@
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl-group button + button {
-  border-top: 1px solid rgb(var(--ml-c-primary-2));
+  border-top: 1px solid rgb(var(--ml-c-bg-3));
 }
 
 @media (forced-colors: active) {
@@ -494,7 +493,7 @@
   button.maplibregl-ctrl-geolocate:disabled
   .maplibregl-ctrl-icon::after,
 .maplibregl-theme-classic .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
-  color: rgb(var(--ml-c-icon));
+  color: rgb(var(--ml-c-icon-1));
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl button .maplibregl-ctrl-icon::before,
@@ -538,17 +537,17 @@
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl button:disabled .maplibregl-ctrl-icon {
-  opacity: 0.25;
+  opacity: var(--ml-o-disabled);
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl button:not(:disabled):hover,
 .maplibregl-theme-classic .maplibregl-ctrl-attrib-button:not(:disabled):hover {
-  background-color: rgb(var(--ml-c-primary-1));
+  background-color: rgb(var(--ml-c-bg-2));
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl button:not(:disabled):active,
 .maplibregl-theme-classic .maplibregl-ctrl-attrib-button:not(:disabled):active {
-  background-color: rgb(var(--ml-c-primary-2));
+  background-color: rgb(var(--ml-c-bg-3));
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl-group button:focus:focus-visible {
@@ -561,7 +560,7 @@
 
 .maplibregl-theme-classic .maplibregl-ctrl.maplibregl-ctrl-attrib {
   padding: 0 5px;
-  background-color: rgb(var(--ml-c-bg) / 65%);
+  background-color: rgb(var(--ml-c-bg-1) / 65%);
   margin: 0;
   font: var(--ml-font-footer);
 }
@@ -574,8 +573,8 @@
     padding: 2px 24px 2px 0;
     margin: 10px;
     position: relative;
-    background-color: rgb(var(--ml-c-bg));
-    color: rgb(var(--ml-c-text));
+    background-color: rgb(var(--ml-c-bg-1));
+    color: rgb(var(--ml-c-icon-1));
     border-radius: 12px;
     box-sizing: content-box;
   }
@@ -618,17 +617,17 @@
 
   .maplibregl-theme-classic .maplibregl-ctrl-attrib.maplibregl-compact-show
     .maplibregl-ctrl-attrib-button {
-    background-color: rgb(var(--ml-c-primary-1));
+    background-color: rgb(var(--ml-c-bg-2));
   }
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl-attrib a {
-  color: rgb(var(--ml-c-text));
+  color: rgb(var(--ml-c-link-1));
   text-decoration: none;
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl-attrib a:hover {
-  color: rgb(var(--ml-c-neutral));
+  color: rgb(var(--ml-c-link-2));
   text-decoration: underline;
 }
 
@@ -663,7 +662,7 @@
 
 .maplibregl-theme-classic .maplibregl-user-location-dot::after {
   border-radius: 50%;
-  border: 2px solid rgb(var(--ml-c-primary-0));
+  border: 2px solid rgb(var(--ml-c-logo-1));
   content: "";
   height: 19px;
   left: -2px;
@@ -690,7 +689,7 @@
 }
 
 .maplibregl-theme-classic .maplibregl-user-location-dot-stale {
-  background-color: rgb(var(--ml-c-disabled));
+  background-color: rgb(var(--ml-c-error));
 }
 
 .maplibregl-theme-classic .maplibregl-user-location-dot-stale::after {
@@ -704,15 +703,15 @@
   border-radius: 100%;
 }
 
-.maplibregl-theme-classic .maplibregl-ctrl button.maplibregl-ctrl-geolocate .maplibregl-ctrl-icon::before {
+.maplibregl-theme-classic .maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate
+  .maplibregl-ctrl-icon::before {
   content: "\e80c";
 }
 
-.maplibregl-theme-classic .maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::before {
-  color: rgb(var(--ml-c-disabled));
-}
-
-.maplibregl-theme-classic .maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::after {
+.maplibregl-theme-classic .maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon::after {
   content: "\e80e";
   color: rgb(var(--ml-c-error));
   position: absolute;
@@ -796,6 +795,10 @@
   }
 }
 
+.maplibregl-theme-classic a.maplibregl-ctrl-logo:hover::before {
+  color: rgb(var(--ml-c-logo-2));
+}
+
 .maplibregl-theme-classic a.maplibregl-ctrl-logo.maplibregl-compact::before {
   content: "\e813";
 }
@@ -813,7 +816,7 @@
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
-  color: rgb(var(--ml-c-primary-2));
+  color: rgb(var(--ml-c-bg-3));
   content: "\e80a";
   position: absolute;
   left: 50%;
@@ -822,13 +825,13 @@
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl-scale {
-  background-color: rgb(var(--ml-c-bg) / 65%);
+  background-color: rgb(var(--ml-c-bg-1) / 65%);
   font: var(--ml-font-footer);
   border-width: medium 2px 2px;
   border-style: none solid solid;
-  border-color: rgb(var(--ml-c-icon));
+  border-color: rgb(var(--ml-c-icon-1));
   padding: 0 5px;
-  color: rgb(var(--ml-c-icon));
+  color: rgb(var(--ml-c-icon-1));
   box-sizing: border-box;
 }
 
@@ -842,8 +845,8 @@
 }
 
 .maplibregl-theme-classic .maplibregl-boxzoom {
-  background: rgb(var(--ml-c-bg));
-  border: 2px dotted rgb(var(--ml-c-primary-1));
+  background: rgb(var(--ml-c-bg-1));
+  border: 2px dotted rgb(var(--ml-c-bg-2));
   opacity: 0.5;
 }
 
@@ -865,35 +868,35 @@
 }
 
 .maplibregl-theme-classic .maplibregl-popup-anchor-top .maplibregl-popup-tip {
-  border-bottom-color: rgb(var(--ml-c-bg));
+  border-bottom-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-anchor-top-left .maplibregl-popup-tip {
-  border-bottom-color: rgb(var(--ml-c-bg));
+  border-bottom-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-anchor-top-right .maplibregl-popup-tip {
-  border-bottom-color: rgb(var(--ml-c-bg));
+  border-bottom-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
-  border-top-color: rgb(var(--ml-c-bg));
+  border-top-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-anchor-bottom-left .maplibregl-popup-tip {
-  border-top-color: rgb(var(--ml-c-bg));
+  border-top-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-anchor-bottom-right .maplibregl-popup-tip {
-  border-top-color: rgb(var(--ml-c-bg));
+  border-top-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-anchor-left .maplibregl-popup-tip {
-  border-right-color: rgb(var(--ml-c-bg));
+  border-right-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-anchor-right .maplibregl-popup-tip {
-  border-left-color: rgb(var(--ml-c-bg));
+  border-left-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-anchor-top-left .maplibregl-popup-content {
@@ -922,19 +925,19 @@
   background-color: transparent;
   min-width: 20px;
   font-size: 16px;
-  color: rgb(var(--ml-c-icon));
+  color: rgb(var(--ml-c-icon-1));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-close-button:hover {
-  background-color: rgb(var(--ml-c-primary-1));
+  background-color: rgb(var(--ml-c-bg-2));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-close-button:active {
-  background-color: rgb(var(--ml-c-primary-2));
+  background-color: rgb(var(--ml-c-bg-3));
 }
 
 .maplibregl-theme-classic .maplibregl-popup-content {
-  background: rgb(var(--ml-c-bg));
+  background: rgb(var(--ml-c-bg-1));
   border-radius: var(--ml-ctrl-border-radius);
   box-shadow: var(--ml-shadow-popup);
   padding: 20px;
@@ -942,5 +945,5 @@
 
 .maplibregl-theme-classic.maplibregl-map {
   font: var(--ml-font);
-  color: rgb(var(--ml-c-text));
+  color: rgb(var(--ml-c-icon-1));
 }

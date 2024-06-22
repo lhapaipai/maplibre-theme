@@ -7,8 +7,14 @@ import "maplibre-theme/classic.scoped.css";
 import "maplibre-theme/modern.scoped.css";
 import "maplibre-theme/legacy.scoped.css";
 
+const strict = false;
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  strict ? (
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  ) : (
     <App />
-  </React.StrictMode>
+  )
 );

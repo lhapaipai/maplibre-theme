@@ -1,5 +1,5 @@
 .maplibregl-boxzoom {
-  background: rgb(var(--ml-c-bg));
-  border: 2px dotted rgb(var(--ml-c-primary-1));
+  background: rgb(var(--ml-c-bg-1));
+  border: 2px dotted rgb(var(--ml-c-bg-2));
   opacity: 0.5;
 }

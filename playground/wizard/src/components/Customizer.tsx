@@ -42,22 +42,26 @@ export default function Customizer({ values, onChange, properties }: Props) {
               <i className={`fe-${mode}`}></i> {mode} theme
             </h2>
             <div className="flex flex-col gap-2">
-              {properties.map(({ type, name, options }) => {
+              {properties.map(({ type, name, options, description }) => {
                 const value = values[mode][name];
                 if (!value) {
                   return null;
                 }
                 const Component = settingEditors[type];
                 return (
-                  <Component
-                    key={name}
-                    name={name}
-                    value={value}
-                    onChange={(name, updatedValue) =>
-                      handleChange(name, updatedValue, mode)
-                    }
-                    options={options}
-                  />
+                  <div key={name}>
+                    <Component
+                      name={name}
+                      value={value}
+                      onChange={(name, updatedValue) =>
+                        handleChange(name, updatedValue, mode)
+                      }
+                      options={options}
+                    />
+                    {description && (
+                      <div className="text-gray-6 text-xs">{description}</div>
+                    )}
+                  </div>
                 );
               })}
             </div>

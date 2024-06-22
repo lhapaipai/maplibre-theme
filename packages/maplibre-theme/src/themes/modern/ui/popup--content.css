@@ -9,7 +9,7 @@
   cursor: pointer;
   background-color: transparent;
   font-size: 1.5rem;
-  color: rgb(var(--ml-c-icon));
+  color: rgb(var(--ml-c-icon-1));
 
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, box-shadow;
@@ -18,14 +18,14 @@
 }
 
 .maplibregl-popup-close-button:hover {
-  background-color: rgb(var(--ml-c-primary-1));
+  background-color: rgb(var(--ml-c-bg-2));
 }
 .maplibregl-popup-close-button:active {
-  background-color: rgb(var(--ml-c-primary-2));
+  background-color: rgb(var(--ml-c-bg-3));
 }
 
 .maplibregl-popup-content {
-  background: rgb(var(--ml-c-bg));
+  background: rgb(var(--ml-c-bg-1));
   border-radius: var(--ml-ctrl-border-radius);
   padding: 0.5rem;
   min-height: 2.5rem;

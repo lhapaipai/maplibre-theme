@@ -1,12 +1,12 @@
-.maplibregl-ctrl button.maplibregl-ctrl-geolocate .maplibregl-ctrl-icon::before {
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate
+  .maplibregl-ctrl-icon::before {
   content: "\e80c";
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::before {
-  color: rgb(var(--ml-c-disabled));
-}
-
-.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::after {
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon::after {
   content: "\e80e";
   color: rgb(var(--ml-c-error));
   position: absolute;

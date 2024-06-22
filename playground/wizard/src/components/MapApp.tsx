@@ -40,6 +40,8 @@ const marignier = { lng: 6.498, lat: 46.089 };
 const montreal = { lng: -73.6, lat: 45.4 };
 const durban = { lng: 31, lat: -29 };
 const bichkek = { lng: 74, lat: 42 };
+const paquesIsland = { lng: -109.3, lat: -27.1 };
+
 const rasterDemTiles = [
   "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
 ];
@@ -54,7 +56,12 @@ export default function MapApp({ theme, style }: Props) {
   );
 
   return (
-    <RMap style={mapStyle} className={`maplibregl-theme-${theme}`}>
+    <RMap
+      style={mapStyle}
+      className={`maplibregl-theme-${theme}`}
+      mapStyle="/style.json"
+      initialAttributionControl={false}
+    >
       <RSource
         type="raster-dem"
         id="terrarium"
@@ -73,6 +80,20 @@ export default function MapApp({ theme, style }: Props) {
         ></div>
         <div
           className="maplibregl-user-location-dot maplibregl-marker maplibregl-marker-anchor-center"
+          style={dotStyle}
+        ></div>
+      </RMarker>
+      <RMarker
+        longitude={paquesIsland.lng}
+        latitude={paquesIsland.lat}
+        initialAnchor="center"
+      >
+        <div
+          className="maplibregl-user-location-accuracy-circle maplibregl-marker maplibregl-marker-anchor-center"
+          style={accuracyCircleStyle}
+        ></div>
+        <div
+          className="maplibregl-user-location-dot maplibregl-user-location-dot-stale maplibregl-marker maplibregl-marker-anchor-center"
           style={dotStyle}
         ></div>
       </RMarker>
