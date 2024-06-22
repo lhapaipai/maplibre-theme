@@ -26,11 +26,6 @@ in your files
 - import "maplibre-gl/dist/maplibre-gl.css";
 + import "maplibre-theme/icons.<your-icon-set>.css";
 + import "maplibre-theme/<your-theme>.css";
-
-/* css file */
-- @import "maplibre-gl/dist/maplibre-gl.css";
-+ @import "maplibre-theme/icons.<your-icon-set>.css";
-+ @import "maplibre-theme/<your-theme>.css";
 ```
 
 For theme choose between : `modern`, `classic` and `legacy`.
@@ -44,11 +39,15 @@ note: if you don't use default icon set, add this extra config in your css.
 }
 ```
 
-Modern theme with default icon set example
+Modern theme with lucide icon set example
 
 ```js
-import "maplibre-theme/icons.default.css";
+import "maplibre-theme/icons.lucide.css";
 import "maplibre-theme/modern.css";
+
+.maplibregl-map {
+  --ml-font-icons: maplibregl-icons-lucide;
+}
 ```
 
 ## Package files
@@ -157,8 +156,8 @@ new Map({
 
 Some variables differs between `classic` and `modern`. check the source code for the exact implementation.
 
-- [modern vars.css](https://github.com/lhapaipai/maplibre-theme/blob/main/src/themes/modern/vars.css)
-- [classic vars.css](https://github.com/lhapaipai/maplibre-theme/blob/main/src/themes/classic/vars.css)
+- [modern vars.css](https://github.com/lhapaipai/maplibre-theme/blob/main/packages/maplibre-theme/src/themes/modern/vars.css)
+- [classic vars.css](https://github.com/lhapaipai/maplibre-theme/blob/main/packages/maplibre-theme/src/themes/classic/vars.css)
 
 It is not recommended to modify css variables for media queries `@media (forced-colors: active) and (prefers-color-scheme: light)` and `@media (forced-colors: active)`.
 If you find inconsistencies, open an issue or submit a PR instead.
