@@ -333,74 +333,62 @@ a.maplibregl-ctrl-logo::before,
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --ml-font-attribution: inherit;
 
-  --ml-c-error: 229 78 51;
+  --ml-c-bg-1: 255 255 255;
+  --ml-c-bg-2: 240 240 240;
+  --ml-c-bg-3: 215 215 215;
 
-  --ml-c-bg: 255 255 255;
-  --ml-c-neutral: 0 0 0;
-
-  /*
-   * text: content of popup, attribution
-   * icon: control buttons (hover effect -> neutral)
-   */
-  --ml-c-text: 51 51 51;
-  --ml-c-icon: 51 51 51;
-
-  /*
-   * primary-0 logo color
-   * primary-1 usually hover effect
-   * primary-2 active effect
-   */
-  --ml-c-primary-0: 255 255 255;
-  --ml-c-primary-1: 240 240 240;
-  --ml-c-primary-2: 215 215 215;
-
-  --ml-c-disabled: 180 180 180;
-
-  --ml-c-outline: 219 167 38;
-
+  --ml-c-icon-1: 51 51 51;
+  --ml-c-icon-2: 0 0 0;
   --ml-c-active: 29 161 242;
-  --ml-c-geoloc: 29 161 242;
-
-  /**
-   * button group / popup shadow
-   * shadow-active: when your button is active
-   */
+  --ml-c-error: 229 78 51;
+  --ml-c-outline: 219 167 38;
+  --ml-o-disabled: 0.25;
   --ml-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.15), 0 1px 2px -1px rgb(0 0 0 / 0.15); /* shadow */
   --ml-shadow-active: 0 10px 15px -3px rgb(0 0 0 / 0.15),
     0 4px 6px -2px rgb(0 0 0 / 0.15);
+
+  --ml-c-link-1: 51 51 51;
+  --ml-c-link-2: 0 0 0;
+
+  --ml-c-logo-1: 255 255 255;
+  --ml-c-logo-2: 215 215 215;
+  --ml-c-geoloc: 29 161 242;
+
+  /**
+   * --ml-c-outline is only used here
+   */
   --ml-ring-shadow: 0 0 0px 2px rgb(var(--ml-c-outline) / 1);
 }
 
 .dark {
-  --ml-c-bg: 17 23 37;
-  --ml-c-neutral: 255 255 255;
+  --ml-c-bg-1: 17 23 37;
+  --ml-c-bg-2: 65 72 83;
+  --ml-c-bg-3: 50 54 63;
 
-  --ml-c-text: 203 213 225;
-  --ml-c-icon: 255 255 255;
-
-  --ml-c-primary-0: 17 23 37;
-  --ml-c-primary-1: 65 72 83;
-  --ml-c-primary-2: 50 54 63;
+  --ml-c-icon-1: 203 213 225;
+  --ml-c-icon-2: 255 255 255;
 
   --ml-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.15), 0 1px 2px -1px rgb(0 0 0 / 0.15); /* shadow */
+
+  --ml-c-link-1: 203 213 225;
+  --ml-c-link-2: 255 255 255;
+
+  --ml-c-logo-1: 17 23 37;
+  --ml-c-logo-2: 50 54 63;
 }
 
 @media (forced-colors: active) and (prefers-color-scheme: light) {
   :root,
   .dark {
-    --ml-c-bg: 255 255 255;
-    --ml-c-neutral: 0 0 0;
+    --ml-c-bg-1: 255 255 255;
+    --ml-c-bg-2: 200 200 200;
+    --ml-c-bg-3: 180 180 180;
 
-    --ml-c-text: 0 0 0;
-    --ml-c-icon: 0 0 0;
+    --ml-c-icon-1: 0 0 0;
+    --ml-c-icon-2: 0 0 0;
 
-    --ml-c-disabled: 102 102 102;
-
-    --ml-c-primary-0: 255 255 255;
-    --ml-c-primary-1: 200 200 200;
-    --ml-c-primary-2: 180 180 180;
-
-    --ml-c-primary-2: 0 0 0;
+    --ml-c-logo-1: 255 255 255;
+    --ml-c-logo-2: 180 180 180;
 
     --ml-c-error: 255 0 0;
   }
@@ -409,17 +397,15 @@ a.maplibregl-ctrl-logo::before,
 @media (forced-colors: active) {
   :root,
   .dark {
-    --ml-c-bg: 0 0 0;
-    --ml-c-neutral: 255 255 255;
+    --ml-c-bg-1: 0 0 0;
+    --ml-c-bg-2: 65 72 83;
+    --ml-c-bg-3: 50 54 63;
 
-    --ml-c-text: 255 255 255;
-    --ml-c-icon: 255 255 255;
+    --ml-c-icon-1: 255 255 255;
+    --ml-c-icon-2: 255 255 255;
 
-    --ml-c-disabled: 153 153 153;
-
-    --ml-c-primary-0: 0 0 0;
-    --ml-c-primary-1: 65 72 83;
-    --ml-c-primary-2: 50 54 63;
+    --ml-c-logo-1: 0 0 0;
+    --ml-c-logo-2: 50 54 63;
 
     --ml-c-error: 255 0 0;
   }
@@ -447,7 +433,7 @@ a.maplibregl-ctrl-logo::before,
 
 .maplibregl-ctrl-group {
   border-radius: var(--ml-ctrl-border-radius);
-  background: rgb(var(--ml-c-bg));
+  background: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-ctrl-group:not(:empty) {
@@ -461,7 +447,7 @@ a.maplibregl-ctrl-logo::before,
 }
 
 .maplibregl-ctrl-group button + button {
-  border-top: 1px solid rgb(var(--ml-c-primary-2));
+  border-top: 1px solid rgb(var(--ml-c-bg-3));
 }
 
 @media (forced-colors: active) {
@@ -490,7 +476,7 @@ a.maplibregl-ctrl-logo::before,
   outline: none;
   padding: 0;
   border: 0;
-  color: rgb(var(--ml-c-icon));
+  color: rgb(var(--ml-c-icon-1));
 
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, box-shadow;
@@ -524,13 +510,13 @@ a.maplibregl-ctrl-logo::before,
 
 .maplibregl-ctrl button:not(:disabled):hover,
 .maplibregl-ctrl-attrib-button:not(:disabled):hover {
-  background-color: rgb(var(--ml-c-primary-1));
-  color: rgb(var(--ml-c-neutral));
+  background-color: rgb(var(--ml-c-bg-2));
+  color: rgb(var(--ml-c-icon-2));
 }
 
 .maplibregl-ctrl button:not(:disabled):active,
 .maplibregl-ctrl-attrib-button:not(:disabled):active {
-  background-color: rgb(var(--ml-c-primary-2));
+  background-color: rgb(var(--ml-c-bg-3));
   box-shadow: var(--ml-ring-shadow-active, 0 0 #0000), var(--ml-shadow-active);
 }
 
@@ -578,11 +564,11 @@ a.maplibregl-ctrl-logo::before,
 }
 
 .maplibregl-ctrl button:disabled .maplibregl-ctrl-icon::before {
-  opacity: 0.25;
+  opacity: var(--ml-o-disabled);
 }
 
 .maplibregl-ctrl.maplibregl-ctrl-attrib {
-  background-color: rgb(var(--ml-c-bg) / 65%);
+  background-color: rgb(var(--ml-c-bg-1) / 65%);
   min-height: 2rem;
   margin: 0;
   padding: 0 0.5rem;
@@ -609,8 +595,7 @@ a.maplibregl-ctrl-logo::before,
     min-height: 2rem;
     padding: 0 2rem 0 0;
     position: relative;
-    background-color: rgb(var(--ml-c-bg));
-    color: rgb(var(--ml-c-text));
+    background-color: rgb(var(--ml-c-bg-1));
     border-radius: var(--ml-ctrl-border-radius);
     margin: 0.5rem;
   }
@@ -650,12 +635,12 @@ a.maplibregl-ctrl-logo::before,
 }
 
 .maplibregl-ctrl-attrib a {
-  color: rgb(var(--ml-c-text));
+  color: rgb(var(--ml-c-link-1));
   text-decoration: none;
 }
 
 .maplibregl-ctrl-attrib a:hover {
-  color: rgb(var(--ml-c-neutral));
+  color: rgb(var(--ml-c-link-2));
   text-decoration: underline;
 }
 
@@ -690,7 +675,7 @@ a.maplibregl-ctrl-logo::before,
 
 .maplibregl-user-location-dot::after {
   border-radius: 50%;
-  border: 2px solid rgb(var(--ml-c-primary-1));
+  border: 2px solid rgb(var(--ml-c-bg-1));
   content: "";
   height: 19px;
   left: -2px;
@@ -717,7 +702,7 @@ a.maplibregl-ctrl-logo::before,
 }
 
 .maplibregl-user-location-dot-stale {
-  background-color: rgb(var(--ml-c-disabled));
+  background-color: rgb(var(--ml-c-error));
 }
 
 .maplibregl-user-location-dot-stale::after {
@@ -731,15 +716,15 @@ a.maplibregl-ctrl-logo::before,
   border-radius: 100%;
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-geolocate .maplibregl-ctrl-icon::before {
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate
+  .maplibregl-ctrl-icon::before {
   content: "\e80c";
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::before {
-  color: rgb(var(--ml-c-disabled));
-}
-
-.maplibregl-ctrl button.maplibregl-ctrl-geolocate:disabled .maplibregl-ctrl-icon::after {
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon::after {
   content: "\e80e";
   color: rgb(var(--ml-c-error));
   position: absolute;
@@ -802,7 +787,7 @@ a.maplibregl-ctrl-logo::before {
   font-size: 1rem;
 
   font-weight: 900;
-  color: rgb(var(--ml-c-primary-0));
+  color: rgb(var(--ml-c-logo-1));
   content: "\e813MapLibre";
   text-stroke: 1px #999;
   -webkit-text-stroke: 1px #999;
@@ -827,7 +812,7 @@ a.maplibregl-ctrl-logo::before {
 }
 
 a.maplibregl-ctrl-logo:hover::before {
-  color: rgb(var(--ml-c-primary-2));
+  color: rgb(var(--ml-c-logo-2));
 }
 
 a.maplibregl-ctrl-logo.maplibregl-compact::before {
@@ -847,7 +832,7 @@ a.maplibregl-ctrl-logo.maplibregl-compact::before {
 }
 
 .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
-  color: rgb(var(--ml-c-primary-2));
+  color: rgb(var(--ml-c-bg-3));
   content: "\e80a";
   position: absolute;
   left: 50%;
@@ -856,14 +841,13 @@ a.maplibregl-ctrl-logo.maplibregl-compact::before {
 }
 
 .maplibregl-ctrl-scale {
-  background-color: rgb(var(--ml-c-bg) / 65%);
+  background-color: rgb(var(--ml-c-bg-1) / 65%);
   font-size: 0.875rem;
   line-height: 1rem;
   border-width: medium 2px 2px;
   border-style: none solid solid;
-  border-color: rgb(var(--ml-c-icon));
+  border-color: rgb(var(--ml-c-icon-1));
   padding: 0 5px;
-  color: rgb(var(--ml-c-icon));
   box-sizing: border-box;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -879,8 +863,8 @@ a.maplibregl-ctrl-logo.maplibregl-compact::before {
 }
 
 .maplibregl-boxzoom {
-  background: rgb(var(--ml-c-bg));
-  border: 2px dotted rgb(var(--ml-c-primary-2));
+  background: rgb(var(--ml-c-bg-1));
+  border: 2px dotted rgb(var(--ml-c-bg-3));
   opacity: 0.5;
   border-radius: 0.5rem;
 }
@@ -903,35 +887,35 @@ a.maplibregl-ctrl-logo.maplibregl-compact::before {
 }
 
 .maplibregl-popup-anchor-top .maplibregl-popup-tip {
-  border-bottom-color: rgb(var(--ml-c-bg));
+  border-bottom-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-popup-anchor-top-left .maplibregl-popup-tip {
-  border-bottom-color: rgb(var(--ml-c-bg));
+  border-bottom-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-popup-anchor-top-right .maplibregl-popup-tip {
-  border-bottom-color: rgb(var(--ml-c-bg));
+  border-bottom-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
-  border-top-color: rgb(var(--ml-c-bg));
+  border-top-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-popup-anchor-bottom-left .maplibregl-popup-tip {
-  border-top-color: rgb(var(--ml-c-bg));
+  border-top-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-popup-anchor-bottom-right .maplibregl-popup-tip {
-  border-top-color: rgb(var(--ml-c-bg));
+  border-top-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-popup-anchor-left .maplibregl-popup-tip {
-  border-right-color: rgb(var(--ml-c-bg));
+  border-right-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-popup-anchor-right .maplibregl-popup-tip {
-  border-left-color: rgb(var(--ml-c-bg));
+  border-left-color: rgb(var(--ml-c-bg-1));
 }
 
 .maplibregl-popup-anchor-top-left .maplibregl-popup-content {
@@ -961,7 +945,7 @@ a.maplibregl-ctrl-logo.maplibregl-compact::before {
   cursor: pointer;
   background-color: transparent;
   font-size: 1.5rem;
-  color: rgb(var(--ml-c-icon));
+  color: rgb(var(--ml-c-icon-1));
 
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, box-shadow;
@@ -970,15 +954,15 @@ a.maplibregl-ctrl-logo.maplibregl-compact::before {
 }
 
 .maplibregl-popup-close-button:hover {
-  background-color: rgb(var(--ml-c-primary-1));
+  background-color: rgb(var(--ml-c-bg-2));
 }
 
 .maplibregl-popup-close-button:active {
-  background-color: rgb(var(--ml-c-primary-2));
+  background-color: rgb(var(--ml-c-bg-3));
 }
 
 .maplibregl-popup-content {
-  background: rgb(var(--ml-c-bg));
+  background: rgb(var(--ml-c-bg-1));
   border-radius: var(--ml-ctrl-border-radius);
   padding: 0.5rem;
   min-height: 2.5rem;
@@ -992,5 +976,5 @@ a.maplibregl-ctrl-logo.maplibregl-compact::before {
 
 .maplibregl-map {
   font: var(--ml-font);
-  color: rgb(var(--ml-c-text));
+  /* color: rgb(var(--ml-c-icon-1)); */
 }
