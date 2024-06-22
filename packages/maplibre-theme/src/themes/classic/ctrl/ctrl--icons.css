@@ -1,0 +1,43 @@
+a.maplibregl-ctrl-logo::before,
+.maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
+.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon::after,
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  text-decoration: inherit;
+}
+
+.maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
+.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon::after,
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+  font-family: "maplibregl-icons";
+}
+
+a.maplibregl-ctrl-logo::before {
+  font-family: maplibregl-icons-core;
+}
+
+.maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
+.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon::after,
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+  font-style: normal;
+  font-weight: normal;
+
+  display: inline-block;
+  text-align: center;
+}

@@ -1,3 +1,8 @@
+## 0.0.11
+
+- separate core icons (MapLibre letters and logo) and ctrl icons
+- split themes and ctrl icons
+
 ## 0.0.10
 
 - rename the CSS variables for better readability

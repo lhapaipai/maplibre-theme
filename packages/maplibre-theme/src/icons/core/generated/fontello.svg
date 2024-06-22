@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2024 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="space_alata-regular" unicode="&#x20;" d="" horiz-adv-x="255" />
+
+<glyph glyph-name="alata-l" unicode="&#x4c;" d="M78 50v735h113v-635h211v-100h-324z" horiz-adv-x="442" />
+
+<glyph glyph-name="alata-m" unicode="&#x4d;" d="M444 50l-177 343-46 104-21-104-68-343h-111l152 735h12l202-397 60-133 60 133 198 397h11l158-735h-110l-74 343-22 104-40-104-178-343h-6z" horiz-adv-x="905" />
+
+<glyph glyph-name="alata-a" unicode="&#x61;" d="M274 40q-61 0-113 29t-85 83-32 129q0 72 28 126t78 84 120 30q42 0 77-14t58-35 31-40l2 77h103v-459h-102l-2 81q-10-22-33-43t-57-34-73-14z m18 90q37 0 68 18t49 49 18 76v7q0 45-18 79t-49 52-68 18q-67 0-100-43t-34-106q0-64 34-107t100-43z" horiz-adv-x="625" />
+
+<glyph glyph-name="alata-b" unicode="&#x62;" d="M343 40q-40 0-73 14t-55 34-34 43l-2-81h-104v735h106v-283l-5-78q11 26 37 48t62 36 75 13q69 0 119-30t77-85 27-127q0-75-32-128t-84-82-114-29z m-18 90q68 0 102 43t33 106q0 65-33 108t-102 42q-36 0-67-17t-49-50-19-76v-7q1-44 19-78t49-52 67-19z" horiz-adv-x="627" />
+
+<glyph glyph-name="alata-e" unicode="&#x65;" d="M288 40q-86 0-140 34t-79 88-25 117q0 75 31 129t84 84 122 29q109 0 159-60t50-163q0-27-3-56h-330q11-62 45-88t89-27q54 0 85 10t51 20l33-77q-20-13-62-26t-110-14z m-131 277h228q1 65-29 89t-78 24q-50 0-81-26t-40-87z" horiz-adv-x="542" />
+
+<glyph glyph-name="alata-i" unicode="&#x69;" d="M138 736c-21 0-38-7-52-20-13-13-20-29-20-48 0-21 7-38 20-52 14-14 31-21 52-21 21 0 38 7 51 21 14 14 21 31 21 52 0 19-7 35-21 48-13 13-30 20-51 20z m-59-227v-459h112v459h-112z" horiz-adv-x="280" />
+
+<glyph glyph-name="alata-p" unicode="&#x70;" d="M73-193v702h104v-85q23 41 65 69t107 28q62 0 111-26t78-79 28-134q0-74-30-128t-80-84-112-30q-59 0-101 21t-66 58v-312h-104z m246 324q68 0 102 43t33 105q0 65-33 107t-102 42q-36 0-67-17t-50-49-19-77v-7q0-44 19-77t50-52 67-18z" horiz-adv-x="620" />
+
+<glyph glyph-name="alata-r" unicode="&#x72;" d="M68 50v459h108v-90q16 45 52 74t82 28q32 0 44-6l-15-109q-9 6-39 6-25 0-54-11t-49-38-21-77v-236h-108z" horiz-adv-x="374" />
+
+<glyph glyph-name="maplibre-logo" unicode="&#xe813;" d="M417 830c-166 1-301-124-302-280-1-137 67-204 140-277 52-50 106-104 141-186 2-1 4-3 5-3a17 17 0 0 1 11-5 17 17 0 0 1 12 4c0 1 0 1 0 1 2 0 3 1 4 3 35 81 90 134 143 184 74 72 144 139 145 276 1 155-133 282-299 283z m-1-143c82-1 148-68 148-152-1-83-68-150-150-150h0c-82 1-148 69-148 152 1 83 68 151 150 150z m-109-656c-14 0-25-15-25-34l-1-95c0-18 11-34 25-34l209-1c14 0 25 15 25 34l1 95c0 19-11 34-25 34z" horiz-adv-x="830" />
+</font>
+</defs>
+</svg>

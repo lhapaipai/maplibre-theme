@@ -7,6 +7,7 @@ this themes are designed to mimic the actual theme with some improvements.
 - light : actually 20ko-30ko minified (the current theme from `maplibre-gl/maplibre-gl.css` is 65ko minified).
 - support dark mode
 - support CSS variables for easy optimisation.
+- possibility to use another icon set for your buttons
 
 See a [Demo](https://maplibre-theme.pentatrion.com/).
 
@@ -23,11 +24,20 @@ in your files
 ```diff
 // js file
 - import "maplibre-gl/dist/maplibre-gl.css";
++ import "maplibre-theme/icons.<your-icon-set>.css";
 + import "maplibre-theme/<your-theme>.css";
 
 /* css file */
 - @import "maplibre-gl/dist/maplibre-gl.css";
++ @import "maplibre-theme/icons.<your-icon-set>.css";
 + @import "maplibre-theme/<your-theme>.css";
+```
+
+Modern theme example
+
+```js
+import "maplibre-theme/icons.default.css";
+import "maplibre-theme/modern.css";
 ```
 
 ## Package files
@@ -37,20 +47,30 @@ List of available CSS files to import. (see [Scoped themes](#scoped-themes) sect
 ```
 .
 └── maplibre-theme
-    ├── classic.css (23 ko)
-    ├── classic.scoped.css (28 ko)
-    ├── core.css (5 ko)
-    ├── core.scoped.css (5 ko)
+    |
+    | // choose one of them.
+    ├── modern.css (18 ko)
+    ├── classic.css (17 ko)
+    |
+    | // default icon set, need to be added with your theme above
+    ├── icons.default.css (6 ko)
+    |
+    | // scoped themes only if you need to use multiple theme in your app
+    ├── classic.scoped.css (21 ko)
+    ├── modern.scoped.css (22 ko)
+    |
+    | // for developpers only
     ├── legacy.css (66 ko)
     ├── legacy.scoped.css (70 ko)
-    ├── modern.css (24 ko)
-    └── modern.scoped.css (29 ko)
+    ├── core.css (5 ko)
+    └── core.scoped.css (5 ko)
 ```
 
 ## Theme modern
 
 ```ts
 import { Map } from "maplibre-gl";
+import "maplibre-theme/icons.default.css";
 import "maplibre-theme/modern.css";
 
 new Map({
@@ -76,6 +96,7 @@ new Map({
 
 ```ts
 import { Map } from "maplibre-gl";
+import "maplibre-theme/icons.default.css";
 import "maplibre-theme/classic.css";
 
 new Map({
@@ -130,6 +151,43 @@ It is not recommended to modify css variables for media queries `@media (forced-
 If you find inconsistencies, open an issue or submit a PR instead.
 
 note: define your colors as just the color channel so we can work with the opacity modifier syntax [TailwindCSS explanation](https://tailwindcss.com/docs/customizing-colors#using-css-variables).
+
+## Use your own icon set
+
+If you want to replace the default icon with your own set of icon.
+
+remove this import 
+```diff
+- import "maplibre-theme/icons.default.css"
+```
+
+instead add this code. 
+
+```css
+@font-face {
+  font-family: "maplibregl-icons";
+  src: url("./path/to/your/icon-font.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+```
+
+And place your icons at this codes.
+
+| Icon | Unicode |
+|------|---------|
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-attrib.svg" width="20" /> | U+E808 |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-compass-north.svg" width="20" /> | U+E809 |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-compass-south.svg" width="20" /> | U+E0A |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-fullscreen.svg" width="20" /> | U+E80B |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-geolocate-active.svg" width="20" /> | U+E80C |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-geolocate-background.svg" width="20" /> | U+E80D |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-geolocate-stroke.svg" width="20" /> | U+E80E |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-shrink.svg" width="20" /> | U+E80F |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-terrain.svg" width="20" /> | U+E810 |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-zoom-in.svg" width="20" /> | U+E002B |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-zoom-out.svg" width="20" /> | U+E002D |
+
 
 ## Scoped themes
 

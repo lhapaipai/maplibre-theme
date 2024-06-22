@@ -26,14 +26,6 @@ const config = (ctx) => {
             const entryName = basename(filePath, ".css");
             const themeClassName = `.maplibregl-theme-${entryName}`;
 
-            // if (
-            //   selector.startsWith(
-            //     ".maplibregl-ctrl button.maplibregl-ctrl-geolocate"
-            //   )
-            // ) {
-            //   debugger;
-            // }
-
             if (entryName === "core" || selector.includes(themeClassName)) {
               return selector;
             }
@@ -54,25 +46,25 @@ const config = (ctx) => {
         }),
 
       autoprefixer(),
-      // cssnanoPlugin({
-      //   preset: [
-      //     "default",
-      //     {
-      //       svgo: {
-      //         plugins: [
-      //           {
-      //             name: "preset-default",
-      //             params: {
-      //               overrides: {
-      //                 removeViewBox: false,
-      //               },
-      //             },
-      //           },
-      //         ],
-      //       },
-      //     },
-      //   ],
-      // }),
+      cssnanoPlugin({
+        preset: [
+          "default",
+          {
+            svgo: {
+              plugins: [
+                {
+                  name: "preset-default",
+                  params: {
+                    overrides: {
+                      removeViewBox: false,
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      }),
     ],
   };
 };

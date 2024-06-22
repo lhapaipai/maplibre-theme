@@ -1,12 +1,13 @@
 @import "./core.css";
 
-@import "./icons/default/index.postcss";
+@import "./icons/core/index.postcss";
 
 @import "./themes/classic/vars.css";
 
 @import "./themes/classic/ctrl/ctrl--base.css";
 @import "./themes/classic/ctrl/ctrl--components.css";
 @import "./themes/classic/ctrl/ctrl--button.css";
+@import "./themes/classic/ctrl/ctrl--icons.css";
 @import "./themes/classic/ctrl/ctrl-attrib.css";
 @import "./themes/classic/ctrl/ctrl-fullscreen.css";
 @import "./themes/classic/ctrl/ctrl-geolocate-marker.css";

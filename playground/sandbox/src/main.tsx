@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
 
+import "maplibre-theme/icons.default.css";
 import "maplibre-theme/legacy.scoped.css";
 import "maplibre-theme/modern.scoped.css";
 import "maplibre-theme/classic.scoped.css";

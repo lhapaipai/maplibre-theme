@@ -1,5 +1,3 @@
-import "./App.css";
-
 import { Button } from "pentatrion-design/components/button";
 
 import { useEffect, useMemo, useState } from "react";
