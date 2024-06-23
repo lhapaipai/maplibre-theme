@@ -1,27 +1,12 @@
 import { Button } from "pentatrion-design/components/button";
 
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import MapApp from "./components/MapApp";
 import NavBar from "./components/NavBar";
 import NavBarContent from "./components/NavBarContent";
-import { cssDefaultValuesByTheme } from "./config/cssValues";
-import { useDarkMode } from "./hooks/useDarkMode";
-import { mergeCssValues } from "./lib/css";
 
 function App() {
-  const { isDarkMode, setDarkMode } = useDarkMode();
   const [showNavBar, setShowNavBar] = useState(false);
-  const [theme, setTheme] = useState<ThemeID>("modern");
-  const [themeCssValues, setThemeCssValues] = useState<null | CssValues>(null);
-
-  useEffect(() => {
-    setThemeCssValues(cssDefaultValuesByTheme[theme]);
-  }, [theme]);
-
-  const mergedCssValues = useMemo(
-    () => mergeCssValues(themeCssValues, isDarkMode),
-    [themeCssValues, isDarkMode]
-  );
 
   return (
     <div id="app" className="flex">
@@ -36,23 +21,11 @@ function App() {
           <i className="fe-menu"></i>
         </Button>
       </div>
-      <NavBar
-        showNavBar={showNavBar}
-        setShowNavBar={setShowNavBar}
-        theme={theme}
-        themeCssValues={themeCssValues}
-      >
-        <NavBarContent
-          isDarkMode={isDarkMode}
-          setDarkMode={setDarkMode}
-          theme={theme}
-          setTheme={setTheme}
-          themeCssValues={themeCssValues}
-          setThemeCssValues={setThemeCssValues}
-        />
+      <NavBar showNavBar={showNavBar} setShowNavBar={setShowNavBar}>
+        <NavBarContent />
       </NavBar>
       <div id="content" className="flex-1 relative">
-        <MapApp theme={theme} style={mergedCssValues} />
+        <MapApp />
       </div>
     </div>
   );

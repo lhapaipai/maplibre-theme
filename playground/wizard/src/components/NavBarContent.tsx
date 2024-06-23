@@ -1,17 +1,14 @@
-import { Dispatch, SetStateAction } from "react";
 import { Toggle } from "pentatrion-design/components/input/Toggle";
 import { Select } from "pentatrion-design/components/select";
 import Customizer from "./Customizer";
-import { propertiesByTheme } from "../config/cssValues";
-
-interface Props {
-  isDarkMode: boolean;
-  setDarkMode: (val: boolean) => void;
-  theme: ThemeID;
-  setTheme: Dispatch<SetStateAction<ThemeID>>;
-  themeCssValues: CssValues | null;
-  setThemeCssValues: Dispatch<SetStateAction<CssValues | null>>;
-}
+import { propertiesByTheme } from "../config/cssVars";
+import { useAppSelector } from "../store";
+import {
+  nameChanged,
+  selectThemeCssVars,
+  selectThemeName,
+} from "../store/themeSlice";
+import { modeChanged, selectMode } from "../store/configSlice";
 
 type ThemeOption = {
   value: ThemeID;
@@ -24,23 +21,20 @@ const themeOptions: ThemeOption[] = [
   { value: "modern", label: "Modern" },
 ];
 
-export default function NavBarContent({
-  isDarkMode,
-  setDarkMode,
-  theme,
-  setTheme,
-  themeCssValues,
-  setThemeCssValues,
-}: Props) {
-  const properties = propertiesByTheme[theme];
+export default function NavBarContent() {
+  const themeName = useAppSelector(selectThemeName);
+  const themeCssVars = useAppSelector(selectThemeCssVars);
+  const mode = useAppSelector(selectMode);
+
+  const properties = propertiesByTheme[themeName];
 
   return (
     <div className="flex flex-col gap-2 flex-1 p-2">
       <div className="p8n-setting">
         <div>Dark mode</div>
         <Toggle
-          checked={isDarkMode}
-          onChange={(e) => setDarkMode(e.target.checked)}
+          checked={mode === "dark"}
+          onChange={(e) => modeChanged(e.target.checked ? "dark" : "light")}
         />
       </div>
       <div className="p8n-setting">
@@ -48,22 +42,18 @@ export default function NavBarContent({
         <Select<ThemeOption>
           variant="ghost"
           options={themeOptions}
-          value={theme}
+          value={themeName}
           onChange={(o) => {
-            setTheme(o.target.value as ThemeID);
+            nameChanged(o.target.value as ThemeID);
           }}
         ></Select>
       </div>
 
       <div className="h-1 flex-[0_0_0.25rem] mx-4 bg-gray-1 rounded-full relative"></div>
 
-      {themeCssValues &&
+      {themeCssVars &&
         (properties.length > 0 ? (
-          <Customizer
-            values={themeCssValues}
-            onChange={setThemeCssValues}
-            properties={properties}
-          />
+          <Customizer />
         ) : (
           <div className="mt-6 text-center">
             This Theme is not Customizable.

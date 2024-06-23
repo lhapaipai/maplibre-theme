@@ -1,34 +1,36 @@
+import { propertiesByTheme } from "../config/cssVars";
 import { settingEditors } from "../setting-editor";
-
-interface Props {
-  values: CssValues;
-  onChange: (values: CssValues) => void;
-  properties: Property[];
-}
+import { cssVarsChanged } from "../store/themeSlice";
+import { useAppSelector } from "../store";
+import { selectThemeCssVars, selectThemeName } from "../store/themeSlice";
 
 const modes: ("light" | "dark")[] = ["light", "dark"];
 
-export default function Customizer({ values, onChange, properties }: Props) {
+export default function Customizer() {
+  const themeName = useAppSelector(selectThemeName);
+  const properties = propertiesByTheme[themeName];
+  const themeCssVars = useAppSelector(selectThemeCssVars);
+
   function handleChange(
     name: string,
     updatedValue: string,
     mode: "light" | "dark"
   ) {
     if (mode === "light") {
-      onChange({
+      cssVarsChanged({
         light: {
-          ...values["light"],
+          ...themeCssVars["light"],
           [name]: updatedValue,
         },
-        dark: values["dark"],
+        dark: themeCssVars["dark"],
       });
     } else {
-      onChange({
+      cssVarsChanged({
         dark: {
-          ...values["dark"],
+          ...themeCssVars["dark"],
           [name]: updatedValue,
         },
-        light: values["light"],
+        light: themeCssVars["light"],
       });
     }
   }
@@ -43,7 +45,7 @@ export default function Customizer({ values, onChange, properties }: Props) {
             </h2>
             <div className="flex flex-col gap-2">
               {properties.map(({ type, name, options, description }) => {
-                const value = values[mode][name];
+                const value = themeCssVars[mode][name];
                 if (!value) {
                   return null;
                 }

@@ -3,22 +3,23 @@ import {
   ModalHeader,
 } from "pentatrion-design/components/modal";
 import { cssInJsToCss } from "../lib/css";
+import { useAppSelector } from "../store";
+import { selectThemeCssVars, selectThemeName } from "../store/themeSlice";
 
-interface Props {
-  theme: ThemeID;
-  themeCssValues: CssValues | null;
-}
-export default function ConfigPreview({ theme, themeCssValues }: Props) {
+export default function ConfigPreview() {
+  const themeName = useAppSelector(selectThemeName);
+  const themeCssVars = useAppSelector(selectThemeCssVars);
+
   const cssIconTheme =
-    themeCssValues?.light["--ml-font-icons"]?.substring(17) || "default";
+    themeCssVars?.light["--ml-font-icons"]?.substring(17) || "default";
 
   const jsCode = `import "maplibre-theme/icons.${cssIconTheme}.css";
-import "maplibre-theme/${theme}.css";
+import "maplibre-theme/${themeName}.css";
 `;
 
   const cssCode = cssInJsToCss({
-    ".maplibregl-map": themeCssValues?.light,
-    ".dark .maplibregl-map": themeCssValues?.dark,
+    ".maplibregl-map": themeCssVars?.light,
+    ".dark .maplibregl-map": themeCssVars?.dark,
   });
   console.log(cssCode);
   return (

@@ -15,18 +15,9 @@ import ConfigPreview from "./ConfigPreview";
 interface Props {
   showNavBar: boolean;
   setShowNavBar: Dispatch<SetStateAction<boolean>>;
-  theme: ThemeID;
-  themeCssValues: CssValues | null;
-
   children: ReactNode;
 }
-export default function NavBar({
-  showNavBar,
-  setShowNavBar,
-  children,
-  theme,
-  themeCssValues,
-}: Props) {
+export default function NavBar({ showNavBar, setShowNavBar, children }: Props) {
   return (
     <div
       id="menu-col"
@@ -70,7 +61,7 @@ export default function NavBar({
         <Modal>
           <ModalTrigger>Generate config</ModalTrigger>
           <ModalContent>
-            <ConfigPreview theme={theme} themeCssValues={themeCssValues} />
+            <ConfigPreview />
           </ModalContent>
         </Modal>
       </div>

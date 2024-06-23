@@ -1,19 +1,19 @@
-export function mergeCssValues(
-  cssValues: CssValues | null,
-  isDarkMode: boolean
+export function mergeCssVars(
+  cssVars: CssVars | null,
+  mode: Mode
 ): {
   [key: string]: string;
 } {
-  if (!cssValues) {
+  if (!cssVars) {
     return {};
   }
-  if (isDarkMode) {
+  if (mode === "dark") {
     return {
-      ...cssValues["light"],
-      ...cssValues["dark"],
+      ...cssVars["light"],
+      ...cssVars["dark"],
     };
   }
-  return cssValues["light"];
+  return cssVars["light"];
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,5 +1,5 @@
 type ThemeID = "modern" | "classic" | "legacy";
-
+type Mode = "light" | "dark";
 type SettingType = "color" | "font" | "number" | "select";
 
 type NumberOptions = {
@@ -47,7 +47,7 @@ type SettingComponentProps = {
       };
 };
 
-type CssValues = {
+type CssVars = {
   light: {
     [key: string]: string;
   };

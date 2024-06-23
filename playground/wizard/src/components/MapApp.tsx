@@ -13,6 +13,10 @@ import {
   RTerrainControl,
 } from "maplibre-react-components";
 import GeolocMockCtrl from "./GeolocMockCtrl";
+import { useAppSelector } from "../store";
+import { selectThemeCssVars, selectThemeName } from "../store/themeSlice";
+import { mergeCssVars } from "../lib/css";
+import { selectMode } from "../store/configSlice";
 const initialMapStyle: CSSProperties = {
   position: "absolute",
   top: 0,
@@ -20,11 +24,6 @@ const initialMapStyle: CSSProperties = {
   right: 0,
   bottom: 0,
 };
-
-interface Props {
-  theme: ThemeID;
-  style: CSSProperties;
-}
 
 const accuracyCircleStyle = {
   transform: "translate(-50%, -50%)",
@@ -46,7 +45,16 @@ const rasterDemTiles = [
   "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
 ];
 
-export default function MapApp({ theme, style }: Props) {
+export default function MapApp() {
+  const themeName = useAppSelector(selectThemeName);
+  const themeCssVars = useAppSelector(selectThemeCssVars);
+  const mode = useAppSelector(selectMode);
+
+  const style: CSSProperties = useMemo(
+    () => mergeCssVars(themeCssVars, mode),
+    [themeCssVars, mode]
+  );
+
   const mapStyle = useMemo(
     () => ({
       ...initialMapStyle,
@@ -58,7 +66,7 @@ export default function MapApp({ theme, style }: Props) {
   return (
     <RMap
       style={mapStyle}
-      className={`maplibregl-theme-${theme}`}
+      className={`maplibregl-theme-${themeName}`}
       mapStyle="/style.json"
       initialAttributionControl={false}
     >

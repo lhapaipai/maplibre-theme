@@ -11,13 +11,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.5",
     "@uiw/react-color-compact": "^2.3.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.395.0",
     "maplibre-react-components": "^0.0.7",
     "maplibre-theme": "workspace:^",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
