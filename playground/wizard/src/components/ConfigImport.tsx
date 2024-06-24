@@ -7,7 +7,7 @@ import {
 } from "pentatrion-design/components/modal";
 import { FormEvent, useState } from "react";
 import { parseStringAsJsonConfig } from "../lib/io";
-import { themeConfigChanged } from "../store/themeSlice";
+import { configChanged } from "../store/configSlice";
 import { useAppDispatch } from "../store";
 import style from "./ConfigModal.module.css";
 import { Textarea } from "pentatrion-design/components/textarea";
@@ -27,7 +27,7 @@ export default function ConfigImport() {
       return;
     }
 
-    dispatch(themeConfigChanged(config.theme));
+    dispatch(configChanged(config));
 
     setIsOpen(false);
   }
@@ -42,7 +42,7 @@ export default function ConfigImport() {
         >
           <header className="flex items-center px-2 pt-2">
             <h4 className="font-semibold leading-6">
-              <div className="ml-2">Import configuration</div>
+              <div className="ml-2">Import configuration as JSON content</div>
             </h4>
           </header>
           <Textarea className="m-2 flex-1" name="config"></Textarea>

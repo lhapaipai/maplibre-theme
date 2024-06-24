@@ -1,27 +1,22 @@
 import { cssInJsToCss } from "./css";
 
-export function generateJsCode(iconSet: IconSet, themeID: ThemeID) {
+export function generateJsCode(iconSet: IconSet, theme: Theme) {
   return `import "maplibre-theme/icons.${iconSet}.css";
-import "maplibre-theme/${themeID}.css";`;
+import "maplibre-theme/${theme}.css";`;
 }
 
-export function generateCssCode(themeCssVars: CssVars) {
+export function generateCssCode(cssVars: CssVars) {
   return cssInJsToCss({
-    ".maplibregl-map": themeCssVars?.light,
-    ".dark .maplibregl-map": themeCssVars?.dark,
+    ".maplibregl-map": cssVars?.light,
+    ".dark .maplibregl-map": cssVars?.dark,
   });
 }
 
-export function generateJsonCode(
-  themeID: ThemeID,
-  themeCssVars: CssVars
-): string {
+export function generateJsonCode(theme: Theme, cssVars: CssVars): string {
   return JSON.stringify(
     {
-      theme: {
-        id: themeID,
-        cssVars: themeCssVars,
-      },
+      theme,
+      cssVars,
     },
     undefined,
     2
@@ -37,17 +32,15 @@ export function parseStringAsJsonConfig(
   try {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const jsonData = JSON.parse(data) as any;
-    if (!jsonData.theme || !jsonData.theme.id || !jsonData.theme.cssVars) {
+    if (!jsonData.theme || !jsonData.cssVars) {
       return null;
     }
 
-    const { id, cssVars } = jsonData.theme;
+    const { theme, cssVars } = jsonData;
 
     return {
-      theme: {
-        id,
-        cssVars,
-      },
+      theme,
+      cssVars,
     };
   } catch (err) {
     return null;

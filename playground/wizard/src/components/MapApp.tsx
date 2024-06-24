@@ -14,9 +14,10 @@ import {
 } from "maplibre-react-components";
 import GeolocMockCtrl from "./GeolocMockCtrl";
 import { useAppSelector } from "../store";
-import { selectThemeCssVars, selectThemeID } from "../store/themeSlice";
+import { selectCssVars, selectTheme } from "../store/configSlice";
 import { mergeCssVars } from "../lib/css";
-import { selectMode } from "../store/configSlice";
+import { selectMode } from "../store/appSlice";
+
 const initialMapStyle: CSSProperties = {
   position: "absolute",
   top: 0,
@@ -46,13 +47,13 @@ const rasterDemTiles = [
 ];
 
 export default function MapApp() {
-  const themeID = useAppSelector(selectThemeID);
-  const themeCssVars = useAppSelector(selectThemeCssVars);
+  const theme = useAppSelector(selectTheme);
+  const cssVars = useAppSelector(selectCssVars);
   const mode = useAppSelector(selectMode);
 
   const style: CSSProperties = useMemo(
-    () => mergeCssVars(themeCssVars, mode),
-    [themeCssVars, mode]
+    () => mergeCssVars(cssVars, mode),
+    [cssVars, mode]
   );
 
   const mapStyle = useMemo(
@@ -66,7 +67,7 @@ export default function MapApp() {
   return (
     <RMap
       style={mapStyle}
-      className={`maplibregl-theme-${themeID}`}
+      className={`maplibregl-theme-${theme}`}
       mapStyle="/style.json"
       initialAttributionControl={false}
     >

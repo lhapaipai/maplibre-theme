@@ -1,11 +1,11 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import themeSlice from "./themeSlice";
+import appSlice from "./appSlice";
 import configSlice from "./configSlice";
 
 const store = configureStore({
   reducer: {
-    theme: themeSlice,
+    app: appSlice,
     config: configSlice,
   },
 });

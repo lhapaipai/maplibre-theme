@@ -1,16 +1,19 @@
 import { propertiesByTheme } from "../config/cssVars";
 import { settingEditors } from "../setting-editor";
-import { themeCssVarsChanged } from "../store/themeSlice";
+import {
+  cssVarsChanged,
+  selectCssVars,
+  selectTheme,
+} from "../store/configSlice";
 import { useAppDispatch, useAppSelector } from "../store";
-import { selectThemeCssVars, selectThemeID } from "../store/themeSlice";
 
 const modes: ("light" | "dark")[] = ["light", "dark"];
 
 export default function Customizer() {
   const dispatch = useAppDispatch();
-  const themeID = useAppSelector(selectThemeID);
-  const properties = propertiesByTheme[themeID];
-  const themeCssVars = useAppSelector(selectThemeCssVars);
+  const theme = useAppSelector(selectTheme);
+  const properties = propertiesByTheme[theme];
+  const cssVars = useAppSelector(selectCssVars);
 
   function handleChange(
     name: string,
@@ -19,22 +22,22 @@ export default function Customizer() {
   ) {
     if (mode === "light") {
       dispatch(
-        themeCssVarsChanged({
+        cssVarsChanged({
           light: {
-            ...themeCssVars["light"],
+            ...cssVars["light"],
             [name]: updatedValue,
           },
-          dark: themeCssVars["dark"],
+          dark: cssVars["dark"],
         })
       );
     } else {
       dispatch(
-        themeCssVarsChanged({
+        cssVarsChanged({
           dark: {
-            ...themeCssVars["dark"],
+            ...cssVars["dark"],
             [name]: updatedValue,
           },
-          light: themeCssVars["light"],
+          light: cssVars["light"],
         })
       );
     }
@@ -50,7 +53,7 @@ export default function Customizer() {
             </h2>
             <div className="flex flex-col gap-2">
               {properties.map(({ type, name, options, description }) => {
-                const value = themeCssVars[mode][name];
+                const value = cssVars[mode][name];
                 if (!value) {
                   return null;
                 }

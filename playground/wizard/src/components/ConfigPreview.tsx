@@ -8,7 +8,7 @@ import style from "./ConfigModal.module.css";
 
 import { extractIconSet } from "../lib/css";
 import { useAppSelector } from "../store";
-import { selectThemeCssVars, selectThemeID } from "../store/themeSlice";
+import { selectCssVars, selectTheme } from "../store/configSlice";
 import { generateCssCode, generateJsCode, generateJsonCode } from "../lib/io";
 import { Tab, Tabs } from "pentatrion-design/components/tabs/Tabs";
 import { useState } from "react";
@@ -18,12 +18,12 @@ import clsx from "clsx";
 export default function ConfigPreview() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const themeID = useAppSelector(selectThemeID);
-  const themeCssVars = useAppSelector(selectThemeCssVars);
+  const theme = useAppSelector(selectTheme);
+  const cssVars = useAppSelector(selectCssVars);
 
-  const iconSet = extractIconSet(themeCssVars);
+  const iconSet = extractIconSet(cssVars);
 
-  const [id, setId] = useState<string | number>("css");
+  const [tabId, setTabId] = useState<string | number>("css");
 
   const tabs: Tab[] = [
     {
@@ -33,13 +33,13 @@ export default function ConfigPreview() {
         <div className="flex-1 flex flex-col">
           <p>Add this lines into your js code</p>
           <Textarea
-            value={generateJsCode(iconSet, themeID)}
+            value={generateJsCode(iconSet, theme)}
             readOnly
             className="h-16"
           />
           <p>Add this rules into your css code</p>
           <Textarea
-            value={generateCssCode(themeCssVars)}
+            value={generateCssCode(cssVars)}
             readOnly
             className="flex-1"
           />
@@ -52,7 +52,7 @@ export default function ConfigPreview() {
       content: (
         <div className="p-4 flex-1 flex flex-col">
           <Textarea
-            value={generateJsonCode(themeID, themeCssVars)}
+            value={generateJsonCode(theme, cssVars)}
             readOnly
             className="flex-1"
           />
@@ -67,8 +67,8 @@ export default function ConfigPreview() {
       <ModalContent className={style.modal}>
         <Tabs
           tabs={tabs}
-          value={id}
-          onChange={setId}
+          value={tabId}
+          onChange={setTabId}
           fullWidth={true}
           className={clsx("rounded-2xl", style.tabs)}
         >

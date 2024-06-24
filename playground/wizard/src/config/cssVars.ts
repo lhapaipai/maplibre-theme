@@ -12,7 +12,7 @@ const iconOptions: SelectOptions = [
 ];
 
 export const cssDefaultValuesByTheme: {
-  [key in ThemeID]: CssVars;
+  [key in Theme]: CssVars;
 } = {
   legacy: {
     light: {},
@@ -99,7 +99,7 @@ export const cssDefaultValuesByTheme: {
 };
 
 export const propertiesByTheme: {
-  [key in ThemeID]: Property[];
+  [key in Theme]: Property[];
 } = {
   modern: [
     {

@@ -3,15 +3,11 @@ import { Select } from "pentatrion-design/components/select";
 import Customizer from "./Customizer";
 import { propertiesByTheme } from "../config/cssVars";
 import { useAppDispatch, useAppSelector } from "../store";
-import {
-  themeIdChanged,
-  selectThemeCssVars,
-  selectThemeID,
-} from "../store/themeSlice";
-import { modeChanged, selectMode } from "../store/configSlice";
+import { themeChanged, selectCssVars, selectTheme } from "../store/configSlice";
+import { selectMode, modeChangedAction } from "../store/appSlice";
 
 type ThemeOption = {
-  value: ThemeID;
+  value: Theme;
   label: string;
 };
 
@@ -23,11 +19,11 @@ const themeOptions: ThemeOption[] = [
 
 export default function NavBarContent() {
   const dispatch = useAppDispatch();
-  const themeID = useAppSelector(selectThemeID);
-  const themeCssVars = useAppSelector(selectThemeCssVars);
+  const theme = useAppSelector(selectTheme);
+  const cssVars = useAppSelector(selectCssVars);
   const mode = useAppSelector(selectMode);
 
-  const properties = propertiesByTheme[themeID];
+  const properties = propertiesByTheme[theme];
 
   return (
     <div className="flex flex-col gap-2 flex-1 p-2">
@@ -36,7 +32,7 @@ export default function NavBarContent() {
         <Toggle
           checked={mode === "dark"}
           onChange={(e) =>
-            dispatch(modeChanged(e.target.checked ? "dark" : "light"))
+            dispatch(modeChangedAction(e.target.checked ? "dark" : "light"))
           }
         />
       </div>
@@ -45,16 +41,16 @@ export default function NavBarContent() {
         <Select<ThemeOption>
           variant="ghost"
           options={themeOptions}
-          value={themeID}
+          value={theme}
           onChange={(o) => {
-            themeIdChanged(o.target.value as ThemeID);
+            themeChanged(o.target.value as Theme);
           }}
         ></Select>
       </div>
 
       <div className="h-1 flex-[0_0_0.25rem] mx-4 bg-gray-1 rounded-full relative"></div>
 
-      {themeCssVars &&
+      {cssVars &&
         (properties.length > 0 ? (
           <Customizer />
         ) : (
