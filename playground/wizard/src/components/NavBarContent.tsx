@@ -43,7 +43,7 @@ export default function NavBarContent() {
           options={themeOptions}
           value={theme}
           onChange={(o) => {
-            themeChanged(o.target.value as Theme);
+            dispatch(themeChanged(o.target.value as Theme));
           }}
         ></Select>
       </div>
