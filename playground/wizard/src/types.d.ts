@@ -59,5 +59,6 @@ type CssVars = {
 
 type JsonConfig = {
   theme: Theme;
+  icons: IconSet;
   cssVars: CssVars;
 };

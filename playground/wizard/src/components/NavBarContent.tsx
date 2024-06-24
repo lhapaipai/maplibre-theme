@@ -1,9 +1,9 @@
 import { Toggle } from "pentatrion-design/components/input/Toggle";
-import { Select } from "pentatrion-design/components/select";
+import { type Option, Select } from "pentatrion-design/components/select";
 import Customizer from "./Customizer";
 import { propertiesByTheme } from "../config/cssVars";
 import { useAppDispatch, useAppSelector } from "../store";
-import { themeChanged, selectCssVars, selectTheme } from "../store/configSlice";
+import { themeChanged, iconsChanged, selectConfig } from "../store/configSlice";
 import { selectMode, modeChangedAction } from "../store/appSlice";
 
 type ThemeOption = {
@@ -17,10 +17,21 @@ const themeOptions: ThemeOption[] = [
   { value: "modern", label: "Modern" },
 ];
 
+const iconOptions: Option[] = [
+  {
+    label: "Default",
+    value: "default",
+  },
+  {
+    label: "Lucide",
+    value: "lucide",
+  },
+];
+
 export default function NavBarContent() {
   const dispatch = useAppDispatch();
-  const theme = useAppSelector(selectTheme);
-  const cssVars = useAppSelector(selectCssVars);
+  const { theme, icons, cssVars } = useAppSelector(selectConfig);
+
   const mode = useAppSelector(selectMode);
 
   const properties = propertiesByTheme[theme];
@@ -47,7 +58,17 @@ export default function NavBarContent() {
           }}
         ></Select>
       </div>
-
+      <div className="p8n-setting">
+        <div>Icons</div>
+        <Select
+          variant="ghost"
+          options={iconOptions}
+          value={icons}
+          onChange={(o) => {
+            dispatch(iconsChanged(o.target.value as IconSet));
+          }}
+        ></Select>
+      </div>
       <div className="h-1 flex-[0_0_0.25rem] mx-4 bg-gray-1 rounded-full relative"></div>
 
       {cssVars &&

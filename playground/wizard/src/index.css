@@ -34,3 +34,7 @@ body,
 [data-floating-ui-portal] [role="dialog"] {
   min-width: 16rem;
 }
+
+.z-notification {
+  z-index: 200;
+}

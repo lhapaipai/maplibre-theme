@@ -5,17 +5,25 @@ export function generateJsCode(iconSet: IconSet, theme: Theme) {
 import "maplibre-theme/${theme}.css";`;
 }
 
-export function generateCssCode(cssVars: CssVars) {
+export function generateCssCode(icons: IconSet, cssVars: CssVars) {
   return cssInJsToCss({
-    ".maplibregl-map": cssVars?.light,
+    ".maplibregl-map": {
+      ...cssVars?.light,
+      "--ml-font-icons": `maplibregl-icons-${icons}`,
+    },
     ".dark .maplibregl-map": cssVars?.dark,
   });
 }
 
-export function generateJsonCode(theme: Theme, cssVars: CssVars): string {
+export function generateJsonCode(
+  theme: Theme,
+  icons: IconSet,
+  cssVars: CssVars
+): string {
   return JSON.stringify(
     {
       theme,
+      icons,
       cssVars,
     },
     undefined,
@@ -32,14 +40,15 @@ export function parseStringAsJsonConfig(
   try {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const jsonData = JSON.parse(data) as any;
-    if (!jsonData.theme || !jsonData.cssVars) {
+    if (!jsonData.theme || !jsonData.icons || !jsonData.cssVars) {
       return null;
     }
 
-    const { theme, cssVars } = jsonData;
+    const { theme, icons, cssVars } = jsonData;
 
     return {
       theme,
+      icons,
       cssVars,
     };
   } catch (err) {

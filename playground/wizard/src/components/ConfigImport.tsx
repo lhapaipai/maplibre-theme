@@ -11,10 +11,12 @@ import { configChanged } from "../store/configSlice";
 import { useAppDispatch } from "../store";
 import style from "./ConfigModal.module.css";
 import { Textarea } from "pentatrion-design/components/textarea";
+import { useReduxNotifications } from "pentatrion-design/redux";
 
 export default function ConfigImport() {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useAppDispatch();
+  const { notify } = useReduxNotifications();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     const formElement = e.target as HTMLFormElement;
@@ -22,8 +24,13 @@ export default function ConfigImport() {
     const strConfig = new FormData(formElement).get("config");
 
     const config = parseStringAsJsonConfig(strConfig);
-    console.log("my config", config);
     if (!config) {
+      notify(
+        "Unable to parse configuration, verify your content is a valid JSON content.",
+        {
+          color: "red",
+        }
+      );
       return;
     }
 

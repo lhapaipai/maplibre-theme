@@ -14,7 +14,7 @@ import {
 } from "maplibre-react-components";
 import GeolocMockCtrl from "./GeolocMockCtrl";
 import { useAppSelector } from "../store";
-import { selectCssVars, selectTheme } from "../store/configSlice";
+import { selectConfig } from "../store/configSlice";
 import { mergeCssVars } from "../lib/css";
 import { selectMode } from "../store/appSlice";
 
@@ -47,13 +47,12 @@ const rasterDemTiles = [
 ];
 
 export default function MapApp() {
-  const theme = useAppSelector(selectTheme);
-  const cssVars = useAppSelector(selectCssVars);
   const mode = useAppSelector(selectMode);
+  const { theme, icons, cssVars } = useAppSelector(selectConfig);
 
   const style: CSSProperties = useMemo(
-    () => mergeCssVars(cssVars, mode),
-    [cssVars, mode]
+    () => mergeCssVars(cssVars, mode, icons),
+    [cssVars, mode, icons]
   );
 
   const mapStyle = useMemo(

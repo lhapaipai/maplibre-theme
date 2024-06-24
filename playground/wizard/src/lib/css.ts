@@ -1,6 +1,7 @@
 export function mergeCssVars(
   cssVars: CssVars | null,
-  mode: Mode
+  mode: Mode,
+  icons: IconSet
 ): {
   [key: string]: string;
 } {
@@ -11,9 +12,13 @@ export function mergeCssVars(
     return {
       ...cssVars["light"],
       ...cssVars["dark"],
+      "--ml-font-icons": `maplibregl-icons-${icons}`,
     };
   }
-  return cssVars["light"];
+  return {
+    ...cssVars["light"],
+    "--ml-font-icons": `maplibregl-icons-${icons}`,
+  };
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
