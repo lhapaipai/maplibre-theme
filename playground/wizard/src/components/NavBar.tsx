@@ -5,12 +5,8 @@ import { Button, LinkButton } from "pentatrion-design/components/button";
 
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import { Scroll } from "pentatrion-design/components/scroll";
-import {
-  Modal,
-  ModalTrigger,
-  ModalContent,
-} from "pentatrion-design/components/modal";
 import ConfigPreview from "./ConfigPreview";
+import ConfigImport from "./ConfigImport";
 
 interface Props {
   showNavBar: boolean;
@@ -57,13 +53,9 @@ export default function NavBar({ showNavBar, setShowNavBar, children }: Props) {
         </div>
       </header>
       <Scroll className="flex-1 overflow-y-auto">{children}</Scroll>
-      <div className="flex items-center justify-end p-4">
-        <Modal>
-          <ModalTrigger>Generate config</ModalTrigger>
-          <ModalContent>
-            <ConfigPreview />
-          </ModalContent>
-        </Modal>
+      <div className="flex items-center justify-between p-4">
+        <ConfigImport />
+        <ConfigPreview />
       </div>
       <div className="flex items-center justify-center h-12">
         <LinkButton

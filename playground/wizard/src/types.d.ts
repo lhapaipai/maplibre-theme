@@ -1,4 +1,5 @@
 type ThemeID = "modern" | "classic" | "legacy";
+type IconSet = "default" | "lucide";
 type Mode = "light" | "dark";
 type SettingType = "color" | "font" | "number" | "select";
 
@@ -53,5 +54,12 @@ type CssVars = {
   };
   dark: {
     [key: string]: string;
+  };
+};
+
+type JsonConfig = {
+  theme: {
+    id: ThemeID;
+    cssVars: CssVars;
   };
 };

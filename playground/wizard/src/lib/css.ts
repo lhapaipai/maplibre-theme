@@ -32,3 +32,10 @@ export function cssInJsToCss(json: any) {
     })
     .join("\n");
 }
+
+export function extractIconSet(themeCssVars: CssVars): IconSet {
+  return (
+    (themeCssVars?.light["--ml-font-icons"]?.substring(17) as IconSet) ||
+    "default"
+  );
+}

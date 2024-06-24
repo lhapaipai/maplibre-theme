@@ -1,14 +1,15 @@
 import { propertiesByTheme } from "../config/cssVars";
 import { settingEditors } from "../setting-editor";
-import { cssVarsChanged } from "../store/themeSlice";
-import { useAppSelector } from "../store";
-import { selectThemeCssVars, selectThemeName } from "../store/themeSlice";
+import { themeCssVarsChanged } from "../store/themeSlice";
+import { useAppDispatch, useAppSelector } from "../store";
+import { selectThemeCssVars, selectThemeID } from "../store/themeSlice";
 
 const modes: ("light" | "dark")[] = ["light", "dark"];
 
 export default function Customizer() {
-  const themeName = useAppSelector(selectThemeName);
-  const properties = propertiesByTheme[themeName];
+  const dispatch = useAppDispatch();
+  const themeID = useAppSelector(selectThemeID);
+  const properties = propertiesByTheme[themeID];
   const themeCssVars = useAppSelector(selectThemeCssVars);
 
   function handleChange(
@@ -17,21 +18,25 @@ export default function Customizer() {
     mode: "light" | "dark"
   ) {
     if (mode === "light") {
-      cssVarsChanged({
-        light: {
-          ...themeCssVars["light"],
-          [name]: updatedValue,
-        },
-        dark: themeCssVars["dark"],
-      });
+      dispatch(
+        themeCssVarsChanged({
+          light: {
+            ...themeCssVars["light"],
+            [name]: updatedValue,
+          },
+          dark: themeCssVars["dark"],
+        })
+      );
     } else {
-      cssVarsChanged({
-        dark: {
-          ...themeCssVars["dark"],
-          [name]: updatedValue,
-        },
-        light: themeCssVars["light"],
-      });
+      dispatch(
+        themeCssVarsChanged({
+          dark: {
+            ...themeCssVars["dark"],
+            [name]: updatedValue,
+          },
+          light: themeCssVars["light"],
+        })
+      );
     }
   }
 

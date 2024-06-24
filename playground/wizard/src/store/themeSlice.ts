@@ -3,12 +3,12 @@ import { cssDefaultValuesByTheme } from "../config/cssVars";
 import { type RootState } from ".";
 
 type ThemeState = {
-  name: ThemeID;
+  id: ThemeID;
   cssVars: CssVars;
 };
 
 const initialState: ThemeState = {
-  name: "modern",
+  id: "modern",
   cssVars: cssDefaultValuesByTheme["modern"],
 };
 
@@ -16,23 +16,29 @@ const themeSlice = createSlice({
   name: "theme",
   initialState,
   reducers: {
-    nameChanged(state, action: PayloadAction<ThemeID>) {
+    themeIdChanged(state, action: PayloadAction<ThemeID>) {
       // TODO verify is required
-      if (state.name !== action.payload) {
-        const newTheme = action.payload;
-        state.name = newTheme;
-        state.cssVars = cssDefaultValuesByTheme[newTheme];
+      if (state.id !== action.payload) {
+        const newID = action.payload;
+        state.id = newID;
+        state.cssVars = cssDefaultValuesByTheme[newID];
       }
     },
-    cssVarsChanged(state, action: PayloadAction<CssVars>) {
+    themeCssVarsChanged(state, action: PayloadAction<CssVars>) {
       state.cssVars = action.payload;
+    },
+    themeConfigChanged(state, action: PayloadAction<JsonConfig["theme"]>) {
+      const { id, cssVars } = action.payload;
+      state.id = id;
+      state.cssVars = cssVars;
     },
   },
 });
 
 export default themeSlice.reducer;
 
-export const { nameChanged, cssVarsChanged } = themeSlice.actions;
+export const { themeIdChanged, themeCssVarsChanged, themeConfigChanged } =
+  themeSlice.actions;
 
-export const selectThemeName = (state: RootState) => state.theme.name;
+export const selectThemeID = (state: RootState) => state.theme.id;
 export const selectThemeCssVars = (state: RootState) => state.theme.cssVars;

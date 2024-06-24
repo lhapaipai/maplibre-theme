@@ -1,44 +1,87 @@
 import {
-  ModalDescription,
-  ModalHeader,
+  Modal,
+  ModalTrigger,
+  ModalContent,
 } from "pentatrion-design/components/modal";
-import { cssInJsToCss } from "../lib/css";
+import { Textarea } from "pentatrion-design/components/textarea";
+import style from "./ConfigModal.module.css";
+
+import { extractIconSet } from "../lib/css";
 import { useAppSelector } from "../store";
-import { selectThemeCssVars, selectThemeName } from "../store/themeSlice";
+import { selectThemeCssVars, selectThemeID } from "../store/themeSlice";
+import { generateCssCode, generateJsCode, generateJsonCode } from "../lib/io";
+import { Tab, Tabs } from "pentatrion-design/components/tabs/Tabs";
+import { useState } from "react";
+import { Button } from "pentatrion-design/components/button";
+import clsx from "clsx";
 
 export default function ConfigPreview() {
-  const themeName = useAppSelector(selectThemeName);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const themeID = useAppSelector(selectThemeID);
   const themeCssVars = useAppSelector(selectThemeCssVars);
 
-  const cssIconTheme =
-    themeCssVars?.light["--ml-font-icons"]?.substring(17) || "default";
+  const iconSet = extractIconSet(themeCssVars);
 
-  const jsCode = `import "maplibre-theme/icons.${cssIconTheme}.css";
-import "maplibre-theme/${themeName}.css";
-`;
+  const [id, setId] = useState<string | number>("css");
 
-  const cssCode = cssInJsToCss({
-    ".maplibregl-map": themeCssVars?.light,
-    ".dark .maplibregl-map": themeCssVars?.dark,
-  });
-  console.log(cssCode);
-  return (
-    <>
-      <ModalHeader>
-        <div className="ml-4">Configuration</div>
-      </ModalHeader>
-      <ModalDescription>
-        <div className="p-4">
+  const tabs: Tab[] = [
+    {
+      id: "css",
+      title: "CSS Export",
+      content: (
+        <div className="flex-1 flex flex-col">
           <p>Add this lines into your js code</p>
-          <pre className="text-sm shadow-inner overflow-x-auto p-4 rounded bg-gray-1">
-            <code>{jsCode}</code>
-          </pre>
+          <Textarea
+            value={generateJsCode(iconSet, themeID)}
+            readOnly
+            className="h-16"
+          />
           <p>Add this rules into your css code</p>
-          <pre className="h-72 text-sm overflow-x-auto overflow-y-auto shadow-inner p-4 rounded bg-gray-1">
-            <code>{cssCode}</code>
-          </pre>
+          <Textarea
+            value={generateCssCode(themeCssVars)}
+            readOnly
+            className="flex-1"
+          />
         </div>
-      </ModalDescription>
-    </>
+      ),
+    },
+    {
+      id: "json",
+      title: "JSON Export",
+      content: (
+        <div className="p-4 flex-1 flex flex-col">
+          <Textarea
+            value={generateJsonCode(themeID, themeCssVars)}
+            readOnly
+            className="flex-1"
+          />
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <Modal open={isOpen} onOpen={setIsOpen}>
+      <ModalTrigger>Generate config</ModalTrigger>
+      <ModalContent className={style.modal}>
+        <Tabs
+          tabs={tabs}
+          value={id}
+          onChange={setId}
+          fullWidth={true}
+          className={clsx("rounded-2xl", style.tabs)}
+        >
+          <Button
+            icon
+            variant="text"
+            color="gray"
+            onClick={() => setIsOpen(false)}
+          >
+            <i className="fe-cancel"></i>
+          </Button>
+        </Tabs>
+      </ModalContent>
+    </Modal>
   );
 }

@@ -2,11 +2,11 @@ import { Toggle } from "pentatrion-design/components/input/Toggle";
 import { Select } from "pentatrion-design/components/select";
 import Customizer from "./Customizer";
 import { propertiesByTheme } from "../config/cssVars";
-import { useAppSelector } from "../store";
+import { useAppDispatch, useAppSelector } from "../store";
 import {
-  nameChanged,
+  themeIdChanged,
   selectThemeCssVars,
-  selectThemeName,
+  selectThemeID,
 } from "../store/themeSlice";
 import { modeChanged, selectMode } from "../store/configSlice";
 
@@ -22,11 +22,12 @@ const themeOptions: ThemeOption[] = [
 ];
 
 export default function NavBarContent() {
-  const themeName = useAppSelector(selectThemeName);
+  const dispatch = useAppDispatch();
+  const themeID = useAppSelector(selectThemeID);
   const themeCssVars = useAppSelector(selectThemeCssVars);
   const mode = useAppSelector(selectMode);
 
-  const properties = propertiesByTheme[themeName];
+  const properties = propertiesByTheme[themeID];
 
   return (
     <div className="flex flex-col gap-2 flex-1 p-2">
@@ -34,7 +35,9 @@ export default function NavBarContent() {
         <div>Dark mode</div>
         <Toggle
           checked={mode === "dark"}
-          onChange={(e) => modeChanged(e.target.checked ? "dark" : "light")}
+          onChange={(e) =>
+            dispatch(modeChanged(e.target.checked ? "dark" : "light"))
+          }
         />
       </div>
       <div className="p8n-setting">
@@ -42,9 +45,9 @@ export default function NavBarContent() {
         <Select<ThemeOption>
           variant="ghost"
           options={themeOptions}
-          value={themeName}
+          value={themeID}
           onChange={(o) => {
-            nameChanged(o.target.value as ThemeID);
+            themeIdChanged(o.target.value as ThemeID);
           }}
         ></Select>
       </div>
