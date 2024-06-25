@@ -70,6 +70,10 @@ List of available CSS files to import. (see [Scoped themes](#scoped-themes) sect
     ├── classic.scoped.css (21 ko)
     ├── modern.scoped.css (22 ko)
     |
+    | // maplibre-theme compatible plugin stylesheets
+    ├── plugins
+    |   └── mapbox-gl-draw.css
+    |
     | // for special use cases
     └── extra
         ├── classic.compat.css
@@ -338,6 +342,9 @@ import "maplibre-theme/icons.default.css";
 // use this instead
 import "maplibre-theme/extra/modern.compat.css";
 
+// because you probably need to copy-paste this stylesheet to adapt to your use case
+// (difference between version you use, etc...)
+// this stylesheet is not minified.
 import "maplibre-theme/plugins/mapbox-gl-draw.css";
 ```
 
