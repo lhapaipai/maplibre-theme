@@ -41,3 +41,21 @@ a.maplibregl-ctrl-logo::before {
   display: inline-block;
   text-align: center;
 }
+
+.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
+.maplibregl-ctrl
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon::after,
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+  width: 22.5px;
+  height: 22.5px;
+
+  font-size: 18px;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1.25em;
+}
+
+.maplibregl-ctrl button svg {
+  width: 22.5px;
+  height: 22.5px;
+}

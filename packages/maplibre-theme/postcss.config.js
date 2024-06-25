@@ -28,8 +28,6 @@ const config = (ctx) => {
         prefix: "",
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         transform(prefix, selector, _prefixedSelector, filePath, _rule) {
-          const contexts = ctx.env?.split("-") ?? [];
-
           let updatedSelector = selector;
 
           if (isScoped) {

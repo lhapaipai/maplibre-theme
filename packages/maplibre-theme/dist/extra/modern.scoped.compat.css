@@ -462,27 +462,12 @@
 }
 
 .maplibregl-theme-modern :is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
   position: relative;
   box-shadow: var(--ml-ring-shadow-active, 0 0 #0000);
-}
-
-.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) .maplibregl-ctrl-attrib-button::before,
-.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button .maplibregl-ctrl-icon::before,
-.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl)
-  button.maplibregl-ctrl-geolocate:disabled
-  .maplibregl-ctrl-icon::after,
-.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
-  /* = 25px */
-  width: 1.563rem;
-  height: 1.563rem;
-  /* opacity: .8; */
-
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1.25em;
-
-  font-size: 1.25rem;
 }
 
 .maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button:not(:disabled):hover,
@@ -492,10 +477,12 @@
 }
 
 /**
- * needed for mapboxgl-draw
+ * needed 
+ * .active -> mapboxgl-draw
+ * .-active -> https://github.com/korywka/mapbox-controls
  */
 
-.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button:not(:disabled).active {
+.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button:not(:disabled):is(.active, .-active) {
   color: rgb(var(--ml-c-active));
 }
 
@@ -524,13 +511,6 @@
   --ml-ring-shadow-active: 0 0 #0000;
 }
 
-.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button .maplibregl-ctrl-icon {
-  display: grid;
-  place-content: center;
-  width: 100%;
-  height: 100%;
-}
-
 @media (forced-colors: active) {
   .maplibregl-theme-modern .maplibregl-ctrl-icon {
     background-color: transparent;
@@ -548,7 +528,7 @@
   cursor: not-allowed;
 }
 
-.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button:disabled .maplibregl-ctrl-icon::before {
+.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button:disabled :is(.maplibregl-ctrl-icon::before, svg) {
   opacity: var(--ml-o-disabled);
 }
 
@@ -594,6 +574,28 @@
 
   display: inline-block;
   text-align: center;
+}
+
+.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) .maplibregl-ctrl-attrib-button::before,
+.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button .maplibregl-ctrl-icon::before,
+.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl)
+  button.maplibregl-ctrl-geolocate:disabled
+  .maplibregl-ctrl-icon::after,
+.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+  /* = 25px */
+  width: 1.563rem;
+  height: 1.563rem;
+  /* opacity: .8; */
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1.25em;
+
+  font-size: 1.25rem;
+}
+
+.maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl) button svg {
+  width: 1.563rem;
+  height: 1.563rem;
 }
 
 .maplibregl-theme-modern :is(.maplibregl-ctrl, .mapboxgl-ctrl).maplibregl-ctrl-attrib {
