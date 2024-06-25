@@ -1,5 +1,5 @@
 import ColorPicker from "../components/ColorPicker";
-import { hexToRgb, rgbToHex } from "../lib/color";
+import { colorNameByCode, hexToRgb, rgbToHex } from "../lib/color";
 
 export default function ColorSetting({
   name,
@@ -16,10 +16,15 @@ export default function ColorSetting({
   return (
     <div className="p8n-setting">
       <div>{name}</div>
+      {value && (
+        <div className="text-gray-6 text-sm">
+          {colorNameByCode[hex]?.join(" ") || `rgb(${value})`}
+        </div>
+      )}
       <ColorPicker
         value={hex}
-        onChange={(e) => {
-          const updatedValue = hexToRgb(e.target.value).join(" ");
+        onChange={(newValue) => {
+          const updatedValue = hexToRgb(newValue).join(" ");
           if (updatedValue !== value && typeof updatedValue === "string") {
             onChange(name, updatedValue);
           }

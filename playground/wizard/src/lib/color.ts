@@ -1,3 +1,5 @@
+import rawColors from "tailwindcss/colors";
+
 export function hexToRgb(hex: string): [number, number, number] {
   if (!/^#([0-9A-Fa-f]{3}){1,2}$/.test(hex)) {
     throw new Error("Invalid hex color");
@@ -36,3 +38,33 @@ export function rgbToHex(rgb: [number, number, number]): string {
 
   return hexColor;
 }
+
+export const colorByGroups = Object.entries(rawColors)
+  .filter(
+    ([name, colorGroup]) =>
+      // blueGray === slate
+      // coolGray === gray
+      // neutral === trueGray
+      // stone === warmGray
+      // ski === lightBlue
+      typeof colorGroup !== "string" &&
+      !["blueGray", "coolGray", "trueGray", "warmGray", "lightBlue"].includes(
+        name
+      )
+  )
+  .map(([name, colorGroup]) => ({
+    name,
+    colors: Object.entries(colorGroup) as [string, string][],
+  }));
+
+export const colorNameByCode: {
+  [key: string]: [string, string];
+} = {};
+
+colorByGroups.map(({ name, colors }) => {
+  colors.forEach(([colorNumber, colorCode]) => {
+    colorNameByCode[colorCode] = [name, colorNumber];
+  });
+});
+
+console.log(colorNameByCode);

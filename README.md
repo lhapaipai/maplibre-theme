@@ -8,10 +8,19 @@ this themes are designed to mimic the actual theme with some improvements.
 - support dark mode
 - support CSS variables for easy optimisation.
 - possibility to use another icon set for your buttons
+- compat mode to support `.mapboxgl-ctrl` and `.mapboxgl-ctrl-group` classes.
 
-See a [Demo](https://maplibre-theme.pentatrion.com/).
+See a demo with [MapLibre theme customizer](https://maplibre-theme.pentatrion.com/).
+
+<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/theme-customizer.png" alt="MapLibre Theme customizer" />
+
+This custimizer can be used in different ways. test how this package works, create your own theme and see the associated configuration.
+
+> [!IMPORTANT]
+> if you have created a nice theme from the customizer and you want to share it, export it in JSON format, open a github issue with the content of the JSON, it will be added as a preset.
 
 Compatibility : `maplibre-gl` >= 1.15
+
 
 ## Installation
 

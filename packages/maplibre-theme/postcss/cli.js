@@ -11,14 +11,13 @@ const pluginsDir = resolve(projectDir, "src/plugins");
 const themesDir = resolve(projectDir, "src/themes");
 const iconsDir = resolve(projectDir, "src/icons");
 
-const debug = true;
-
 const [env, action, ctx] = process.argv.slice(2);
 
 const ctxArr = ctx?.split(",") || [];
 
 const isScoped = ctxArr.includes("scoped");
 const isCompat = ctxArr.includes("compat");
+const isDebug = ctxArr.includes("debug");
 
 const argts = [];
 const sources = [];
@@ -60,7 +59,7 @@ if (exts.length > 0) {
 }
 
 const postcssCtx = [...ctxArr];
-if (action !== "plugins" && !debug) {
+if (action !== "plugins" && !isDebug) {
   postcssCtx.push("minify");
 }
 
