@@ -327,7 +327,13 @@ this special files create stylesheets with scoped themes and MapBox compatible. 
 
 ## MapLibre Plugins
 
-Some MapLibre compatible theme are adapted to be compatible with MapLibre Theme.
+This section gives you some tips for integrating MapLibre plugins with your theme.
+
+note: if the plugin was originally designed for MapBox you may encounter problems with the hard-coded classes `mapbox-ctrl` and `mapboxgl-ctrl-group` see section above.
+
+you will also find in the `maplibre-theme/plugins` directory style sheets in the name of your plugin which will replace the plugin style sheet.
+
+**Be lenient MapLibre theme is not intended to provide the perfect style sheet for your use case**. you will definitely need to refactor the css depending on the version of the plugin you are using. I can advise you to copy and paste this style sheet into your project and use it as a basis for work. This is why plugin stylesheets are not minified.
 
 ### Mapbox GL Draw
 
