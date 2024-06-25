@@ -14,8 +14,7 @@ import "maplibre-theme/extra/classic.scoped.compat.css";
 import "maplibre-theme/extra/modern.scoped.compat.css";
 import "maplibre-theme/extra/legacy.scoped.compat.css";
 
-// import "maplibre-theme/extra/modern.compat.css";
-// import "maplibre-theme/extra/classic.compat.css";
+import "maplibre-theme/plugins/mapbox-gl-draw.css";
 
 import { NotificationConsumer } from "pentatrion-design/redux";
 

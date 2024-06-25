@@ -1,0 +1,82 @@
+@import "../icons/mapbox-gl-draw/index.css";
+
+.mapbox-gl-draw_point::before,
+.mapbox-gl-draw_polygon::before,
+.mapbox-gl-draw_line::before,
+.mapbox-gl-draw_trash::before,
+.mapbox-gl-draw_uncombine::before,
+.mapbox-gl-draw_combine::before {
+  font-family: "maplibregl-icons-mapbox-gl-draw";
+  width: 1.563rem;
+  height: 1.563rem;
+
+  line-height: 1.25em;
+
+  font-size: 1.25rem;
+}
+
+.mapbox-gl-draw_point::before {
+  content: "\e802";
+}
+.mapbox-gl-draw_polygon::before {
+  content: "\e803";
+}
+.mapbox-gl-draw_line::before {
+  content: "\e801";
+}
+.mapbox-gl-draw_trash::before {
+  content: "\e804";
+}
+.mapbox-gl-draw_uncombine::before {
+  content: "\e805";
+}
+.mapbox-gl-draw_combine::before {
+  content: "\e800";
+}
+
+.maplibregl-map.mouse-pointer
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: pointer;
+}
+.maplibregl-map.mouse-move .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: move;
+}
+.maplibregl-map.mouse-add .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: crosshair;
+}
+.maplibregl-map.mouse-move.mode-direct_select
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+.maplibregl-map.mode-direct_select.feature-vertex.mouse-move
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: move;
+}
+.maplibregl-map.mode-direct_select.feature-midpoint.mouse-pointer
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: cell;
+}
+.maplibregl-map.mode-direct_select.feature-feature.mouse-move
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: move;
+}
+.maplibregl-map.mode-static.mouse-pointer
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.mapbox-gl-draw_boxselect {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px dotted #fff;
+  opacity: 0.5;
+}

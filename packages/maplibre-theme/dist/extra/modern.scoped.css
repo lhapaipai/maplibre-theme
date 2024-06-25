@@ -35,14 +35,6 @@
   transform: translate(0, 0);
 }
 
-.maplibregl-theme-modern .maplibregl-ctrl {
-  clear: both;
-  pointer-events: auto;
-
-  /* workaround for a Safari bug https://github.com/mapbox/mapbox-gl-js/issues/8185 */
-  transform: translate(0, 0);
-}
-
 @media screen {
   .maplibregl-theme-modern .maplibregl-ctrl-attrib.maplibregl-compact-show {
     visibility: visible;
@@ -497,6 +489,14 @@
 .maplibregl-theme-modern .maplibregl-ctrl-attrib-button:not(:disabled):hover {
   background-color: rgb(var(--ml-c-bg-2));
   color: rgb(var(--ml-c-icon-2));
+}
+
+/**
+ * needed for mapboxgl-draw
+ */
+
+.maplibregl-theme-modern .maplibregl-ctrl button:not(:disabled).active {
+  color: rgb(var(--ml-c-active));
 }
 
 .maplibregl-theme-modern .maplibregl-ctrl button:not(:disabled):active,

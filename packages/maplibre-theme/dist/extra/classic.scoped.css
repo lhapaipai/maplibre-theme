@@ -35,14 +35,6 @@
   transform: translate(0, 0);
 }
 
-.maplibregl-theme-classic .maplibregl-ctrl {
-  clear: both;
-  pointer-events: auto;
-
-  /* workaround for a Safari bug https://github.com/mapbox/mapbox-gl-js/issues/8185 */
-  transform: translate(0, 0);
-}
-
 @media screen {
   .maplibregl-theme-classic .maplibregl-ctrl-attrib.maplibregl-compact-show {
     visibility: visible;
@@ -430,21 +422,6 @@
   }
 }
 
-.maplibregl-theme-classic .maplibregl-ctrl-group {
-  border-radius: var(--ml-ctrl-border-radius);
-  background: rgb(var(--ml-c-bg-1));
-}
-
-.maplibregl-theme-classic .maplibregl-ctrl-group:not(:empty) {
-  box-shadow: var(--ml-shadow-ctrl);
-}
-
-@media (forced-colors: active) {
-  .maplibregl-theme-classic .maplibregl-ctrl-group:not(:empty) {
-    box-shadow: 0 0 0 2px ButtonText;
-  }
-}
-
 .maplibregl-theme-classic .maplibregl-ctrl-group button + button {
   border-top: 1px solid rgb(var(--ml-c-bg-3));
 }
@@ -543,6 +520,14 @@
 .maplibregl-theme-classic .maplibregl-ctrl button:not(:disabled):hover,
 .maplibregl-theme-classic .maplibregl-ctrl-attrib-button:not(:disabled):hover {
   background-color: rgb(var(--ml-c-bg-2));
+}
+
+/**
+ * needed for mapboxgl-draw
+ */
+
+.maplibregl-theme-classic .maplibregl-ctrl button:not(:disabled).active {
+  color: rgb(var(--ml-c-active));
 }
 
 .maplibregl-theme-classic .maplibregl-ctrl button:not(:disabled):active,

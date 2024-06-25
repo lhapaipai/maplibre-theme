@@ -74,6 +74,12 @@
 .maplibregl-ctrl-attrib-button:not(:disabled):hover {
   background-color: rgb(var(--ml-c-bg-2));
 }
+/**
+ * needed for mapboxgl-draw
+ */
+.maplibregl-ctrl button:not(:disabled).active {
+  color: rgb(var(--ml-c-active));
+}
 
 .maplibregl-ctrl button:not(:disabled):active,
 .maplibregl-ctrl-attrib-button:not(:disabled):active {

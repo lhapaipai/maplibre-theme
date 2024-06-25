@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "maplibregl-icons-mapbox-gl-draw";
+  src: url("data:font/woff2;charset=utf-8;base64,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");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.mapbox-gl-draw_point::before,
+.mapbox-gl-draw_polygon::before,
+.mapbox-gl-draw_line::before,
+.mapbox-gl-draw_trash::before,
+.mapbox-gl-draw_uncombine::before,
+.mapbox-gl-draw_combine::before {
+  font-family: "maplibregl-icons-mapbox-gl-draw";
+  width: 1.563rem;
+  height: 1.563rem;
+
+  line-height: 1.25em;
+
+  font-size: 1.25rem;
+}
+
+.mapbox-gl-draw_point::before {
+  content: "\e802";
+}
+
+.mapbox-gl-draw_polygon::before {
+  content: "\e803";
+}
+
+.mapbox-gl-draw_line::before {
+  content: "\e801";
+}
+
+.mapbox-gl-draw_trash::before {
+  content: "\e804";
+}
+
+.mapbox-gl-draw_uncombine::before {
+  content: "\e805";
+}
+
+.mapbox-gl-draw_combine::before {
+  content: "\e800";
+}
+
+.maplibregl-map.mouse-pointer
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: pointer;
+}
+
+.maplibregl-map.mouse-move .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: move;
+}
+
+.maplibregl-map.mouse-add .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: crosshair;
+}
+
+.maplibregl-map.mouse-move.mode-direct_select
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+.maplibregl-map.mode-direct_select.feature-vertex.mouse-move
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: move;
+}
+
+.maplibregl-map.mode-direct_select.feature-midpoint.mouse-pointer
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: cell;
+}
+
+.maplibregl-map.mode-direct_select.feature-feature.mouse-move
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: move;
+}
+
+.maplibregl-map.mode-static.mouse-pointer
+  .maplibregl-canvas-container.maplibregl-interactive {
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+.mapbox-gl-draw_boxselect {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px dotted #fff;
+  opacity: 0.5;
+}

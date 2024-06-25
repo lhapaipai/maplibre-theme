@@ -320,6 +320,28 @@ this special files create stylesheets with scoped themes and MapBox compatible. 
 + import "maplibre-theme/extra/modern.scoped.compat.css"
 ```
 
+
+## MapLibre Plugins
+
+Some MapLibre compatible theme are adapted to be compatible with MapLibre Theme.
+
+### Mapbox GL Draw
+
+as this plugin comes from MapBox you will need to use the associated `compat` theme
+
+```js
+import "maplibre-theme/icons.default.css";
+
+// don't use
+// import "maplibre-theme/modern.css";
+
+// use this instead
+import "maplibre-theme/extra/modern.compat.css";
+
+import "maplibre-theme/plugins/mapbox-gl-draw.css";
+```
+
+
 ## Create your own Theme
 
 To facilitate the creation of themes for MapLibre, the main style sheet has been split into several files. vital css rules vs default style related rules.

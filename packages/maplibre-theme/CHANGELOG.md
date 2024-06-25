@@ -1,3 +1,8 @@
+## 0.0.13
+
+- add compatibility mode with MapBox for `ctrl`, `ctrl-group`.
+- example compatibility mode with MapBox GL Draw.
+
 ## 0.0.12
 
 - add lucide icon set

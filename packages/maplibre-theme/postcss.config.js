@@ -10,8 +10,12 @@ import { scope, mapboxCompat } from "./postcss/util.js";
 const projectDir = dirname(fileURLToPath(import.meta.url));
 
 const config = (ctx) => {
-  const scoped = ctx.env === "scoped";
-  const compat = ctx.env === "compat";
+  const contexts = ctx.env?.split(",") ?? [];
+
+  const isScoped = contexts.includes("scoped");
+  const isCompat = contexts.includes("compat");
+  const withMinification = contexts.includes("minify");
+
   return {
     plugins: [
       postcssImport(),
@@ -28,11 +32,11 @@ const config = (ctx) => {
 
           let updatedSelector = selector;
 
-          if (contexts.includes("scoped")) {
+          if (isScoped) {
             updatedSelector = scope(updatedSelector, filePath);
           }
 
-          if (contexts.includes("compat")) {
+          if (isCompat) {
             updatedSelector = mapboxCompat(updatedSelector);
           }
 
@@ -41,25 +45,27 @@ const config = (ctx) => {
       }),
 
       autoprefixer(),
-      cssnanoPlugin({
-        preset: [
-          "default",
-          {
-            svgo: {
-              plugins: [
-                {
-                  name: "preset-default",
-                  params: {
-                    overrides: {
-                      removeViewBox: false,
+
+      withMinification &&
+        cssnanoPlugin({
+          preset: [
+            "default",
+            {
+              svgo: {
+                plugins: [
+                  {
+                    name: "preset-default",
+                    params: {
+                      overrides: {
+                        removeViewBox: false,
+                      },
                     },
                   },
-                },
-              ],
+                ],
+              },
             },
-          },
-        ],
-      }),
+          ],
+        }),
     ],
   };
 };
