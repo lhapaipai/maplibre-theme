@@ -263,6 +263,10 @@ new Map({
 </html>
 ```
 
+## Compat mode
+
+since MapLibre has removed `mapboxgl-css` classes ([#1575](https://github.com/maplibre/maplibre-gl-js/pull/1575/files)) some plugins may not works. This is not the only reason why a plugin is not compatible but it can contribute to it
+
 If you want to overwrite CSS vars add the theme specific class name to your selector.
 
 ```css

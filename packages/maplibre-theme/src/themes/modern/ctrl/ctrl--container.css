@@ -17,3 +17,18 @@
   margin: 0 0.5rem 0.5rem 0;
   float: right;
 }
+
+.maplibregl-ctrl-group {
+  border-radius: var(--ml-ctrl-border-radius);
+  background: rgb(var(--ml-c-bg-1));
+}
+
+.maplibregl-ctrl-group:not(:empty) {
+  box-shadow: var(--ml-shadow);
+}
+
+@media (forced-colors: active) {
+  .maplibregl-ctrl-group:not(:empty) {
+    box-shadow: 0 0 0 2px ButtonText;
+  }
+}

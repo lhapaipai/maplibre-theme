@@ -9,9 +9,14 @@ import "./index.css";
 
 import "maplibre-theme/icons.default.css";
 import "maplibre-theme/icons.lucide.css";
-import "maplibre-theme/classic.scoped.css";
-import "maplibre-theme/modern.scoped.css";
-import "maplibre-theme/legacy.scoped.css";
+
+import "maplibre-theme/extra/classic.scoped.compat.css";
+import "maplibre-theme/extra/modern.scoped.compat.css";
+import "maplibre-theme/extra/legacy.scoped.compat.css";
+
+// import "maplibre-theme/extra/modern.compat.css";
+// import "maplibre-theme/extra/classic.compat.css";
+
 import { NotificationConsumer } from "pentatrion-design/redux";
 
 const strict = false;

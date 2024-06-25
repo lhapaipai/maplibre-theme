@@ -2,7 +2,7 @@
 
 @import "./container.css";
 
-@import "./ctrl/ctrl--base.css";
+@import "./ctrl/ctrl--container.css";
 @import "./ctrl/ctrl--components.css";
 @import "./ctrl/ctrl-attrib.postcss";
 @import "./ctrl/ctrl-fullscreen.postcss";

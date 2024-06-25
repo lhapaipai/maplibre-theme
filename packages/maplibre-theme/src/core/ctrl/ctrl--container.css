@@ -1,0 +1,7 @@
+.maplibregl-ctrl {
+  clear: both;
+  pointer-events: auto;
+
+  /* workaround for a Safari bug https://github.com/mapbox/mapbox-gl-js/issues/8185 */
+  transform: translate(0, 0);
+}

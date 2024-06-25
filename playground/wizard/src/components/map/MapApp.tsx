@@ -13,10 +13,11 @@ import {
   RTerrainControl,
 } from "maplibre-react-components";
 import GeolocMockCtrl from "./GeolocMockCtrl";
-import { useAppSelector } from "../store";
-import { selectConfig } from "../store/configSlice";
-import { mergeCssVars } from "../lib/css";
-import { selectMode } from "../store/appSlice";
+import { useAppSelector } from "~/store";
+import { selectConfig } from "~/store/configSlice";
+import { mergeCssVars } from "~/lib/css";
+import { selectMode } from "~/store/appSlice";
+import RMapboxDraw from "./RMapboxDraw";
 
 const initialMapStyle: CSSProperties = {
   position: "absolute",
@@ -118,7 +119,7 @@ export default function MapApp() {
         Hello world !
         <button className="maplibregl-popup-close-button">×</button>
       </RPopup>
-
+      <RMapboxDraw />
       <RFullscreenControl />
       <RGeolocateControl
         showAccuracyCircle={true}

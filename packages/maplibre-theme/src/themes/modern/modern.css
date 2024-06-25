@@ -5,7 +5,7 @@
 
 @import "./container.css";
 
-@import "./ctrl/ctrl--base.css";
+@import "./ctrl/ctrl--container.css";
 @import "./ctrl/ctrl--components.css";
 @import "./ctrl/ctrl--button.css";
 @import "./ctrl/ctrl--icons.css";

@@ -27,7 +27,7 @@
   bottom: 0;
 }
 
-.maplibregl-ctrl {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) {
   clear: both;
   pointer-events: auto;
 
@@ -35,7 +35,7 @@
   transform: translate(0, 0);
 }
 
-.maplibregl-ctrl {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) {
   clear: both;
   pointer-events: auto;
 
@@ -86,12 +86,12 @@
   z-index: 99999;
 }
 
-.maplibregl-ctrl-group button.maplibregl-ctrl-compass {
+:is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) button.maplibregl-ctrl-compass {
   touch-action: none;
 }
 
 .maplibregl-canvas-container.maplibregl-interactive,
-.maplibregl-ctrl-group button.maplibregl-ctrl-compass {
+:is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) button.maplibregl-ctrl-compass {
   cursor: grab;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -99,7 +99,7 @@
 }
 
 .maplibregl-canvas-container.maplibregl-interactive:active,
-.maplibregl-ctrl-group button.maplibregl-ctrl-compass:active {
+:is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) button.maplibregl-ctrl-compass:active {
   cursor: grabbing;
 }
 
@@ -396,64 +396,64 @@
   /* color: rgb(var(--ml-c-icon-1)); */
 }
 
-.maplibregl-ctrl-top-left .maplibregl-ctrl {
+.maplibregl-ctrl-top-left :is(.maplibregl-ctrl, .mapboxgl-ctrl) {
   margin: 0.5rem 0 0 0.5rem;
   float: left;
 }
 
-.maplibregl-ctrl-top-right .maplibregl-ctrl {
+.maplibregl-ctrl-top-right :is(.maplibregl-ctrl, .mapboxgl-ctrl) {
   margin: 0.5rem 0.5rem 0 0;
   float: right;
 }
 
-.maplibregl-ctrl-bottom-left .maplibregl-ctrl {
+.maplibregl-ctrl-bottom-left :is(.maplibregl-ctrl, .mapboxgl-ctrl) {
   margin: 0 0 0.5rem 0.5rem;
   float: left;
 }
 
-.maplibregl-ctrl-bottom-right .maplibregl-ctrl {
+.maplibregl-ctrl-bottom-right :is(.maplibregl-ctrl, .mapboxgl-ctrl) {
   margin: 0 0.5rem 0.5rem 0;
   float: right;
 }
 
-.maplibregl-ctrl-group {
+:is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) {
   border-radius: var(--ml-ctrl-border-radius);
   background: rgb(var(--ml-c-bg-1));
 }
 
-.maplibregl-ctrl-group:not(:empty) {
+:is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group):not(:empty) {
   box-shadow: var(--ml-shadow);
 }
 
 @media (forced-colors: active) {
-  .maplibregl-ctrl-group:not(:empty) {
+  :is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group):not(:empty) {
     box-shadow: 0 0 0 2px ButtonText;
   }
 }
 
-.maplibregl-ctrl-group button + button {
+:is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) button + button {
   border-top: 1px solid rgb(var(--ml-c-bg-3));
 }
 
 @media (forced-colors: active) {
-  .maplibregl-ctrl-group button + button {
+  :is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) button + button {
     border-top: 1px solid ButtonText;
   }
 }
 
-.maplibregl-ctrl-group button:first-child {
+:is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) button:first-child {
   border-radius: var(--ml-ctrl-border-radius) var(--ml-ctrl-border-radius) 0 0;
 }
 
-.maplibregl-ctrl-group button:last-child {
+:is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) button:last-child {
   border-radius: 0 0 var(--ml-ctrl-border-radius) var(--ml-ctrl-border-radius);
 }
 
-.maplibregl-ctrl-group button:only-child {
+:is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) button:only-child {
   border-radius: inherit;
 }
 
-.maplibregl-ctrl button,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button,
 .maplibregl-ctrl-attrib-button {
   width: 2rem;
   height: 2rem;
@@ -469,19 +469,19 @@
   transition-duration: 0.3s;
 }
 
-.maplibregl-ctrl-group button {
+:is(.maplibregl-ctrl-group, .mapboxgl-ctrl-group) button {
   display: block;
   background-color: transparent;
   position: relative;
   box-shadow: var(--ml-ring-shadow-active, 0 0 #0000);
 }
 
-.maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
-.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) .maplibregl-ctrl-attrib-button::before,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button .maplibregl-ctrl-icon::before,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate:disabled
   .maplibregl-ctrl-icon::after,
-.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
   /* = 25px */
   width: 1.563rem;
   height: 1.563rem;
@@ -493,38 +493,38 @@
   font-size: 1.25rem;
 }
 
-.maplibregl-ctrl button:not(:disabled):hover,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button:not(:disabled):hover,
 .maplibregl-ctrl-attrib-button:not(:disabled):hover {
   background-color: rgb(var(--ml-c-bg-2));
   color: rgb(var(--ml-c-icon-2));
 }
 
-.maplibregl-ctrl button:not(:disabled):active,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button:not(:disabled):active,
 .maplibregl-ctrl-attrib-button:not(:disabled):active {
   background-color: rgb(var(--ml-c-bg-3));
   box-shadow: var(--ml-ring-shadow-active, 0 0 #0000), var(--ml-shadow-active);
 }
 
-.maplibregl-ctrl button:focus,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button:focus,
 .maplibregl-ctrl-attrib-button:focus {
   --ml-ring-shadow-active: var(--ml-ring-shadow);
 }
 
-.maplibregl-ctrl button:focus {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button:focus {
   z-index: 2;
 }
 
-.maplibregl-ctrl button:focus:focus-visible,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button:focus:focus-visible,
 .maplibregl-ctrl-attrib-button:focus:focus-visible {
   --ml-ring-shadow-active: var(--ml-ring-shadow);
 }
 
-.maplibregl-ctrl button:focus:not(:focus-visible),
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button:focus:not(:focus-visible),
 .maplibregl-ctrl-attrib-button:focus:not(:focus-visible) {
   --ml-ring-shadow-active: 0 0 #0000;
 }
 
-.maplibregl-ctrl button .maplibregl-ctrl-icon {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button .maplibregl-ctrl-icon {
   display: grid;
   place-content: center;
   width: 100%;
@@ -539,26 +539,26 @@
 
 /* https://bugzilla.mozilla.org/show_bug.cgi?id=140562 */
 
-.maplibregl-ctrl button::-moz-focus-inner {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-.maplibregl-ctrl button:disabled {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button:disabled {
   cursor: not-allowed;
 }
 
-.maplibregl-ctrl button:disabled .maplibregl-ctrl-icon::before {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button:disabled .maplibregl-ctrl-icon::before {
   opacity: var(--ml-o-disabled);
 }
 
 a.maplibregl-ctrl-logo::before,
-.maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
-.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) .maplibregl-ctrl-attrib-button::before,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button .maplibregl-ctrl-icon::before,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate:disabled
   .maplibregl-ctrl-icon::after,
-.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -570,12 +570,12 @@ a.maplibregl-ctrl-logo::before,
   text-decoration: inherit;
 }
 
-.maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
-.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) .maplibregl-ctrl-attrib-button::before,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button .maplibregl-ctrl-icon::before,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate:disabled
   .maplibregl-ctrl-icon::after,
-.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
   font-family: var(--ml-font-icons);
 }
 
@@ -583,12 +583,12 @@ a.maplibregl-ctrl-logo::before {
   font-family: maplibregl-icons-core;
 }
 
-.maplibregl-ctrl .maplibregl-ctrl-attrib-button::before,
-.maplibregl-ctrl button .maplibregl-ctrl-icon::before,
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) .maplibregl-ctrl-attrib-button::before,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button .maplibregl-ctrl-icon::before,
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate:disabled
   .maplibregl-ctrl-icon::after,
-.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
   font-style: normal;
   font-weight: normal;
 
@@ -596,7 +596,7 @@ a.maplibregl-ctrl-logo::before {
   text-align: center;
 }
 
-.maplibregl-ctrl.maplibregl-ctrl-attrib {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl).maplibregl-ctrl-attrib {
   background-color: rgb(var(--ml-c-bg-1) / 65%);
   min-height: 2rem;
   margin: 0;
@@ -677,11 +677,11 @@ a.maplibregl-ctrl-logo::before {
   display: none;
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-fullscreen .maplibregl-ctrl-icon::before {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-fullscreen .maplibregl-ctrl-icon::before {
   content: "\e80b";
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-shrink .maplibregl-ctrl-icon::before {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-shrink .maplibregl-ctrl-icon::before {
   content: "\e80f";
 }
 
@@ -745,13 +745,13 @@ a.maplibregl-ctrl-logo::before {
   border-radius: 100%;
 }
 
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate
   .maplibregl-ctrl-icon::before {
   content: "\e80c";
 }
 
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate:disabled
   .maplibregl-ctrl-icon::after {
   content: "\e80e";
@@ -762,35 +762,35 @@ a.maplibregl-ctrl-logo::before {
   transform: translate(-50%, calc(-50% - 1px));
 }
 
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-active
   .maplibregl-ctrl-icon::before {
   content: "\e80c";
   color: rgb(var(--ml-c-active));
 }
 
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-active-error
   .maplibregl-ctrl-icon::before {
   content: "\e80c";
   color: rgb(var(--ml-c-error));
 }
 
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-background
   .maplibregl-ctrl-icon::before {
   content: "\e80d";
   color: rgb(var(--ml-c-active));
 }
 
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-background-error
   .maplibregl-ctrl-icon::before {
   content: "\e80d";
   color: rgb(var(--ml-c-error));
 }
 
-.maplibregl-ctrl
+:is(.maplibregl-ctrl, .mapboxgl-ctrl)
   button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-waiting
   .maplibregl-ctrl-icon::before {
   animation: maplibregl-spin 2s infinite linear;
@@ -848,19 +848,19 @@ a.maplibregl-ctrl-logo.maplibregl-compact::before {
   content: "\e813";
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon::before {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon::before {
   content: "-";
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon::before {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon::before {
   content: "+";
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::before {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::before {
   content: "\e809";
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
   color: rgb(var(--ml-c-bg-3));
   content: "\e80a";
   position: absolute;
@@ -882,11 +882,11 @@ a.maplibregl-ctrl-logo.maplibregl-compact::before {
   border-bottom-right-radius: 4px;
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-terrain .maplibregl-ctrl-icon::before {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-terrain .maplibregl-ctrl-icon::before {
   content: "\e810";
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-terrain-enabled .maplibregl-ctrl-icon::before {
+:is(.maplibregl-ctrl, .mapboxgl-ctrl) button.maplibregl-ctrl-terrain-enabled .maplibregl-ctrl-icon::before {
   color: rgb(var(--ml-c-active));
   content: "\e810";
 }

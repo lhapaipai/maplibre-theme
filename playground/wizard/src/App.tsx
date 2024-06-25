@@ -1,7 +1,7 @@
 import { Button } from "pentatrion-design/components/button";
 
 import { useState } from "react";
-import MapApp from "./components/MapApp";
+import MapApp from "./components/map/MapApp";
 import NavBar from "./components/NavBar";
 import NavBarContent from "./components/NavBarContent";
 

@@ -4,12 +4,14 @@ import prefixer from "postcss-prefix-selector";
 import postcssInlineSvg from "postcss-inline-svg";
 import postcssImport from "postcss-import";
 import postcssInlineBase64 from "postcss-inline-base64";
-import { dirname, basename } from "node:path";
+import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { scope, mapboxCompat } from "./postcss/util.js";
 const projectDir = dirname(fileURLToPath(import.meta.url));
 
 const config = (ctx) => {
   const scoped = ctx.env === "scoped";
+  const compat = ctx.env === "compat";
   return {
     plugins: [
       postcssImport(),
@@ -18,32 +20,25 @@ const config = (ctx) => {
       }),
       postcssInlineSvg(),
 
-      scoped &&
-        prefixer({
-          prefix: "",
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          transform(prefix, selector, _prefixedSelector, filePath, _rule) {
-            const entryName = basename(filePath, ".css");
-            const themeClassName = `.maplibregl-theme-${entryName}`;
+      prefixer({
+        prefix: "",
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        transform(prefix, selector, _prefixedSelector, filePath, _rule) {
+          const contexts = ctx.env?.split("-") ?? [];
 
-            if (entryName === "core" || selector.includes(themeClassName)) {
-              return selector;
-            }
-            /* todo difference with ":root,\n .dark" ? */
-            if (selector === ":root") {
-              return themeClassName;
-            }
-            if (selector === ".dark") {
-              return `.dark ${themeClassName}`;
-            }
+          let updatedSelector = selector;
 
-            if (selector.startsWith(".maplibregl-map")) {
-              return `${themeClassName}${selector}`;
-            }
+          if (contexts.includes("scoped")) {
+            updatedSelector = scope(updatedSelector, filePath);
+          }
 
-            return `${themeClassName} ${selector}`;
-          },
-        }),
+          if (contexts.includes("compat")) {
+            updatedSelector = mapboxCompat(updatedSelector);
+          }
+
+          return updatedSelector;
+        },
+      }),
 
       autoprefixer(),
       cssnanoPlugin({

@@ -70,12 +70,19 @@ List of available CSS files to import. (see [Scoped themes](#scoped-themes) sect
     ├── classic.scoped.css (21 ko)
     ├── modern.scoped.css (22 ko)
     |
-    | // for developpers only
-    ├── legacy.css (66 ko)
-    ├── legacy.scoped.css (70 ko)
-    ├── core.css (5 ko)
-    └── core.scoped.css (5 ko)
+    | // for special use cases
+    └── extra
+        ├── classic.compat.css
+        ├── classic.scoped.css
+        ├── classic.scoped.compat.css
+        ├── modern.compat.css
+        ├── modern.scoped.css
+        ├── modern.scoped.compat.css
+        ├── legacy.compat.css
+        ├── legacy.scoped.css
+        └── legacy.scoped.compat.css
 ```
+
 
 ## Theme modern
 
@@ -262,13 +269,55 @@ new Map({
   </body>
 </html>
 ```
-
-If you want to overwrite CSS vars add the theme specific class name to your selector.
-
 ```css
 .maplibregl-map.maplibregl-theme-classic {
   --ml-ctrl-border-radius: 4px;
 }
+```
+
+## MapBox compatible mode
+
+since MapLibre has removed `mapboxgl-css` classes ([#1575](https://github.com/maplibre/maplibre-gl-js/pull/1575/files)) some MapBox plugins may display poorly on your map and therefore with your theme. (note we will talk about css incompatibilities here, there may also be some related to js features and they will not be covered here)
+
+It is especially when the `.maplibregl-ctrl` and `.maplibregl-ctrl-group` classes are hardcoded in the js.
+
+You can try this special `<theme-name>.compat.css` themes which will replace your usual import.
+
+Note: These special stylesheets don't do magic, they help with compatibility with your theme when the plugin has hard coded in the JavaScript classnames associated with MapBox (`.mapboxgl-ctrl`, `.mapboxgl-ctrl-group`).
+It will then be necessary to make the stylesheet produced by the plugin compatible but this step is easy to carry out.
+
+### `xxx.compat.css`
+
+```diff
+- import "maplibre-theme/modern.css"
++ import "maplibre-theme/extra/modern.compat.css"
+```
+
+here is what this style sheet is responsible for doing
+
+```diff
+- .maplibregl-ctrl {
++ :is(.maplibregl-ctrl, .mapboxgl-ctrl) {
+  clear: both;
+  pointer-events: auto;
+
+  /* workaround for a Safari bug https://github.com/mapbox/mapbox-gl-js/issues/8185 */
+  transform: translate(0, 0);
+}
+
+- .maplibregl-map .maplibregl-ctrl-group button + button {
++ .maplibregl-map :is(.maplibregl-ctrl, .mapboxgl-ctrl) button + button {
+  border-top: 1px solid rgb(var(--ml-c-bg-3));
+}
+```
+
+### `xxx.scoped.compat.css`
+
+this special files create stylesheets with scoped themes and MapBox compatible. These special themes which will replace your usual import.
+
+```diff
+- import "maplibre-theme/modern.css"
++ import "maplibre-theme/extra/modern.scoped.compat.css"
 ```
 
 ## Create your own Theme

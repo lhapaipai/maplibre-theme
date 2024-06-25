@@ -5,11 +5,13 @@
   "description": "CSS Themes for your Maplibre GL Js Web app",
   "type": "module",
   "scripts": {
-    "dev": "postcss --watch -d dist src/core.css src/themes/legacy/legacy.css src/themes/classic/classic.css src/themes/modern/modern.css --ext .scoped.css --env scoped",
-    "build:scoped": "postcss -d dist src/core.css src/themes/legacy/legacy.css src/themes/classic/classic.css src/themes/modern/modern.css --ext .scoped.css --env scoped",
-    "build:base": "postcss -d dist src/core.css src/themes/legacy/legacy.css src/themes/classic/classic.css src/themes/modern/modern.css --env base",
-    "build:icons": "postcss -d dist src/icons/default/icons.default.css src/icons/lucide/icons.lucide.css --env base",
-    "build": "pnpm build:scoped && pnpm build:base && pnpm build:icons && node generate-public-package.js",
+    "dev": "postcss --watch -d dist/extra src/themes/legacy/legacy.css src/themes/modern/modern.css src/themes/classic/classic.css --ext .scoped.compat.css --env scoped-compat",
+    "build:scoped": "postcss -d dist/extra src/core.css src/themes/legacy/legacy.css src/themes/classic/classic.css src/themes/modern/modern.css --ext .scoped.css --env scoped",
+    "build:compat": "postcss -d dist/extra src/themes/legacy/legacy.css src/themes/modern/modern.css src/themes/classic/classic.css --ext .compat.css --env compat",
+    "build:scoped:compat": "postcss -d dist/extra src/themes/legacy/legacy.css src/themes/modern/modern.css src/themes/classic/classic.css --ext .scoped.compat.css --env scoped-compat",
+    "build:default": "postcss -d dist src/themes/legacy/legacy.css src/themes/classic/classic.css src/themes/modern/modern.css",
+    "build:icons": "postcss -d dist src/icons/default/icons.default.css src/icons/lucide/icons.lucide.css",
+    "build": "pnpm build:default && pnpm build:scoped && pnpm build:compat && pnpm build:scoped:compat && pnpm build:icons && node generate-public-package.js",
     "fontello:default": "fontello -c src/icons/default/config.json",
     "fontello:lucide": "fontello -c src/icons/lucide/config.json",
     "fontello:core": "fontello -c src/icons/core/config.json"
@@ -26,6 +28,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
     "cssnano": "^7.0.2",
     "fontello-cli": "workspace:^",
     "postcss": "^8.4.38",
@@ -33,6 +36,7 @@
     "postcss-import": "^16.1.0",
     "postcss-inline-base64": "^7.3.1",
     "postcss-inline-svg": "^6.0.0",
-    "postcss-prefix-selector": "^1.16.1"
+    "postcss-prefix-selector": "^1.16.1",
+    "vitest": "^1.6.0"
   }
 }
