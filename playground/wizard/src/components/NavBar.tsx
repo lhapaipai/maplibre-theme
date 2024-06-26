@@ -7,6 +7,7 @@ import { Dispatch, ReactNode, SetStateAction } from "react";
 import { Scroll } from "pentatrion-design/components/scroll";
 import ConfigPreview from "./ConfigPreview";
 import ConfigImport from "./ConfigImport";
+import { version } from "~/../package.json";
 
 interface Props {
   showNavBar: boolean;
@@ -24,23 +25,27 @@ export default function NavBar({ showNavBar, setShowNavBar, children }: Props) {
     >
       <ResizeArea name="menu" position="right" className="hidden md:block" />
       <header className="h-8 flex items-center m-2 justify-between">
-        <a
-          href="https://maplibre.org"
-          className="block w-full [&:hover_.libre]:text-[#285DAA]"
-        >
-          <h1 className="flex items-center justify-between">
+        <h1 className="flex items-center justify-between relative w-full">
+          <a
+            href="https://maplibre.org"
+            className=" [&:hover_.libre]:text-[#285DAA]"
+          >
             <span className=" text-2xl app-logo">
               Map
               <span className="libre transition-colors text-[#82b4fe]">
                 Libre
               </span>
             </span>
-            <span className="text-gray-6 hidden md:block">
+          </a>
+
+          <span className="text-gray-6 hidden md:flex flex-col">
+            <span>
               <i className="fe-sliders"></i>
               Theme customizer
             </span>
-          </h1>
-        </a>
+            <span className="text-xs absolute top-3/4 right-0">{version}</span>
+          </span>
+        </h1>
         <div className="md:hidden">
           <Button
             icon

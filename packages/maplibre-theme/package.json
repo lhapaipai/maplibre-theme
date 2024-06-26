@@ -29,7 +29,7 @@
     "maplibre"
   ],
   "author": "Hugues Tavernier",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "concurrently": "^8.2.2",

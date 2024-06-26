@@ -1,5 +1,5 @@
 import { Button } from "pentatrion-design/components/button";
-import { Color } from "pentatrion-design/components/input";
+import { Color } from "./Color";
 import { useState } from "react";
 import {
   Modal,
