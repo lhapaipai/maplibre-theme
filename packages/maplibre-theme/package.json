@@ -15,10 +15,7 @@
     "build:icons": "node postcss/cli.js build icons",
     "build:plugins": "node postcss/cli.js build plugins",
     "build": "pnpm build:themes && pnpm build:themes:scoped && pnpm build:themes:compat && pnpm build:themes:scoped:compat && pnpm build:icons && pnpm build:plugins && node generate-public-package.js",
-    "fontello:mapbox-gl-draw": "fontello -c src/icons/mapbox-gl-draw/config.json",
-    "fontello:default": "fontello -c src/icons/default/config.json",
-    "fontello:lucide": "fontello -c src/icons/lucide/config.json",
-    "fontello:core": "fontello -c src/icons/core/config.json"
+    "fontello": "fontello"
   },
   "repository": {
     "type": "git",
@@ -35,6 +32,7 @@
     "concurrently": "^8.2.2",
     "cssnano": "^7.0.2",
     "fontello-cli": "workspace:^",
+    "pentatrion-fontello-cli": "^0.0.5",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0",

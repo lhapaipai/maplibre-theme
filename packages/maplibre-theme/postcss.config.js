@@ -3,11 +3,7 @@ import cssnanoPlugin from "cssnano";
 import prefixer from "postcss-prefix-selector";
 import postcssInlineSvg from "postcss-inline-svg";
 import postcssImport from "postcss-import";
-import postcssInlineBase64 from "postcss-inline-base64";
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
 import { scope, mapboxCompat } from "./postcss/util.js";
-const projectDir = dirname(fileURLToPath(import.meta.url));
 
 const config = (ctx) => {
   const contexts = ctx.env?.split(",") ?? [];
@@ -19,9 +15,6 @@ const config = (ctx) => {
   return {
     plugins: [
       postcssImport(),
-      postcssInlineBase64({
-        baseDir: projectDir,
-      }),
       postcssInlineSvg(),
 
       prefixer({
@@ -46,23 +39,7 @@ const config = (ctx) => {
 
       withMinification &&
         cssnanoPlugin({
-          preset: [
-            "default",
-            {
-              svgo: {
-                plugins: [
-                  {
-                    name: "preset-default",
-                    params: {
-                      overrides: {
-                        removeViewBox: false,
-                      },
-                    },
-                  },
-                ],
-              },
-            },
-          ],
+          preset: ["default"],
         }),
     ],
   };

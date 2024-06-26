@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "{{FONT_FAMILY}}";
+  src: url("{{URL_DATA}}");
+  font-weight: normal;
+  font-style: normal;
+}

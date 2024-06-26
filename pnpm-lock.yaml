@@ -60,6 +60,9 @@ importers:
       fontello-cli:
         specifier: workspace:^
         version: link:../fontello-cli
+      pentatrion-fontello-cli:
+        specifier: ^0.0.5
+        version: 0.0.5
       postcss:
         specifier: ^8.4.38
         version: 8.4.38
@@ -1427,6 +1430,10 @@ packages:
     resolution: {integrity: sha512-Yw5MtnMv7vgD2/6Bjmmuegc8bQEVA9GmAyaR18bMYWKqsWDG9wgYZ1j4I6gNMF5Y5JBDcUcjRQqNQx7Y8uotcg==}
     engines: {node: '>=14.16'}
 
+  file-type@19.0.0:
+    resolution: {integrity: sha512-s7cxa7/leUWLiXO78DVVfBVse+milos9FitauDLG1pI7lNaJ2+5lzPnr2N24ym+84HVwJL6hVuGfgVE+ALvU8Q==}
+    engines: {node: '>=18'}
+
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
@@ -2163,6 +2170,10 @@ packages:
         optional: true
       '@types/react-dom':
         optional: true
+
+  pentatrion-fontello-cli@0.0.5:
+    resolution: {integrity: sha512-tR5z9xeQculdnrBzD3aexy6uF5LMK3TdhWLkpYnConQ3mOeGkm7HDTpsF/hzljPx/aUo8TJSq3HnQviSiRgIEA==}
+    hasBin: true
 
   picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
@@ -4471,6 +4482,12 @@ snapshots:
       strtok3: 7.0.0
       token-types: 5.0.1
 
+  file-type@19.0.0:
+    dependencies:
+      readable-web-to-node-stream: 3.0.2
+      strtok3: 7.0.0
+      token-types: 5.0.1
+
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
@@ -5161,6 +5178,20 @@ snapshots:
     transitivePeerDependencies:
       - '@types/sortablejs'
       - sortablejs
+
+  pentatrion-fontello-cli@0.0.5:
+    dependencies:
+      axios: 1.7.2
+      commander: 12.1.0
+      extract-zip: 2.0.1
+      file-type: 19.0.0
+      form-data: 4.0.0
+      open: 10.1.0
+      prompts: 2.4.2
+      rimraf: 5.0.7
+    transitivePeerDependencies:
+      - debug
+      - supports-color
 
   picocolors@1.0.1: {}
 
