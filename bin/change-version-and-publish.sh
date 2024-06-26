@@ -25,10 +25,10 @@ then
     exit 1
 fi
 
-cd "$PROJECT_DIR/playground/wizard"
+cd "$PROJECT_DIR/packages/wizard"
 npm --no-git-tag-version --allow-same-version version $VERSION
 
-cd "$PROJECT_DIR/playground/sandbox"
+cd "$PROJECT_DIR/packages/sandbox"
 npm --no-git-tag-version --allow-same-version version $VERSION
 
 cd "$PROJECT_DIR/packages/maplibre-theme"

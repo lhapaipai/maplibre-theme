@@ -1,6 +1,6 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { readFileSync, writeFileSync, copyFileSync } from "node:fs";
+import { readFileSync, writeFileSync, copyFileSync, cpSync } from "node:fs";
 const projectDir = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(projectDir, "../..");
 const pkgInfos = JSON.parse(
@@ -21,3 +21,7 @@ copyFileSync(
   resolve(rootDir, "README.md"),
   resolve(projectDir, "dist/README.md")
 );
+
+cpSync(resolve(projectDir, "src"), resolve(projectDir, "dist/src"), {
+  recursive: true,
+});

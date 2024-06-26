@@ -1,3 +1,7 @@
+## 0.0.14
+
+- add src dir into npm package
+
 ## 0.0.13
 
 - add compatibility mode with MapBox for `ctrl`, `ctrl-group`.
