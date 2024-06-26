@@ -8,10 +8,19 @@ this themes are designed to mimic the actual theme with some improvements.
 - support dark mode
 - support CSS variables for easy optimisation.
 - possibility to use another icon set for your buttons
+- compat mode to support `.mapboxgl-ctrl` and `.mapboxgl-ctrl-group` classes.
 
-See a [Demo](https://maplibre-theme.pentatrion.com/).
+See a demo with [MapLibre theme customizer](https://maplibre-theme.pentatrion.com/).
+
+<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/theme-customizer.png" alt="MapLibre Theme customizer" />
+
+This custimizer can be used in different ways. test how this package works, create your own theme and see the associated configuration.
+
+> [!IMPORTANT]
+> if you have created a nice theme from the customizer and you want to share it, export it in JSON format, open a github issue with the content of the JSON, it will be added as a preset.
 
 Compatibility : `maplibre-gl` >= 1.15
+
 
 ## Installation
 
@@ -69,6 +78,10 @@ List of available CSS files to import. (see [Scoped themes](#scoped-themes) sect
     | // scoped themes only if you need to use multiple theme in your app
     ├── classic.scoped.css (21 ko)
     ├── modern.scoped.css (22 ko)
+    |
+    | // maplibre-theme compatible plugin stylesheets
+    ├── plugins
+    |   └── mapbox-gl-draw.css
     |
     | // for special use cases
     └── extra
@@ -323,7 +336,13 @@ this special files create stylesheets with scoped themes and MapBox compatible. 
 
 ## MapLibre Plugins
 
-Some MapLibre compatible theme are adapted to be compatible with MapLibre Theme.
+This section gives you some tips for integrating MapLibre plugins with your theme.
+
+note: if the plugin was originally designed for MapBox you may encounter problems with the hard-coded classes `mapbox-ctrl` and `mapboxgl-ctrl-group` see section above.
+
+you will also find in the `maplibre-theme/plugins` directory style sheets in the name of your plugin which will replace the plugin style sheet.
+
+**Be lenient MapLibre theme is not intended to provide the perfect style sheet for your use case**. you will definitely need to refactor the css depending on the version of the plugin you are using. I can advise you to copy and paste this style sheet into your project and use it as a basis for work. This is why plugin stylesheets are not minified.
 
 ### Mapbox GL Draw
 
@@ -338,6 +357,9 @@ import "maplibre-theme/icons.default.css";
 // use this instead
 import "maplibre-theme/extra/modern.compat.css";
 
+// because you probably need to copy-paste this stylesheet to adapt to your use case
+// (difference between version you use, etc...)
+// this stylesheet is not minified.
 import "maplibre-theme/plugins/mapbox-gl-draw.css";
 ```
 
