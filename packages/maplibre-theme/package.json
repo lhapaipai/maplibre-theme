@@ -14,7 +14,7 @@
     "build:themes:scoped:compat": "node postcss/cli.js build themes scoped,compat",
     "build:icons": "node postcss/cli.js build icons",
     "build:plugins": "node postcss/cli.js build plugins",
-    "build": "pnpm build:themes && pnpm build:themes:scoped && pnpm build:themes:compat && pnpm build:themes:scoped:compat && pnpm build:icons && pnpm build:plugins && node generate-public-package.js",
+    "build": "rm -rf dist/* && pnpm build:themes && pnpm build:themes:scoped && pnpm build:themes:compat && pnpm build:themes:scoped:compat && pnpm build:icons && pnpm build:plugins && node generate-public-package.js",
     "fontello": "fontello"
   },
   "repository": {

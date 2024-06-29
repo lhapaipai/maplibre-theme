@@ -19,7 +19,7 @@ export default function NavBar({ showNavBar, setShowNavBar, children }: Props) {
     <div
       id="menu-col"
       className={clsx(
-        "fixed left-0 top-0 z-30 bottom-0 flex-col max-w-full w-64 flex-none  bg-gray-0  shadow dark:shadow-dark md:relative md:flex md:bg-transparent md:shadow-none md:dark:shadow-none md:flex-[0_0_var(--sidebar-menu-width)] border-r border-r-gray-2",
+        "fixed left-0 top-0 z-30 bottom-0 flex-col max-w-full w-80 flex-none  bg-gray-0  shadow dark:shadow-dark md:relative md:flex md:bg-transparent md:shadow-none md:dark:shadow-none md:flex-[0_0_var(--sidebar-menu-width)] border-r border-r-gray-2",
         !showNavBar ? "hidden" : "flex"
       )}
     >
@@ -58,7 +58,7 @@ export default function NavBar({ showNavBar, setShowNavBar, children }: Props) {
         </div>
       </header>
       <Scroll className="flex-1 overflow-y-auto">{children}</Scroll>
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between m-2">
         <ConfigImport />
         <ConfigPreview />
       </div>
