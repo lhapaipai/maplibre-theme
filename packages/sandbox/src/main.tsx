@@ -1,9 +1,9 @@
 import ReactDOM from "react-dom/client";
 
 import "maplibre-theme/icons.default.css";
-import "maplibre-theme/legacy.scoped.css";
-import "maplibre-theme/modern.scoped.css";
-import "maplibre-theme/classic.scoped.css";
+import "maplibre-theme/extra/legacy.scoped.css";
+import "maplibre-theme/extra/modern.scoped.css";
+import "maplibre-theme/extra/classic.scoped.css";
 
 import App from "./App.tsx";
 import React from "react";

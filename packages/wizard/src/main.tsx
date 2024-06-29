@@ -18,7 +18,7 @@ import "maplibre-theme/plugins/mapbox-gl-draw.css";
 
 import { NotificationConsumer } from "pentatrion-design/redux";
 
-const strict = false;
+const strict = true;
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   strict ? (

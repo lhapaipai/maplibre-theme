@@ -108,6 +108,12 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      '@maplibre/maplibre-gl-style-spec':
+        specifier: ^20.3.0
+        version: 20.3.0
+      '@types/geojson':
+        specifier: ^7946.0.14
+        version: 7946.0.14
       '@types/react':
         specifier: ^18.2.66
         version: 18.3.3
@@ -172,6 +178,9 @@ importers:
         specifier: ^9.1.2
         version: 9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1)
     devDependencies:
+      '@types/geojson':
+        specifier: ^7946.0.14
+        version: 7946.0.14
       '@types/mapbox__mapbox-gl-draw':
         specifier: ^1.4.6
         version: 1.4.6
@@ -208,6 +217,9 @@ importers:
       fontello-cli:
         specifier: workspace:^
         version: link:../fontello-cli
+      maplibre-gl:
+        specifier: ^4.4.1
+        version: 4.4.1
       pentatrion-design:
         specifier: ^0.0.12
         version: 0.0.12(@reduxjs/toolkit@2.2.5(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(react@18.3.1))(@types/react-dom@18.3.0)(@types/react@18.3.3)(@types/sortablejs@1.15.8)(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(sortablejs@1.15.2)(tailwindcss@3.4.4)

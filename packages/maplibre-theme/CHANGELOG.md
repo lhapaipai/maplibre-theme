@@ -1,3 +1,8 @@
+## 0.1.0
+
+- add dark mapStyle to wizard
+- revert src dir from npm package
+
 ## 0.0.14
 
 - add src dir into npm package

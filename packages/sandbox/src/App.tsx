@@ -1,8 +1,7 @@
-import { Map, StyleSpecification } from "maplibre-gl";
+import { Map } from "maplibre-gl";
 import "./App.css";
 import "maplibre-react-components/style.css";
-import style from "./style.json";
-const mapStyle = style as StyleSpecification;
+import { lightStyle, darkStyle } from "./style.ts";
 
 new URL(window.location.toString()).searchParams
   .get("classes")
@@ -12,7 +11,6 @@ new URL(window.location.toString()).searchParams
   });
 
 import {
-  MrcLogoControl,
   RAttributionControl,
   RFullscreenControl,
   RGeolocateControl,
@@ -67,7 +65,7 @@ function CustomMap({
         ref={mapRef}
         initialAttributionControl={false}
         className={clsx(className, `shadow-md maplibregl-theme-${theme}`)}
-        mapStyle={mapStyle}
+        mapStyle={scheme === "light" ? lightStyle : darkStyle}
         onClick={(e) => console.log(e.lngLat)}
       >
         <RSource

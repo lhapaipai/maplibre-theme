@@ -21,7 +21,3 @@ copyFileSync(
   resolve(rootDir, "README.md"),
   resolve(projectDir, "dist/README.md")
 );
-
-cpSync(resolve(projectDir, "src"), resolve(projectDir, "dist/src"), {
-  recursive: true,
-});

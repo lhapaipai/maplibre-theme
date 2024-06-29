@@ -18,7 +18,7 @@ import { selectConfig } from "~/store/configSlice";
 import { mergeCssVars } from "~/lib/css";
 import { selectMode } from "~/store/appSlice";
 import RMapboxDraw from "./RMapboxDraw";
-
+import { lightStyle, darkStyle } from "~/config/mapStyle";
 const initialMapStyle: CSSProperties = {
   position: "absolute",
   top: 0,
@@ -50,7 +50,6 @@ const rasterDemTiles = [
 export default function MapApp() {
   const mode = useAppSelector(selectMode);
   const { theme, icons, cssVars } = useAppSelector(selectConfig);
-
   const style: CSSProperties = useMemo(
     () => mergeCssVars(cssVars, mode, icons),
     [cssVars, mode, icons]
@@ -68,7 +67,7 @@ export default function MapApp() {
     <RMap
       style={mapStyle}
       className={`maplibregl-theme-${theme}`}
-      mapStyle="/style.json"
+      mapStyle={mode === "dark" ? darkStyle : lightStyle}
       initialAttributionControl={false}
     >
       <RSource
