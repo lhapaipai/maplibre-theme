@@ -28,6 +28,8 @@
    * --ml-c-outline is only used here
    */
   --ml-outline: 0 0 2px 2px rgb(var(--ml-c-outline));
+
+  --ml-font-icons: "maplibregl-icons-default";
 }
 
 .dark {

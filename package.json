@@ -3,7 +3,8 @@
     "workspace:theme:dev": "pnpm --filter maplibre-theme-private run dev",
     "workspace:wizard:dev": "pnpm --filter wizard run dev",
     "workspace:sandbox:dev": "pnpm --filter sandbox run dev",
-    "dev": "concurrently \"pnpm run workspace:theme:dev\" \"pnpm run workspace:wizard:dev\" \"pnpm run workspace:sandbox:dev\""
+    "dev": "concurrently \"pnpm run workspace:theme:dev\" \"pnpm run workspace:wizard:dev\" \"pnpm run workspace:sandbox:dev\"",
+    "build": "pnpm --filter maplibre-theme-private run build"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
