@@ -1,6 +1,6 @@
 {
   "name": "maplibre-theme",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CSS Themes for your Maplibre GL Js Web app",
   "type": "module",
   "repository": {
