@@ -252,6 +252,7 @@ And create with a tool like [Fontello](https://fontello.com/) your icons using t
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-terrain.svg" width="20" /> | U+E810 |
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-zoom-in.svg" width="20" /> | U+002B |
 |<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-zoom-out.svg" width="20" /> | U+002D |
+|<img src="https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/default/assets/maplibregl-ctrl-globe.svg" width="20" /> | U+E800 |
 
 note: if you don't want to specify a bicolor compass icon. add your compass for the code `U+E809` and a blank icon like [space.svg](https://raw.githubusercontent.com/lhapaipai/maplibre-theme/main/packages/maplibre-theme/src/icons/core/assets/space.svg) for the `U+E80A` char code.
 
