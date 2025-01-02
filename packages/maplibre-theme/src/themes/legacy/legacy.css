@@ -8,6 +8,7 @@
 @import "./ctrl/ctrl-fullscreen.postcss";
 @import "./ctrl/ctrl-geolocate-marker.css";
 @import "./ctrl/ctrl-geolocate.postcss";
+@import "./ctrl/ctrl-globe.postcss";
 @import "./ctrl/ctrl-logo.postcss";
 @import "./ctrl/ctrl-navigation.postcss";
 @import "./ctrl/ctrl-scale.css";

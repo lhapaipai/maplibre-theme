@@ -421,6 +421,10 @@ Default generated colors with Forced-colors active.
 
 ## For Developpers
 
+in sync with MapLibre GL : v4.6.0
+to check diff : https://github.com/maplibre/maplibre-gl-js/compare/v4.6.0...main
+filename in maplibre-gl repository : `src/css/maplibre-gl.css`
+
 ### dev
 
 in the root directory `pnpm run dev` run concurrently the 2 playgrounds `sandbox` and `wizard` and start postcss in watch mode.

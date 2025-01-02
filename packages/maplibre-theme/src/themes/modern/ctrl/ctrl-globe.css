@@ -1,0 +1,8 @@
+.maplibregl-ctrl button.maplibregl-ctrl-globe .maplibregl-ctrl-icon::before {
+  content: "\e800";
+}
+
+.maplibregl-ctrl button.maplibregl-ctrl-globe-enabled .maplibregl-ctrl-icon::before {
+  color: rgb(var(--ml-c-active));
+  content: "\e800";
+}
