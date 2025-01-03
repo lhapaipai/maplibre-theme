@@ -3,6 +3,7 @@ import {
   RAttributionControl,
   RFullscreenControl,
   RGeolocateControl,
+  RGlobeControl,
   RLogoControl,
   RMap,
   RMarker,
@@ -132,6 +133,7 @@ export default function MapApp() {
       <RScaleControl />
       <RAttributionControl compact={false} />
       <RAttributionControl compact={true} />
+      <RGlobeControl />
       <GeolocMockCtrl />
     </RMap>
   );

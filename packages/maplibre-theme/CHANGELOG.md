@@ -1,3 +1,7 @@
+## 0.2.0
+
+- update for MapLibre v5.
+
 ## 0.1.0
 
 - add dark mapStyle to wizard

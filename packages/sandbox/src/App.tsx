@@ -14,6 +14,7 @@ import {
   RAttributionControl,
   RFullscreenControl,
   RGeolocateControl,
+  RGlobeControl,
   RLogoControl,
   RMap,
   RMarker,
@@ -123,6 +124,7 @@ function CustomMap({
         />
         <RNavigationControl />
         <RTerrainControl source="terrarium" />
+        <RGlobeControl />
         <RLogoControl compact={false} />
         <RLogoControl compact={true} />
         <RScaleControl />
