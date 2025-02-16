@@ -1,3 +1,7 @@
+## 0.2.1
+
+- fix outline when focusing maplibre canvas
+
 ## 0.2.0
 
 - update for MapLibre v5.
