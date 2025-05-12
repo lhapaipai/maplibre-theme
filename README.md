@@ -28,17 +28,51 @@ Compatibility : `maplibre-gl` >= 1.15
 npm i maplibre-theme
 ```
 
-in your files
+## TL;DR;
 
 ```diff
-// js file
 - import "maplibre-gl/dist/maplibre-gl.css";
-+ import "maplibre-theme/icons.<your-icon-set>.css";
-+ import "maplibre-theme/<your-theme>.css";
++ import "maplibre-theme/icons.default.css";
++ import "maplibre-theme/modern.css";
 ```
 
-For theme choose between : `modern`, `classic` and `legacy`.
-For icon set choose between : `default` and `lucide`.
+Extra config
+```css
+.maplibregl-map {
+  /* your CSS vars */
+  --ml-ctrl-border-radius: 4px;
+
+  /*
+   * bg-1 default state
+   * bg-2 usually hover effect
+   * bg-3 active effect
+   */
+  --ml-c-bg-1: #ffffff;
+  --ml-c-bg-2: #f0f0f0;
+  --ml-c-bg-3: #d7d7d7;
+}
+```
+
+check [modern vars.css](https://github.com/lhapaipai/maplibre-theme/blob/main/packages/maplibre-theme/src/themes/modern/vars.css) for all available css vars.
+
+
+## Details
+
+MapLibre theme separate your CSS into 2 files. one for inline icons and another for the rest.
+
+```ts
+import "maplibre-theme/icons.<your-icon-set>.css";
+import "maplibre-theme/<your-theme>.css";
+```
+
+For theme choose between:
+- `modern`
+- `classic` (looks like the current MapLibre theme as a starting point, but now you have dark mode built in and can play with css variables)
+- `legacy`
+
+For icon set choose between:
+- `default`
+- `lucide`
 
 
 note: if you don't use default icon set, add this extra config in your css.
@@ -48,12 +82,13 @@ note: if you don't use default icon set, add this extra config in your css.
 }
 ```
 
-Modern theme with lucide icon set example
+Example: Modern theme with lucide icon set
 
 ```js
 import "maplibre-theme/icons.lucide.css";
 import "maplibre-theme/modern.css";
-
+```
+```css
 .maplibregl-map {
   --ml-font-icons: maplibregl-icons-lucide;
 }
