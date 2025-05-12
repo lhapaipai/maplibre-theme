@@ -1,4 +1,4 @@
-import { Button } from "pentatrion-design/components/button";
+import { Button } from "pentatrion-design/button";
 
 import { useState } from "react";
 import MapApp from "./components/map/MapApp";

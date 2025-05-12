@@ -1,5 +1,5 @@
-import { Toggle } from "pentatrion-design/components/input/Toggle";
-import { type Option, Select } from "pentatrion-design/components/select";
+import { Toggle } from "pentatrion-design/input";
+import { type Option, Select } from "pentatrion-design/select";
 import Customizer from "./Customizer";
 import { propertiesByTheme } from "../config/cssVars";
 import { useAppDispatch, useAppSelector } from "../store";

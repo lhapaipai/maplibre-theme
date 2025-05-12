@@ -28,16 +28,16 @@
   "author": "Hugues Tavernier",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "concurrently": "^8.2.2",
-    "cssnano": "^7.0.2",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "cssnano": "^7.0.7",
     "pentatrion-fontello-cli": "^0.0.5",
-    "postcss": "^8.4.38",
-    "postcss-cli": "^11.0.0",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.0",
     "postcss-inline-base64": "^7.3.1",
     "postcss-inline-svg": "^6.0.0",
-    "postcss-prefix-selector": "^1.16.1",
-    "vitest": "^1.6.0"
+    "postcss-prefix-selector": "^2.1.1",
+    "vitest": "^3.1.3"
   }
 }

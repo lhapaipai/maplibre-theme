@@ -1,10 +1,10 @@
 import clsx from "clsx";
 
-import { ResizeArea } from "pentatrion-design/components/resize-area";
-import { Button, LinkButton } from "pentatrion-design/components/button";
+import { ResizeArea } from "pentatrion-design/resize-area";
+import { Button, HrefButton } from "pentatrion-design/button";
 
 import { Dispatch, ReactNode, SetStateAction } from "react";
-import { Scroll } from "pentatrion-design/components/scroll";
+import { Scroll } from "pentatrion-design/scroll";
 import ConfigPreview from "./ConfigPreview";
 import ConfigImport from "./ConfigImport";
 import { version } from "~/../package.json";
@@ -63,7 +63,7 @@ export default function NavBar({ showNavBar, setShowNavBar, children }: Props) {
         <ConfigPreview />
       </div>
       <div className="flex items-center justify-center h-12">
-        <LinkButton
+        <HrefButton
           icon
           color="gray"
           variant="text"
@@ -71,7 +71,7 @@ export default function NavBar({ showNavBar, setShowNavBar, children }: Props) {
           href="https://github.com/lhapaipai/maplibre-theme"
         >
           <i className="fe-github-circled"></i>
-        </LinkButton>
+        </HrefButton>
       </div>
     </div>
   );

@@ -1,17 +1,13 @@
-import {
-  Modal,
-  ModalTrigger,
-  ModalContent,
-} from "pentatrion-design/components/modal";
-import { Textarea } from "pentatrion-design/components/textarea";
+import { Modal, ModalTrigger, ModalContent } from "pentatrion-design/modal";
+import { Textarea } from "pentatrion-design/textarea";
 import style from "./ConfigModal.module.css";
 
 import { useAppSelector } from "../store";
 import { selectConfig } from "../store/configSlice";
 import { generateCssCode, generateJsCode, generateJsonCode } from "../lib/io";
-import { Tab, Tabs } from "pentatrion-design/components/tabs/Tabs";
+import { Tabs } from "pentatrion-design/tabs";
 import { useState } from "react";
-import { Button } from "pentatrion-design/components/button";
+import { Button } from "pentatrion-design/button";
 import clsx from "clsx";
 
 export default function ConfigPreview() {
@@ -21,7 +17,7 @@ export default function ConfigPreview() {
 
   const [tabId, setTabId] = useState<string | number>("css");
 
-  const tabs: Tab[] = [
+  const tabs = [
     {
       id: "css",
       title: "CSS Export",

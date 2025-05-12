@@ -1,8 +1,25 @@
+@import "tailwindcss";
+
+@source "../node_modules/pentatrion-design/dist/lib";
+@source "../node_modules/pentatrion-design/dist/components";
+@source "../node_modules/pentatrion-design/dist/hooks";
+
+@import "pentatrion-design/tailwind/variants.css";
 @import "./icons/fontello.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "pentatrion-design/tailwind/theme.css" layer(theme);
+@import "pentatrion-design/tailwind/base.css" layer(base);
+
+@import "pentatrion-design/tailwind/components-input-outline.css"
+  layer(components);
+@import "pentatrion-design/tailwind/components-range.css" layer(components);
+@import "pentatrion-design/tailwind/components-resize-area.css"
+  layer(components);
+@import "pentatrion-design/tailwind/components-step.css" layer(components);
+@import "pentatrion-design/tailwind/components.css" layer(components);
+
+@import "pentatrion-design/tailwind/utilities.css";
+@import "pentatrion-design/tailwind/utilities-dialog.css" layer(utilities);
 
 html {
   font-size: 16px;

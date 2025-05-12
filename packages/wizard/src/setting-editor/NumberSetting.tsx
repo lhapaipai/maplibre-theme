@@ -1,4 +1,4 @@
-import { Range } from "pentatrion-design";
+import { Range } from "pentatrion-design/input";
 
 const formatters = {
   px: (val: number) => `${val}px`,

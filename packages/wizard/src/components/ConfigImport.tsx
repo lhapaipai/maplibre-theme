@@ -1,22 +1,21 @@
-import { Button } from "pentatrion-design/components/button";
+import { Button } from "pentatrion-design/button";
 import {
   Modal,
   ModalTrigger,
   ModalContent,
   ModalFooter,
-} from "pentatrion-design/components/modal";
+} from "pentatrion-design/modal";
+import { addToast } from "pentatrion-design/toast";
 import { FormEvent, useState } from "react";
 import { parseStringAsJsonConfig } from "../lib/io";
 import { configChanged } from "../store/configSlice";
 import { useAppDispatch } from "../store";
 import style from "./ConfigModal.module.css";
-import { Textarea } from "pentatrion-design/components/textarea";
-import { useReduxNotifications } from "pentatrion-design/redux";
+import { Textarea } from "pentatrion-design/textarea";
 
 export default function ConfigImport() {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useAppDispatch();
-  const { notify } = useReduxNotifications();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     const formElement = e.target as HTMLFormElement;
@@ -25,7 +24,7 @@ export default function ConfigImport() {
 
     const config = parseStringAsJsonConfig(strConfig);
     if (!config) {
-      notify(
+      addToast(
         "Unable to parse configuration, verify your content is a valid JSON content.",
         {
           color: "red",

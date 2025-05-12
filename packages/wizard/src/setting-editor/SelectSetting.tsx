@@ -1,4 +1,4 @@
-import { Select } from "pentatrion-design/components/select";
+import { Select } from "pentatrion-design/select";
 
 export default function SelectSetting({
   name,

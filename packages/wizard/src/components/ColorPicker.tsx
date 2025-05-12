@@ -1,4 +1,4 @@
-import { Button } from "pentatrion-design/components/button";
+import { Button } from "pentatrion-design/button";
 import { Color } from "./Color";
 import { useState } from "react";
 import {
@@ -7,7 +7,7 @@ import {
   ModalDescription,
   ModalFooter,
   ModalHeader,
-} from "pentatrion-design/components/modal";
+} from "pentatrion-design/modal";
 
 import clsx from "clsx";
 import { colorByGroups } from "~/lib/color";

@@ -12,24 +12,24 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "maplibre-gl": "^5.0.0",
-    "maplibre-react-components": "^0.2.0",
+    "maplibre-gl": "^5.5.0",
+    "maplibre-react-components": "^0.2.2",
     "maplibre-theme": "workspace:*",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@maplibre/maplibre-gl-style-spec": "^20.3.0",
-    "@types/geojson": "^7946.0.14",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "@maplibre/maplibre-gl-style-spec": "^23.2.2",
+    "@types/geojson": "^7946.0.16",
+    "@types/react": "^19.1.3",
+    "@types/react-dom": "^19.1.4",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "eslint": "^9.26.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   }
 }
