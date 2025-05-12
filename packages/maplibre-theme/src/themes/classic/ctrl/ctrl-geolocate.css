@@ -8,7 +8,7 @@
   button.maplibregl-ctrl-geolocate:disabled
   .maplibregl-ctrl-icon::after {
   content: "\e80e";
-  color: rgb(var(--ml-c-error));
+  color: var(--ml-c-error);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -19,28 +19,28 @@
   button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-active
   .maplibregl-ctrl-icon::before {
   content: "\e80c";
-  color: rgb(var(--ml-c-active));
+  color: var(--ml-c-active);
 }
 
 .maplibregl-ctrl
   button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-active-error
   .maplibregl-ctrl-icon::before {
   content: "\e80c";
-  color: rgb(var(--ml-c-error));
+  color: var(--ml-c-error);
 }
 
 .maplibregl-ctrl
   button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-background
   .maplibregl-ctrl-icon::before {
   content: "\e80d";
-  color: rgb(var(--ml-c-active));
+  color: var(--ml-c-active);
 }
 
 .maplibregl-ctrl
   button.maplibregl-ctrl-geolocate.maplibregl-ctrl-geolocate-background-error
   .maplibregl-ctrl-icon::before {
   content: "\e80d";
-  color: rgb(var(--ml-c-error));
+  color: var(--ml-c-error);
 }
 
 .maplibregl-ctrl

@@ -166,9 +166,9 @@ new Map({
    * bg-2 usually hover effect
    * bg-3 active effect
    */
-  --ml-c-bg-1: 255 255 255;
-  --ml-c-bg-2: 240 240 240;
-  --ml-c-bg-3: 215 215 215;
+  --ml-c-bg-1: #ffffff;
+  --ml-c-bg-2: #f0f0f0;
+  --ml-c-bg-3: #d7d7d7;
 
   /* etc... */
 }
@@ -181,8 +181,6 @@ Some variables differs between `classic` and `modern`. check the source code for
 
 It is not recommended to modify css variables for media queries `@media (forced-colors: active) and (prefers-color-scheme: light)` and `@media (forced-colors: active)`.
 If you find inconsistencies, open an issue or submit a PR instead.
-
-note: define your colors as just the color channel so we can work with the opacity modifier syntax [TailwindCSS explanation](https://tailwindcss.com/docs/customizing-colors#using-css-variables).
 
 ## Custom icon set
 

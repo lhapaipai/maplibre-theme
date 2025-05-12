@@ -1,10 +1,10 @@
 .maplibregl-ctrl-scale {
-  background-color: rgb(var(--ml-c-bg-1) / 65%);
+  background-color: color-mix(in oklab, var(--ml-c-bg-1) 65%, transparent);
   font-size: 0.875rem;
   line-height: 1rem;
   border-width: medium 2px 2px;
   border-style: none solid solid;
-  border-color: rgb(var(--ml-c-icon-1));
+  border-color: var(--ml-c-icon-1);
   padding: 0 5px;
   box-sizing: border-box;
   border-bottom-left-radius: 4px;

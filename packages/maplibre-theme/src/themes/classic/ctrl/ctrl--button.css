@@ -1,6 +1,6 @@
 .maplibregl-ctrl button,
 .maplibregl-ctrl-attrib-button {
-  color: rgb(var(--ml-c-icon-1));
+  color: var(--ml-c-icon-1);
 }
 
 .maplibregl-ctrl-group button {
@@ -50,7 +50,7 @@
 
 .maplibregl-ctrl button:not(:disabled):hover,
 .maplibregl-ctrl-attrib-button:not(:disabled):hover {
-  background-color: rgb(var(--ml-c-bg-2));
+  background-color: var(--ml-c-bg-2);
 }
 /**
  * needed 
@@ -58,12 +58,12 @@
  * .-active -> https://github.com/korywka/mapbox-controls
  */
 .maplibregl-ctrl button:not(:disabled):is(.active, .-active) {
-  color: rgb(var(--ml-c-active));
+  color: var(--ml-c-active);
 }
 
 .maplibregl-ctrl button:not(:disabled):active,
 .maplibregl-ctrl-attrib-button:not(:disabled):active {
-  background-color: rgb(var(--ml-c-bg-3));
+  background-color: var(--ml-c-bg-3);
 }
 
 .maplibregl-ctrl-group button:focus:focus-visible {

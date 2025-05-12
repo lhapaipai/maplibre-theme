@@ -2,7 +2,9 @@
   content: "\e810";
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-terrain-enabled .maplibregl-ctrl-icon::before {
-  color: rgb(var(--ml-c-active));
+.maplibregl-ctrl
+  button.maplibregl-ctrl-terrain-enabled
+  .maplibregl-ctrl-icon::before {
+  color: var(--ml-c-active);
   content: "\e810";
 }

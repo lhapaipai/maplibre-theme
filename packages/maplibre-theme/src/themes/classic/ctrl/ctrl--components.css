@@ -1,5 +1,5 @@
 .maplibregl-ctrl-group button + button {
-  border-top: 1px solid rgb(var(--ml-c-bg-3));
+  border-top: 1px solid var(--ml-c-bg-3);
 }
 
 @media (forced-colors: active) {

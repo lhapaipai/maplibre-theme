@@ -1,5 +1,4 @@
 import { Button } from "pentatrion-design/button";
-import { Color } from "./Color";
 import { useState } from "react";
 import {
   Modal,
@@ -8,7 +7,7 @@ import {
   ModalFooter,
   ModalHeader,
 } from "pentatrion-design/modal";
-
+import { Color } from "pentatrion-design/input";
 import clsx from "clsx";
 import { colorByGroups } from "~/lib/color";
 
@@ -31,7 +30,11 @@ export default function ColorPicker({ value, onChange }: Props) {
   }
   return (
     <>
-      <Color onClick={() => setTempValue(value)} value={value}>
+      <Color
+        className="cursor-pointer"
+        onClick={() => setTempValue(value)}
+        value={value}
+      >
         {value}
       </Color>
       <Modal

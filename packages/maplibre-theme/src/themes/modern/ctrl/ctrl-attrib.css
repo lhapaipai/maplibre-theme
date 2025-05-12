@@ -1,5 +1,5 @@
 .maplibregl-ctrl.maplibregl-ctrl-attrib {
-  background-color: rgb(var(--ml-c-bg-1) / 65%);
+  background-color: color-mix(in oklab, var(--ml-c-bg-1) 65%, transparent);
   min-height: 2rem;
   margin: 0;
   padding: 0 0.5rem;
@@ -26,7 +26,7 @@
     min-height: 2rem;
     padding: 0 2rem 0 0;
     position: relative;
-    background-color: rgb(var(--ml-c-bg-1));
+    background-color: var(--ml-c-bg-1);
     border-radius: var(--ml-ctrl-border-radius);
     margin: 0.5rem;
   }
@@ -66,12 +66,12 @@
 }
 
 .maplibregl-ctrl-attrib a {
-  color: rgb(var(--ml-c-link-1));
+  color: var(--ml-c-link-1);
   text-decoration: none;
 }
 
 .maplibregl-ctrl-attrib a:hover {
-  color: rgb(var(--ml-c-link-2));
+  color: var(--ml-c-link-2);
   text-decoration: underline;
 }
 

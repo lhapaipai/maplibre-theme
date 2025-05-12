@@ -20,7 +20,7 @@
 
 .maplibregl-ctrl-group {
   border-radius: var(--ml-ctrl-border-radius);
-  background: rgb(var(--ml-c-bg-1));
+  background: var(--ml-c-bg-1);
 }
 
 .maplibregl-ctrl-group:not(:empty) {

@@ -4,81 +4,81 @@
   --ml-font-attribution: 12px/20px "Helvetica Neue", Arial, Helvetica,
     sans-serif;
 
-  --ml-c-bg-1: 255 255 255;
-  --ml-c-bg-2: 240 240 240;
-  --ml-c-bg-3: 215 215 215;
+  --ml-c-bg-1: #ffffff;
+  --ml-c-bg-2: #f0f0f0;
+  --ml-c-bg-3: #d7d7d7;
 
-  --ml-c-icon-1: 51 51 51;
-  --ml-c-icon-2: 0 0 0;
-  --ml-c-active: 29 161 242;
-  --ml-c-error: 229 78 51;
-  --ml-c-outline: 29 161 242;
+  --ml-c-icon-1: #333333;
+  --ml-c-icon-2: #000000;
+  --ml-c-active: #1da1f2;
+  --ml-c-error: #e54e33;
+  --ml-c-outline: #1da1f2;
   --ml-o-disabled: 0.25;
   --ml-shadow-ctrl: 0 0 0 2px rgb(0 0 0 / 10%);
   --ml-shadow-popup: 0 1px 2px rgb(0 0 0 / 10%);
-  --ml-c-link-1: 51 51 51;
-  --ml-c-link-2: 0 0 0;
+  --ml-c-link-1: #333333;
+  --ml-c-link-2: #000000;
 
-  --ml-c-logo-1: 255 255 255;
-  --ml-c-logo-2: 215 215 215;
+  --ml-c-logo-1: #ffffff;
+  --ml-c-logo-2: #d7d7d7;
 
-  --ml-c-geoloc: 29 161 242;
+  --ml-c-geoloc: #1da1f2;
 
   /**
    * --ml-c-outline is only used here
    */
-  --ml-outline: 0 0 2px 2px rgb(var(--ml-c-outline));
+  --ml-outline: 0 0 2px 2px var(--ml-c-outline);
 
   --ml-font-icons: "maplibregl-icons-default";
 }
 
 .dark {
-  --ml-c-bg-1: 17 23 37;
-  --ml-c-bg-2: 65 72 83;
-  --ml-c-bg-3: 50 54 63;
+  --ml-c-bg-1: #111725;
+  --ml-c-bg-2: #414853;
+  --ml-c-bg-3: #32363f;
 
-  --ml-c-icon-1: 203 213 225;
-  --ml-c-icon-2: 255 255 255;
-  --ml-c-link-1: 203 213 225;
-  --ml-c-link-2: 255 255 255;
+  --ml-c-icon-1: #cbd5e1;
+  --ml-c-icon-2: #ffffff;
+  --ml-c-link-1: #cbd5e1;
+  --ml-c-link-2: #ffffff;
 
   --ml-shadow-ctrl: 0 0 0 2px rgb(0 0 0 / 35%);
   --ml-shadow-popup: 0 0 0 2px rgb(0 0 0 / 35%);
 
-  --ml-c-logo-1: 17 23 37;
-  --ml-c-logo-2: 50 54 63;
+  --ml-c-logo-1: #111725;
+  --ml-c-logo-2: #32363f;
 }
 
 @media (forced-colors: active) and (prefers-color-scheme: light) {
   :root,
   .dark {
-    --ml-c-bg-1: 255 255 255;
-    --ml-c-bg-2: 200 200 200;
-    --ml-c-bg-3: 180 180 180;
+    --ml-c-bg-1: #ffffff;
+    --ml-c-bg-2: #c8c8c8;
+    --ml-c-bg-3: #b4b4b4;
 
-    --ml-c-icon-1: 0 0 0;
-    --ml-c-icon-2: 0 0 0;
+    --ml-c-icon-1: #000000;
+    --ml-c-icon-2: #000000;
 
-    --ml-c-logo-1: 255 255 255;
-    --ml-c-logo-2: 180 180 180;
+    --ml-c-logo-1: #ffffff;
+    --ml-c-logo-2: #b4b4b4;
 
-    --ml-c-error: 255 0 0;
+    --ml-c-error: #ff0000;
   }
 }
 
 @media (forced-colors: active) {
   :root,
   .dark {
-    --ml-c-bg-1: 0 0 0;
-    --ml-c-bg-2: 65 72 83;
-    --ml-c-bg-3: 50 54 63;
+    --ml-c-bg-1: #000000;
+    --ml-c-bg-2: #414853;
+    --ml-c-bg-3: #32363f;
 
-    --ml-c-icon-1: 255 255 255;
-    --ml-c-icon-2: 255 255 255;
+    --ml-c-icon-1: #ffffff;
+    --ml-c-icon-2: #ffffff;
 
-    --ml-c-logo-1: 0 0 0;
-    --ml-c-logo-2: 50 54 63;
+    --ml-c-logo-1: #000000;
+    --ml-c-logo-2: #32363f;
 
-    --ml-c-error: 255 0 0;
+    --ml-c-error: #ff0000;
   }
 }

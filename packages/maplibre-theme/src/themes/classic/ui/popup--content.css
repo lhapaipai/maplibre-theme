@@ -8,19 +8,19 @@
   background-color: transparent;
   min-width: 20px;
   font-size: 16px;
-  color: rgb(var(--ml-c-icon-1));
+  color: var(--ml-c-icon-1);
 }
 
 .maplibregl-popup-close-button:hover {
-  background-color: rgb(var(--ml-c-bg-2));
+  background-color: var(--ml-c-bg-2);
 }
 
 .maplibregl-popup-close-button:active {
-  background-color: rgb(var(--ml-c-bg-3));
+  background-color: var(--ml-c-bg-3);
 }
 
 .maplibregl-popup-content {
-  background: rgb(var(--ml-c-bg-1));
+  background: var(--ml-c-bg-1);
   border-radius: var(--ml-ctrl-border-radius);
   box-shadow: var(--ml-shadow-popup);
   padding: 20px;

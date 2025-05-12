@@ -3,26 +3,26 @@
   --ml-font: 16px/24px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --ml-font-attribution: inherit;
-  --ml-c-bg-1: 255 255 255;
-  --ml-c-bg-2: 240 240 240;
-  --ml-c-bg-3: 215 215 215;
+  --ml-c-bg-1: #ffffff;
+  --ml-c-bg-2: #f0f0f0;
+  --ml-c-bg-3: #d7d7d7;
 
-  --ml-c-icon-1: 51 51 51;
-  --ml-c-icon-2: 0 0 0;
-  --ml-c-active: 29 161 242;
-  --ml-c-error: 229 78 51;
-  --ml-c-outline: 219 167 38;
+  --ml-c-icon-1: #333333;
+  --ml-c-icon-2: #000000;
+  --ml-c-active: #1da1f2;
+  --ml-c-error: #e54e33;
+  --ml-c-outline: #dba726;
   --ml-o-disabled: 0.25;
   --ml-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.15), 0 1px 2px -1px rgb(0 0 0 / 0.15); /* shadow */
   --ml-shadow-active: 0 10px 15px -3px rgb(0 0 0 / 0.15),
     0 4px 6px -2px rgb(0 0 0 / 0.15);
 
-  --ml-c-link-1: 51 51 51;
-  --ml-c-link-2: 0 0 0;
+  --ml-c-link-1: #333333;
+  --ml-c-link-2: #000000;
 
-  --ml-c-logo-1: 255 255 255;
-  --ml-c-logo-2: 215 215 215;
-  --ml-c-geoloc: 29 161 242;
+  --ml-c-logo-1: #ffffff;
+  --ml-c-logo-2: #d7d7d7;
+  --ml-c-geoloc: #1da1f2;
 
   /**
    * --ml-c-outline is only used here
@@ -32,52 +32,52 @@
 }
 
 .dark {
-  --ml-c-bg-1: 17 23 37;
-  --ml-c-bg-2: 65 72 83;
-  --ml-c-bg-3: 50 54 63;
+  --ml-c-bg-1: #111725;
+  --ml-c-bg-2: #414853;
+  --ml-c-bg-3: #32363f;
 
-  --ml-c-icon-1: 203 213 225;
-  --ml-c-icon-2: 255 255 255;
+  --ml-c-icon-1: #cbd5e1;
+  --ml-c-icon-2: #ffffff;
 
   --ml-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.15), 0 1px 2px -1px rgb(0 0 0 / 0.15); /* shadow */
 
-  --ml-c-link-1: 203 213 225;
-  --ml-c-link-2: 255 255 255;
+  --ml-c-link-1: #cbd5e1;
+  --ml-c-link-2: #ffffff;
 
-  --ml-c-logo-1: 17 23 37;
-  --ml-c-logo-2: 50 54 63;
+  --ml-c-logo-1: #111725;
+  --ml-c-logo-2: #32363f;
 }
 
 @media (forced-colors: active) and (prefers-color-scheme: light) {
   :root,
   .dark {
-    --ml-c-bg-1: 255 255 255;
-    --ml-c-bg-2: 200 200 200;
-    --ml-c-bg-3: 180 180 180;
+    --ml-c-bg-1: #ffffff;
+    --ml-c-bg-2: #c8c8c8;
+    --ml-c-bg-3: #b4b4b4;
 
-    --ml-c-icon-1: 0 0 0;
-    --ml-c-icon-2: 0 0 0;
+    --ml-c-icon-1: #000000;
+    --ml-c-icon-2: #000000;
 
-    --ml-c-logo-1: 255 255 255;
-    --ml-c-logo-2: 180 180 180;
+    --ml-c-logo-1: #ffffff;
+    --ml-c-logo-2: #b4b4b4;
 
-    --ml-c-error: 255 0 0;
+    --ml-c-error: #ff0000;
   }
 }
 
 @media (forced-colors: active) {
   :root,
   .dark {
-    --ml-c-bg-1: 0 0 0;
-    --ml-c-bg-2: 65 72 83;
-    --ml-c-bg-3: 50 54 63;
+    --ml-c-bg-1: #000000;
+    --ml-c-bg-2: #414853;
+    --ml-c-bg-3: #32363f;
 
-    --ml-c-icon-1: 255 255 255;
-    --ml-c-icon-2: 255 255 255;
+    --ml-c-icon-1: #ffffff;
+    --ml-c-icon-2: #ffffff;
 
-    --ml-c-logo-1: 0 0 0;
-    --ml-c-logo-2: 50 54 63;
+    --ml-c-logo-1: #000000;
+    --ml-c-logo-2: #32363f;
 
-    --ml-c-error: 255 0 0;
+    --ml-c-error: #ff0000;
   }
 }

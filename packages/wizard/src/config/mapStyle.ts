@@ -725,7 +725,7 @@ const lightLayers: LayerSpecification[] = [
     paint: {
       "line-color": "#1077B0",
       "line-opacity": 1,
-      "line-dasharray": [3, 3],
+      "line-dasharray": ["literal", [3, 3]],
     },
   },
   {
@@ -1117,7 +1117,7 @@ const darkLayers: LayerSpecification[] = [
     paint: {
       "line-color": "#4A90E2",
       "line-opacity": 1,
-      "line-dasharray": [3, 3],
+      "line-dasharray": ["literal", [3, 3]],
     },
   },
   {

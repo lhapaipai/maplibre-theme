@@ -2,7 +2,9 @@
   content: "\e800";
 }
 
-.maplibregl-ctrl button.maplibregl-ctrl-globe-enabled .maplibregl-ctrl-icon::before {
-  color: rgb(var(--ml-c-active));
+.maplibregl-ctrl
+  button.maplibregl-ctrl-globe-enabled
+  .maplibregl-ctrl-icon::before {
+  color: var(--ml-c-active);
   content: "\e800";
 }

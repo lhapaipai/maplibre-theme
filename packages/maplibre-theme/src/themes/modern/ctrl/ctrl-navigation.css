@@ -10,7 +10,7 @@
   content: "\e809";
 }
 .maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-icon::after {
-  color: rgb(var(--ml-c-bg-3));
+  color: var(--ml-c-bg-3);
   content: "\e80a";
   position: absolute;
   left: 50%;
