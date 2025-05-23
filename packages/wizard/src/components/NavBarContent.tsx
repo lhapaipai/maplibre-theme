@@ -50,7 +50,7 @@ export default function NavBarContent() {
       <div className="p8n-setting">
         <div>Theme</div>
         <Select<ThemeOption>
-          variant="ghost"
+          variant="normal"
           options={themeOptions}
           value={theme}
           onChange={(o) => {
@@ -61,7 +61,7 @@ export default function NavBarContent() {
       <div className="p8n-setting">
         <div>Icons</div>
         <Select
-          variant="ghost"
+          variant="normal"
           options={iconOptions}
           value={icons}
           onChange={(o) => {

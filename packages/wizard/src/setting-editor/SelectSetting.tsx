@@ -12,7 +12,7 @@ export default function SelectSetting({
     <div className="p8n-setting">
       <div>{name}</div>
       <Select
-        variant="ghost"
+        variant="normal"
         options={options}
         placement="bottom-end"
         floatingMinWidth={160}

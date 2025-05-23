@@ -55,6 +55,17 @@ Extra config
 
 check [modern vars.css](https://github.com/lhapaipai/maplibre-theme/blob/main/packages/maplibre-theme/src/themes/modern/vars.css) for all available css vars.
 
+## Migration from v0.2.x to v1.x
+
+If you were using custom colors in your CSS vars. You need to convert color channel to real colors
+
+```diff
+.maplibregl-map {
+
+-  --ml-c-bg-1: 255 255 255;
++  --ml-c-bg-1: #ffffff;
+}
+```
 
 ## Details
 
@@ -452,6 +463,8 @@ Default generated colors with Forced-colors active.
 | ButtonFace     | #f5f5f5  | #000    |
 | HighlightText  | #ffffff  | #000    |
 | Highlight      | #1f9ede  | #1aebff |
+
+
 
 ## For Developpers
 
